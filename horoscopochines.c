@@ -1,3 +1,10 @@
+/*
+Essa função recebe o ano como parâmetro e retorna o animal no horóscopo chinês.
+Baseado na tabela:
+https://pm1.narvii.com/6611/54409831b41ebc171b6faeeeabe4272c90ed7ac3_hq.jpg
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
