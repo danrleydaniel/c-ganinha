@@ -24,33 +24,33 @@ int validaEmail(char *);
 
 int main(){
 	int opcao;
-    logotipoPrincipal();
+    	logotipoPrincipal();
 	opcao = mainMenu();
 	
 	while(opcao != 0){
-	switch(opcao){
-		case 1:
-        menuClientes();
-		break;
-		
-		case 2:
-		menuPrevisoes();
-		break;
-		
-		case 3:
-		creditos();
-		break;
-		
-		default:
-		printf("\nOpção inválida\n");
-	}
+		switch(opcao){
+			case 1:
+			menuClientes();
+			break;
+
+			case 2:
+			menuPrevisoes();
+			break;
+
+			case 3:
+			creditos();
+			break;
+
+			default:
+			printf("\nOpção inválida\n");
+		}
 	printf("\nO que deseja fazer agora? \n");
 	opcao = mainMenu();
 	}
 }
 
 void logotipoPrincipal(void){
-  printf("//////////////////////////////////\n");
+ 	printf("//////////////////////////////////\n");
 	printf("//     SANDRA ROSA MADALENA     //\n");
 	printf("//////////////////////////////////");
 	printf("\n\n");
