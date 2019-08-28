@@ -20,9 +20,6 @@ int validaCpf(char *);
 int validaEmail(char *);
 
 
-
-
-
 int main(){
 	int opcao;
     	logotipoPrincipal();
@@ -213,7 +210,7 @@ void cdCliente(void){
 
 int numerologia(int dia, int mes, int ano){
 
-	int calc1, num;
+    int calc1, num;
     int  diaf=0, mesf=0, anof=0, numf=0, calc1f=0;
 
      if (ano < 0)
@@ -389,8 +386,6 @@ int validaCpf(char * cpf){
 		return 1;
 	}
 }
-	
-
 
 int validaEmail(char * email){
   int i = 0;
