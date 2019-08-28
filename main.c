@@ -3,6 +3,7 @@
 #include <time.h>
 #include <unistd.h>
 #include <string.h>
+#include <ctype.h>
 
 void logotipoPrincipal(void);
 int mainMenu(void);
@@ -15,7 +16,7 @@ char * horoscopo(int);
 char * signo(int, int, int);
 int bissexto(int);
 int dataValida(int, int, int);
-int validaCpf(long int);
+int validaCpf(char *);
 int validaEmail(char *);
 
 
@@ -61,7 +62,7 @@ int mainMenu(void){
 	printf("Escolha uma opção: \n\n");
 	printf("1 - MENU CLIENTES\n");
 	printf("2 - MENU PREVISÕES\n");
-	printf("3 - CRÉDITOS\n");
+	printf("3 - SOBRE\n");
 	printf("0 - FECHAR PROGRAMA\n");
 	scanf("%d", &opcao);
 	return opcao;
@@ -82,8 +83,7 @@ int menuClientes(void){
     switch (opcao){
       case 1:
       cdCliente();
-      printf("\nAguarde...\n");
-      sleep(15);
+      sleep(30);
       break;
 
       case 2:
@@ -125,16 +125,19 @@ int menuPrevisoes(void){
       case 1:
       printf("Em breve.\n");
      // consultarPrevisoes();
+     sleep(5);
       break;
 
       case 2:
       printf("Em breve.\n");
      // consultarCorDaSorte();
+     sleep(5);
       break;
 
       case 3:
       printf("Em breve.\n");
      // consultarFraseDia();
+     sleep(5);
       break;
 
       default:
@@ -156,42 +159,56 @@ void creditos(void){
 void cdCliente(void){
     system("clear");
 
-    char nome[50], email[40];
+    char nome[50], email[40], cpf[15];
     int dia, mes, ano, numNativo;
     char* signos;
     char* china;
-    long int cpf;
 
-    printf("Digite seu nome: ");
+    printf("Digite seu primeiro nome: ");
     scanf("%s", &nome[0]);
+    
+    
+    printf("\nDigite sua data de nascimento: ");
+    scanf("%d/%d/%d", &dia, &mes, &ano);
+    
+    while(!(dataValida(dia, mes, ano))){
+    	printf("\nData inválida. Digite novamente: ");
+    	scanf("%d/%d/%d", &dia, &mes, &ano);
+    }
 
-    do{
-        printf("\nDigite sua data de nascimento: ");
-        scanf("%d/%d/%d", &dia, &mes, &ano);
-    } while(!(dataValida(dia, mes, ano)));
+    
+    printf("\nDigite seu email: ");
+    scanf("%s", &email[0]);
+    
+    while(!(validaEmail(email))){
+    	printf("Email inválido. Digite novamente: ");
+    	scanf("%s", &email[0]);
+    }
+    	
 
-    do{
-        printf("\nDigite seu email: ");
-        scanf("%s", &email[0]);
-    } while(!(validaEmail(email)));
-
-    do{
-        printf("Digite o seu CPF: ");
-        printf("%ln",&cpf);
-    } while(!(validaCpf(cpf)));
+	printf("\nDigite o seu CPF: ");
+	scanf("%s",&cpf[0]);
+	
+    while(!(validaCpf(cpf))){
+    	printf("CPF inválido. Digite novamente: ");
+    	scanf("%s",&cpf[0]);
+    }
+    	
 
     signos = signo(dia,mes,ano);
     china = horoscopo(ano);
     numNativo = numerologia(dia, mes, ano);
 
-    printf("\nDados do usuário: ");
+    printf("\n\nDados do usuário: \n");
     printf("\nNome: %s",nome);
     printf("\nData de nascimento: %d/%d/%d", dia,mes,ano);
     printf("\nEmail: %s",email);
-    printf("\nCPF: %ld",cpf);
+    printf("\nCPF: %s",cpf);
     printf("\nSigno: %s",signos);
     printf("\nAnimal no horóscopo chinês: %s",china);
     printf("\nVocê é nativo do número %d\n",numNativo);
+    printf("\n\nAguarde... O programa voltará ao Menu Clientes automaticamente. Enquanto isso, confira seus dados.");
+    printf("\n");
 }
 
 int numerologia(int dia, int mes, int ano){
@@ -283,29 +300,29 @@ char * horoscopo(int ano){
 
 char * signo(int dia, int mes, int ano){
   if (((mes==3) && (dia>=21)) || ((mes==4) && (dia<=20))){
-    return "Aries \n";
+    return "Aries";
   } else if (((mes==4) && (dia>=21 && dia<=30)) || ((mes==5) && (dia<=20))){
-    return "Touro \n";
+    return "Touro";
   } else if (((mes==5) && (dia>=21)) || ((mes==6) && (dia<=20))){
-    return "Gemeos \n";
+    return "Gemeos";
   } else if (((mes==6) && (dia>=21 && dia<=30)) || ((mes==7) && (dia<=21))){
-    return "Cancer \n";
+    return "Cancer ";
   } else if (((mes==7) && (dia>=22)) || ((mes==8) && (dia<=22))){
-    return "Leão \n";
+    return "Leão";
   } else if (((mes==8) && (dia>=23)) || ((mes==9) && (dia<=22))){
-    return "Virgem \n";
+    return "Virgem";
   } else if (((mes==9) && (dia>=23 && dia<=30)) || ((mes==10) && (dia<=22))){
-    return "Libra \n";
+    return "Libra";
   } else if (((mes==10) && (dia>=23)) || ((mes==11) && (dia<=21))){
-    return "Escorpião \n";
+    return "Escorpião";
   } else if (((mes==11) && (dia>=22 && dia<=30)) || ((mes==12) && (dia<=21))){
-    return "Sagitário \n";
+    return "Sagitário";
   } else if (((mes==12) && (dia>=22)) || ((mes==1) && (dia<=20))){
-    return "Capricórnio \n";
+    return "Capricórnio";
   } else if (((mes==1) && (dia>=21)) || ((mes==2) && (dia<=19))){
-    return "Aquário \n";
+    return "Aquário";
   } else if (((mes==2) && (dia>=20 && dia<=29)) || ((mes==3) && (dia<=20))){
-    return "Peixes \n";
+    return "Peixes";
   } else{
     return "Erro \n";
   }
@@ -354,46 +371,27 @@ int dataValida(int dd, int mm, int aa) {
     return 1;
 }
 
-int validaCpf(long int CPF){
-    //essa função foi encontrada lo seguinte link: 
-    //https://www.clubedohardware.com.br/forums/topic/1256061-validar-cpf-linguagem-c-no-dev-c/
-    //função feita pelo usuario Eizy para fins didáticos.
-
-    //função será melhorada ao fim do projeto c-gana.
-
-    int x1, x2, x3, x4, x5, x6, x7, x8, x9, D1, D2, cpf2, cpfval, cpfvali;
-    x1 = CPF /100000000;
-    x2 = (CPF/10000000)%10;
-    x3 = (CPF/1000000)%10;
-    x4 = (CPF/100000)%10;
-    x5 = (CPF/10000)%10;
-    x6 = (CPF/1000)%10;
-    x7 = (CPF/100)%10;
-    x8 = (CPF/10)%10;
-    x9 = CPF%10;
-    D1 = ((x1*10)+(x2*9)+(x3*8)+(x4*7)+(x5*6)+(x6*5)+(x7*4)+(x8*3)+(x9*2))%11;
-    if(D1<2)
-    D1 = 0;
-    else
-    {
-    D1 = 11 - D1;
-    }
-    D2 = ((x1*11)+(x2*10)+(x3*9)+(x4*8)+(x5*7)+(x6*6)+(x7*5)+(x8*4)+(x9*3)+(D1*2))%11;
-    if(D2<2)
-    D2=0;
-    else
-    {
-
-    D2=11 - D2;
-    }
-
-    cpf2 = D1*10+D2;
-    cpfval = CPF*100+cpf2;
-    if(cpfval == CPF)
-        return 1;
-    else
-        return 0;
+int validaCpf(char * cpf){
+	int tamanho = strlen(cpf);
+	int i;
+	int cont = 0;
+	for(i = 0; i < tamanho; i++){
+		char digito = cpf[i];
+		if(!(isdigit(digito))){
+			cont++;
+		}
+	}
+	if(tamanho == 11){
+		return 1;
+	} else if(cont != 0){
+		return 0;
+	} else{
+		return 1;
+	}
 }
+	
+
+
 int validaEmail(char * email){
   int i = 0;
   int tamanho = strlen(email);
