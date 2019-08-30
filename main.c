@@ -6,9 +6,9 @@
 #include <ctype.h>
 
 void logotipoPrincipal(void);
-int mainMenu(void);
-int menuClientes(void);
-int menuPrevisoes(void);
+char mainMenu(void);
+char menuClientes(void);
+char menuPrevisoes(void);
 void creditos(void);
 void cdCliente(void);
 int numerologia(int, int, int);
@@ -21,21 +21,21 @@ int validaEmail(char *);
 
 
 int main(){
-	int opcao;
-    	logotipoPrincipal();
+	char opcao;
+    logotipoPrincipal();
 	opcao = mainMenu();
 	
-	while(opcao != 0){
+	while(opcao != '0'){
 		switch(opcao){
-			case 1:
+			case '1':
 			menuClientes();
 			break;
 
-			case 2:
+			case '2':
 			menuPrevisoes();
 			break;
 
-			case 3:
+			case '3':
 			creditos();
 			break;
 
@@ -45,6 +45,7 @@ int main(){
 	printf("\nO que deseja fazer agora? \n");
 	opcao = mainMenu();
 	}
+	return 0;
 }
 
 void logotipoPrincipal(void){
@@ -54,19 +55,19 @@ void logotipoPrincipal(void){
 	printf("\n\n");
 }
 
-int mainMenu(void){
-	int opcao;
+char mainMenu(void){
+	char opcao;
 	printf("Escolha uma opção: \n\n");
 	printf("1 - MENU CLIENTES\n");
 	printf("2 - MENU PREVISÕES\n");
 	printf("3 - SOBRE\n");
 	printf("0 - FECHAR PROGRAMA\n");
-	scanf("%d", &opcao);
+	scanf("%c", &opcao);
 	return opcao;
 }
 
-int menuClientes(void){
-  int opcao;
+char menuClientes(void){
+  char opcao;
   system("clear");
   printf("O que deseja fazer agora?");
   printf("\nEscolha uma opção: ");
@@ -75,25 +76,25 @@ int menuClientes(void){
   printf("\n3 - Modificar Cliente");
   printf("\n4 - Deletar Cliente");
   printf("\n0 - Voltar ao Menu Principal\n");
-  scanf("%d",&opcao);
-  while (opcao != 0){
+  scanf("%c",&opcao);
+  while (opcao != '0'){
     switch (opcao){
-      case 1:
+      case '1':
       cdCliente();
       sleep(30);
       break;
 
-      case 2:
+      case '2':
       printf("Em breve.\n");
       sleep(5);
       break;
 
-      case 3:
+      case '3':
       printf("Em breve.\n");
       sleep(5);
       break;
 
-      case 4:
+      case '4':
       printf("Em breve.\n");
       sleep(5);
       break;
@@ -107,8 +108,8 @@ int menuClientes(void){
   return opcao;
 }
 
-int menuPrevisoes(void){
-  int opcao;
+char menuPrevisoes(void){
+  char opcao;
   system("clear");
   printf("\nO que deseja fazer agora?\n");
   printf("\nEscolha uma opção: ");
@@ -116,22 +117,22 @@ int menuPrevisoes(void){
   printf("\n2 - Consultar Cor da Sorte");
   printf("\n3 - Consultar Frase do Dia");
   printf("\n0 - Voltar ao Menu Principal\n");
-  scanf("%d",&opcao);
-  while(opcao != 0){
+  scanf("%c",&opcao);
+  while(opcao != '0'){
     switch(opcao){
-      case 1:
+      case '1':
       printf("Em breve.\n");
      // consultarPrevisoes();
      sleep(5);
       break;
 
-      case 2:
+      case '2':
       printf("Em breve.\n");
      // consultarCorDaSorte();
      sleep(5);
       break;
 
-      case 3:
+      case '3':
       printf("Em breve.\n");
      // consultarFraseDia();
      sleep(5);
@@ -210,7 +211,7 @@ void cdCliente(void){
 
 int numerologia(int dia, int mes, int ano){
 
-    int calc1, num;
+	int calc1, num;
     int  diaf=0, mesf=0, anof=0, numf=0, calc1f=0;
 
      if (ano < 0)
@@ -337,7 +338,6 @@ int bissexto(int aa) {
         return 0;
     }
 }
-
 
 int dataValida(int dd, int mm, int aa) {
     //Função feita pelo professor Flavius Gorgônio.
