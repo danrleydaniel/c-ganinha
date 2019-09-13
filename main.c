@@ -162,8 +162,8 @@ void cdCliente(void){
     char* signos;
     char* china;
 
-    printf("Digite seu primeiro nome: ");
-    scanf("%s", &nome[0]);
+    printf("Digite seu nome: ");
+    scanf(" %[^\n]s", nome);
     
     
     printf("\nDigite sua data de nascimento: ");
