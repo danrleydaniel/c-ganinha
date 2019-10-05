@@ -9,6 +9,14 @@
 #include <ctype.h>
 #include "cadastrosevalidacoes.h"
 
+int chartoint(char c){
+    return c - '0';
+}
+
+char inttochar(int n){
+  return n + 48;
+}
+
 void cdCliente(void){
     system("clear");
 
@@ -225,21 +233,47 @@ int dataValida(int dd, int mm, int aa) {
 
 int validaCpf(char * cpf){
 	int tamanho = strlen(cpf);
-	int i;
-	int cont = 0;
-	for(i = 0; i < tamanho; i++){
-		char digito = cpf[i];
-		if(!(isdigit(digito))){
-			cont++;
-		}
-	}
-	if(tamanho == 11){
-		return 1;
-	} else if(cont != 0){
-		return 0;
-	} else{
-		return 1;
-	}
+	if(tamanho != 11){
+    return 0;
+  }
+  else{
+    int num;
+    int soma1 = 0;
+    char digito1, digito2;
+    int j = 0;
+    for(int i = 10; i >= 2; i--){
+      num = chartoint(cpf[j]);
+      num *= i;
+      soma1 += num;
+      j++;
+    }
+    soma1 = soma1 % 11;
+    soma1 = 11 - soma1;
+    if(soma1 > 9)
+      soma1 = 0;
+    digito1 = inttochar(soma1);
+    if(digito1 != cpf[9])
+      return 0;
+    else{
+      j = 0;
+      soma1 = 0;
+      for(int i = 11; i >= 2; i--){
+        num = chartoint(cpf[j]);
+        num *= i;
+        soma1 += num;
+        j++;
+      }
+      soma1 = soma1 % 11;
+      soma1 = 11 - soma1;
+      if(soma1 > 9)
+        soma1 = 0;
+      digito2 = inttochar(soma1);
+      if(digito2 != cpf[10])
+        return 0;
+      else
+        return 1;
+    }
+  }
 }
 
 int validaEmail(char * email){
