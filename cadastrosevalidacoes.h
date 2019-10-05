@@ -1,3 +1,5 @@
+int chartoint(char); //Transforma char para inteiro
+char inttochar(int); //Transforma inteiro para char
 void cdCliente(void); //Função que cadastra um cliente
 int numerologia(int, int, int); //Função que retorna o "número nativo" do usário
 char * horoscopo(int); //Função que retorna o animal no horóscopo chinês correspondente à data de nascimento do usuário
