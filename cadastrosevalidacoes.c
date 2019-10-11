@@ -8,6 +8,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "cadastrosevalidacoes.h"
+#include "menuscgana.h"
 
 int chartoint(char c){
     return c - '0';
@@ -15,61 +16,6 @@ int chartoint(char c){
 
 char inttochar(int n){
   return n + 48;
-}
-
-void cdCliente(void){
-    system("clear");
-
-    char nome[50], email[40], cpf[15];
-    int dia, mes, ano, numNativo;
-    char* signos;
-    char* china;
-
-    printf("Digite seu nome: ");
-    scanf(" %[^\n]s", nome);
-    
-    
-    printf("\nDigite sua data de nascimento: ");
-    scanf("%d/%d/%d", &dia, &mes, &ano);
-    
-    while(!(dataValida(dia, mes, ano))){
-    	printf("\nData inválida. Digite novamente: ");
-    	scanf("%d/%d/%d", &dia, &mes, &ano);
-    }
-
-    
-    printf("\nDigite seu email: ");
-    scanf("%s", &email[0]);
-    
-    while(!(validaEmail(email))){
-    	printf("Email inválido. Digite novamente: ");
-    	scanf("%s", &email[0]);
-    }
-    	
-
-	printf("\nDigite o seu CPF: ");
-	scanf("%s",&cpf[0]);
-	
-    while(!(validaCpf(cpf))){
-    	printf("CPF inválido. Digite novamente: ");
-    	scanf("%s",&cpf[0]);
-    }
-    	
-
-    signos = signo(dia,mes,ano);
-    china = horoscopo(ano);
-    numNativo = numerologia(dia, mes, ano);
-
-    printf("\n\nDados do usuário: \n");
-    printf("\nNome: %s",nome);
-    printf("\nData de nascimento: %d/%d/%d", dia,mes,ano);
-    printf("\nEmail: %s",email);
-    printf("\nCPF: %s",cpf);
-    printf("\nSigno: %s",signos);
-    printf("\nAnimal no horóscopo chinês: %s",china);
-    printf("\nVocê é nativo do número %d\n",numNativo);
-    printf("\n\nAguarde... O programa voltará ao Menu Clientes automaticamente. Enquanto isso, confira seus dados.");
-    printf("\n");
 }
 
 int numerologia(int dia, int mes, int ano){
@@ -117,42 +63,30 @@ int numerologia(int dia, int mes, int ano){
 }
 
 char * horoscopo(int ano){
-	int anoRato = 1960;
-	int anoBoi = 1961;
-	int anoTigre = 1962;
-	int anoLebre = 1963;
-	int anoDragao = 1964;
-	int anoCobra = 1965;
-	int anoCavalo = 1966;
-	int anoOvelha = 1967;
-	int anoMacaco = 1968;
-	int anoGalo = 1969;
-	int anoCao = 1970;
-	int anoPorco = 1971;
 	
-	if((ano - anoRato) % 12 == 0){
+	if((ano - 1960) % 12 == 0){
 		return "Rato";
-	} else if((ano - anoBoi) % 12 == 0){
+	} else if((ano - 1961) % 12 == 0){
 		return "Boi";
-	} else if((ano - anoTigre) % 12 == 0){
+	} else if((ano - 1962) % 12 == 0){
 		return "Tigre";
-	} else if((ano - anoLebre) % 12 == 0){
+	} else if((ano - 1963) % 12 == 0){
 		return "Lebre";
-	} else if((ano - anoDragao) % 12 == 0){
+	} else if((ano - 1964) % 12 == 0){
 		return "Dragão";
-	} else if((ano - anoCobra) % 12 == 0){
+	} else if((ano - 1965) % 12 == 0){
 		return "Cobra";
-	} else if((ano - anoCavalo) % 12 == 0){
+	} else if((ano - 1966) % 12 == 0){
 		return "Cavalo";
-	} else if((ano - anoOvelha) % 12 == 0){
+	} else if((ano - 1967) % 12 == 0){
 		return "Ovelha";
-	} else if((ano - anoMacaco) % 12 == 0){
+	} else if((ano - 1968) % 12 == 0){
 		return "Macaco";
-	} else if((ano - anoGalo) % 12 == 0){
+	} else if((ano - 1969) % 12 == 0){
 		return "Galo";
-	} else if((ano - anoCao) % 12 == 0){
+	} else if((ano - 1970) % 12 == 0){
 		return "Cão";
-	} else if((ano - anoPorco) % 12 == 0){
+	} else if((ano - 1971) % 12 == 0){
 		return "Porco";
 	} else{
 		return "Erro";
