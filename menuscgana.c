@@ -72,7 +72,7 @@ char mainMenu(void){
 
 char menuClientes(void){
   char opcao;
-  system("clear");
+  system("clear||cls");
   logoMenuClientes();
   printf("O que deseja fazer agora?");
   printf("\nEscolha uma opção: ");
@@ -120,7 +120,7 @@ char menuClientes(void){
 }
 
 void cdCliente(void){
-  system("clear");
+  system("clear||cls");
   logoCadastrarCliente();
   Usuario* usu;
   usu = (Usuario*) malloc(sizeof(Usuario));
@@ -166,6 +166,7 @@ void cdCliente(void){
 }
 
 void listarClientes(void){
+  system("clear||cls");
   FILE* fp;
   Usuario* usu;
   logoListaClientes();
@@ -191,6 +192,7 @@ void exibeCliente(Usuario* usu){
 }
 
 void buscarCliente(void){
+  system("clear||cls");
   FILE* fp;
   Usuario* usu;
   int encontrado = 0;
@@ -341,7 +343,7 @@ void deletarCliente(void){
 
 char menuPrevisoes(void){
   char opcao;
-  system("clear");
+  system("clear||cls");
   printf("\nEscolha uma opção: ");
   printf("\n1 - Cadastrar-se na Bola de Cristal");
   printf("\n2 - Atualizar Dados da Bola de Cristal");
