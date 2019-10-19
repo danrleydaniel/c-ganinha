@@ -51,6 +51,13 @@ void logoDeletarCliente(void){
 "");
 }
 
+void logoEditarCliente(void){
+  printf("====================\n"
+"|| EDITAR CLIENTE ||\n"
+"====================\n"
+"");
+}
+
 char mainMenu(void){
 	char opcao;
 	printf("Escolha uma opção: \n\n");
@@ -67,8 +74,6 @@ char menuClientes(void){
   char opcao;
   system("clear");
   logoMenuClientes();
-  Usuario* novoUsuario;
-  novoUsuario = (Usuario*) malloc(sizeof(Usuario));
   printf("O que deseja fazer agora?");
   printf("\nEscolha uma opção: ");
   printf("\n1 - Cadastrar Cliente");
@@ -96,7 +101,7 @@ char menuClientes(void){
       break;
 
       case '4':
-      printf("Em breve.\n");
+      editarCliente();
       sleep(5);
       break;
 
@@ -111,7 +116,6 @@ char menuClientes(void){
     }
     opcao = menuClientes();
   }
-  free(novoUsuario);
   return opcao;
 }
 
@@ -182,8 +186,8 @@ void listarClientes(void){
 void exibeCliente(Usuario* usu){
   printf("Nome: %s \n",usu->nome);
   printf("Email: %s \n",usu->email);
-  printf("CPF: %s",usu->cpf);
-  printf("Data de Nascimento: %d/%d/%d",usu->dia,usu->mes,usu->ano);
+  printf("CPF: %s \n",usu->cpf);
+  printf("Data de Nascimento: %d/%d/%d \n",usu->dia,usu->mes,usu->ano);
 }
 
 void buscarCliente(void){
@@ -211,10 +215,92 @@ void buscarCliente(void){
   } else{
     printf("Aparentemente, o cliente %s não está cadastrado.\n", procurado);
   }
+  free(usu);
+}
+
+char menuEditarCliente(void){
+  char op;
+  printf("\nQual informação do usuário deseja editar?\n"
+  "1 - Nome\n"
+  "2 - Email\n"
+  "3 - Data de Nascimento\n");
+  scanf(" %c",&op);
+  return op;
+}
+
+void editarCliente(void){
+  system("clear||cls");
+  FILE* fp;
+  Usuario* usu;
+  int encontrado = 0;
+  char resp;
+  char procurado[15];
+  fp = fopen("usuarios.dat", "r+b");
+  if(fp == NULL){
+    printf("\nOps! Aparentemente o arquivo 'usuarios.dat' não foi encontrado. Tente novamente\n");
+  }
+  printf("\n");
+  logoEditarCliente();
+  printf("Digite o CPF do usuário que deseja editar: \n");
+  scanf(" %15[^\n]",procurado);
+  usu = (Usuario*) malloc(sizeof(Usuario));
+  while((!encontrado) && (fread(usu,sizeof(Usuario), 1, fp))){
+    if(strcmp(usu->cpf, procurado) == 0 && (usu->status == 'c')){
+      encontrado = 1;
+    }
+  }
+  fclose(fp);
+  if(encontrado){
+    exibeCliente(usu);
+    resp = menuEditarCliente();
+    switch(resp){
+      case '1': editaNome(usu);
+                break;
+      case '2': editaEmail(usu);
+                break;
+      case '3': editaDataNascimento(usu);
+                break;
+      default: printf("\nOpção inválida!\n");
+    }
+  } else{
+    printf("\nAparentemente, nenhum usuário com o CPF %s está cadastrado.\n",procurado);
+  }
+  free(usu);
+}
+
+void editaNome(Usuario* usu){
+  char novoNome[80];
+  printf("\nDigite o novo nome: ");
+  scanf(" %80[^\n]",novoNome);
+  strcpy(usu->nome,novoNome);
+}
+
+void editaEmail(Usuario* usu){
+  char novoEmail[40];
+  printf("\nDigite o novo email: ");
+  scanf(" %40[^\n]",novoEmail);
+  while(!validaEmail(novoEmail)){
+    printf("\nEmail inválido. Digite novamente: ");
+    scanf(" %40[^\n]",novoEmail);
+  }
+  strcpy(usu->email,novoEmail);
+}
+
+void editaDataNascimento(Usuario* usu){
+  int novoDia, novoMes, novoAno;
+  printf("\nDigite a nova de nascimento: ");
+  scanf("%d/%d/%d", &novoDia, &novoMes, &novoAno);
+  while(!dataValida(novoDia, novoMes, novoAno)){
+    printf("\nData inválida. Digite novamente: ");
+    scanf("%d/%d/%d", &novoDia, &novoMes, &novoAno);
+  }
+  usu->dia = novoDia;
+  usu->mes = novoMes;
+  usu->ano = novoAno;
 }
 
 void deletarCliente(void){
-  system("clear");
+  system("clear||cls");
   FILE* fp;
   Usuario* usu;
   int encontrado = 0;
@@ -238,6 +324,7 @@ void deletarCliente(void){
   if(encontrado){
     exibeCliente(usu);
     printf("\nDeseja realmente deletar esse usuário?[S/N] ");
+    scanf(" %c",&resp);
     if(resp == 's' || resp == 'S'){
       usu->status = 'x';
       fseek(fp, -1*sizeof(Usuario), SEEK_CUR);
