@@ -10,64 +10,92 @@
 #include "menuscgana.h"
 
 void logotipoPrincipal(void){
- 	printf("//////////////////////////////////\n");
-	printf("//     SANDRA ROSA MADALENA     //\n");
-	printf("//////////////////////////////////");
-	printf("\n\n");
+  printf("//////////////////////////////////\n");
+  printf("//     SANDRA ROSA MADALENA     //\n");
+  printf("//////////////////////////////////");
+  printf("\n\n");
 }
 
 void logoCadastrarCliente(void){
   printf("==========================\n"
-"||CADASTRAR NOVO USUÁRIO||\n"
-"==========================\n"
-"");
+  "||CADASTRAR NOVO USUÁRIO||\n"
+  "==========================\n"
+  "");
 }
 
 void logoMenuClientes(void){
   printf("===================\n"
-"|| MENU CLIENTES ||\n"
-"===================\n"
-"");
+  "|| MENU CLIENTES ||\n"
+  "===================\n"
+  "");
 }
 
 void logoListaClientes(void){
   printf("=======================\n"
-"|| LISTA DE USUÁRIOS ||\n"
-"=======================\n"
-"");
+  "|| LISTA DE USUÁRIOS ||\n"
+  "=======================\n"
+  "");
 }
 
 void logoBuscarCliente(void){
   printf("======================\n"
-"|| PROCURAR USUÁRIO ||\n"
-"======================\n"
-"");
+  "|| PROCURAR USUÁRIO ||\n"
+  "======================\n"
+  "");
 }
 
 void logoDeletarCliente(void){
   printf("=====================\n"
-"|| DELETAR USUÁRIO ||\n"
-"=====================\n"
-"");
+  "|| DELETAR USUÁRIO ||\n"
+  "=====================\n"
+  "");
 }
 
 void logoEditarCliente(void){
   printf("====================\n"
-"|| EDITAR CLIENTE ||\n"
-"====================\n"
-"");
+  "|| EDITAR CLIENTE ||\n"
+  "====================\n"
+  "");
+}
+
+void logoMenuPrevisoes(void){
+  printf("====================\n"
+  "|| MENU PREVISÕES ||\n"
+  "====================\n"
+  "");
+}
+
+void logoCadastrarBolaCristal(void){
+  printf("==================================\n"
+  "|| CADASTRAR NA BOLA DE CRISTAL ||\n"
+  "==================================\n"
+  "");
+}
+
+void logoListarConsultores(void){
+  printf("==========================\n"
+  "|| LISTA DE CONSULTORES ||\n"
+  "==========================\n"
+  "");
+}
+
+void logoEditarBolaCristal(void){
+  printf("=====================================\n"
+  "|| EDITAR DADOS DA BOLA DE CRISTAL ||\n"
+  "=====================================\n"
+  "");
 }
 
 char mainMenu(void){
-	char opcao;
-	printf("Escolha uma opção: \n\n");
-	printf("1 - MENU CLIENTES\n");
-	printf("2 - MENU PREVISÕES\n");
-	printf("3 - SOBRE\n");
-	printf("0 - FECHAR PROGRAMA\n");
-	scanf("%c", &opcao);
+  char opcao;
+  printf("Escolha uma opção: \n\n");
+  printf("1 - MENU CLIENTES\n");
+  printf("2 - MENU PREVISÕES\n");
+  printf("3 - SOBRE\n");
+  printf("0 - FECHAR PROGRAMA\n");
+  scanf("%c", &opcao);
 
-	return opcao;
+  return opcao;
 }
 
 char menuClientes(void){
@@ -146,7 +174,7 @@ void cdCliente(void){
   
 
   printf("\nDigite o seu CPF: ");
-	scanf(" %15[^\n]",usu->cpf);
+  scanf(" %15[^\n]",usu->cpf);
   
   while(!(validaCpf(usu->cpf))){
     printf("CPF inválido. Digite novamente: ");
@@ -189,6 +217,7 @@ void exibeCliente(Usuario* usu){
   printf("Email: %s \n",usu->email);
   printf("CPF: %s \n",usu->cpf);
   printf("Data de Nascimento: %d/%d/%d \n",usu->dia,usu->mes,usu->ano);
+  printf("\n\n");
 }
 
 void buscarCliente(void){
@@ -251,22 +280,25 @@ void editarCliente(void){
       encontrado = 1;
     }
   }
-  fclose(fp);
   if(encontrado){
     exibeCliente(usu);
     resp = menuEditarCliente();
     switch(resp){
       case '1': editaNome(usu);
+                fwrite(usu, sizeof(Usuario), 1, fp);
                 break;
       case '2': editaEmail(usu);
+                fwrite(usu, sizeof(Usuario), 1, fp);
                 break;
       case '3': editaDataNascimento(usu);
+                fwrite(usu, sizeof(Usuario), 1, fp);
                 break;
       default: printf("\nOpção inválida!\n");
     }
   } else{
     printf("\nAparentemente, nenhum usuário com o CPF %s está cadastrado.\n",procurado);
   }
+  fclose(fp);
   free(usu);
 }
 
@@ -344,35 +376,39 @@ void deletarCliente(void){
 char menuPrevisoes(void){
   char opcao;
   system("clear||cls");
+  logoMenuPrevisoes();
   printf("\nEscolha uma opção: ");
   printf("\n1 - Cadastrar-se na Bola de Cristal");
-  printf("\n2 - Atualizar Dados da Bola de Cristal");
-  printf("\n3 - Consultar Cigana");
-  printf("\n4 - Romper Contrato com a Cigana");
+  printf("\n2 - Lista de Consultores");
+  printf("\n3 - Atualizar Dados da Bola de Cristal");
+  printf("\n4 - Consultar Cigana");
+  printf("\n5 - Romper Contrato com a Cigana");
   printf("\n0 - Voltar ao Menu Principal\n");
   scanf("%c",&opcao);
   while(opcao != '0'){
     switch(opcao){
       case '1':
-      printf("Em breve.\n");
-     // consultarPrevisoes();
-     sleep(5);
+      cadastraBolaCristal();
+      sleep(15);
       break;
 
       case '2':
-      printf("Em breve.\n");
-     // consultarCorDaSorte();
-     sleep(5);
+      listarConsultores();
+      sleep(15);
       break;
 
       case '3':
-      printf("Em breve.\n");
-     // consultarFraseDia();
-     sleep(5);
+      editarDadosBolaCristal();
+      sleep(15);
       break;
 
       case '4':
       printf("Em breve.\n");
+      sleep(5);
+
+      case '5':
+      printf("Em breve\n");
+      sleep(5);
 
       default:
       printf("\nOpção inválida\n");
@@ -383,12 +419,128 @@ char menuPrevisoes(void){
   return opcao;
 }
 
+void cadastraBolaCristal(void){
+  system("clear||cls");
+  char procurado[15];
+  int encontrado = 0;
+  FILE* fp;
+  Usuario* usu;
+  logoCadastrarBolaCristal();
+  printf("Se você já possui cadastro no sistema, digite o seu CPF: ");
+  scanf(" %15[^\n]",procurado);
+  fp = fopen("usuarios.dat","rb");
+  if(fp == NULL){
+    printf("\nOps! Aparentemente o arquivo 'usuarios.dat' não foi encontrado. Tente novamente.\n");
+  }
+  usu = (Usuario*) malloc(sizeof(Usuario));
+  while((!encontrado) && (fread(usu,sizeof(Usuario), 1, fp))){
+    if(strcmp(usu->cpf, procurado) == 0 && (usu->status == 'c')){
+      encontrado = 1;
+    }
+  }
+  fclose(fp);
+  if(encontrado){
+    printf("\nO seguinte cliente foi encontrado: \n");
+    exibeCliente(usu);
+    Consultor* consu;
+    consu = (Consultor*) malloc(sizeof(Consultor));
+
+    strcpy(consu->nome, usu->nome);
+    strcpy(consu->cpf, usu->cpf);
+    consu->numNativo = numerologia(usu->dia, usu->mes, usu->ano);
+    strcpy(consu->signos, signo(usu->dia, usu->mes, usu->ano));
+    strcpy(consu->china, horoscopo(usu->ano));
+    consu->status = 'c';
+
+    gravaConsultor(consu);
+    printf("\nPÁRABÉNS! VOCÊ FOI CADASTRADO COMO CONSULTOR!\n");
+    free(consu);
+  } else{
+    printf("\nNenhum usuário com este CPF foi cadastrado. Você precisa cadastrar-se primeiramente no Menu Clientes para ter acesso às funcionalidades da cigana...\n");
+  }
+  free(usu);
+}
+
+void exibeConsultor(Consultor* consu){
+  printf("Nome: %s \n",consu->nome);
+  printf("CPF: %s \n",consu->cpf);
+  printf("Signo: %s \n",consu->signos);
+  printf("Animal no horóscopo chinês: %s \n",consu->china);
+  printf("Nativo do número %d \n",consu->numNativo);
+  printf("\n\n");
+}
+
+void listarConsultores(void){
+  system("clear||cls");
+  FILE* fp2;
+  Consultor* consu;
+  logoListarConsultores();
+  consu = (Consultor*) malloc(sizeof(Usuario));
+  fp2 = fopen("consultores.dat","rb");
+  if(fp2 == NULL){
+    printf("\nOps! Aparentemente o arquivo 'consultores.dat' não foi encontrado. Tente novamente\n");
+  }
+  while(fread(consu, sizeof(Consultor), 1, fp2)){
+    if(consu->status == 'c'){
+      exibeConsultor(consu);
+    }
+  }
+  free(consu);
+  fclose(fp2);
+}
+
+void editarDadosBolaCristal(void){
+  system("clear||cls");
+  logoEditarBolaCristal();
+  FILE* fp;
+  FILE* fp2;
+  Usuario* usu;
+  Consultor* consu;
+  int encontrado = 0;
+  char procurado[15];
+  fp = fopen("usuarios.dat", "r+b");
+  fp2 = fopen("consultores.dat", "r+b");
+  if(fp == NULL){
+    printf("\nOps! Aparentemente o arquivo 'usuarios.dat' não foi encontrado. Tente novamente\n");
+  } else if(fp2 == NULL){
+    printf("\nOps! Aparentemente o arquivo 'consultores.dat' não foi encontrado. Tente novamente\n");
+  }
+  printf("Digite o seu CPF: \n");
+  scanf(" %15[^\n]",procurado);
+  usu = (Usuario*) malloc(sizeof(Usuario));
+  consu = (Consultor*) malloc(sizeof(Consultor));
+  while((!encontrado) && (fread(usu,sizeof(Usuario), 1, fp)) && (fread(consu,sizeof(Consultor), 1, fp))){
+    if(strcmp(usu->cpf, procurado) == 0 && strcmp(consu->cpf, procurado) == 0 && (usu->status == 'c') && (consu->status == 'c')){
+      encontrado = 1;
+    }
+  }
+  fclose(fp);
+  if(encontrado){
+    printf("Cadastro no sistema: \n");
+    exibeCliente(usu);
+    printf("Cadastro na bola de cristal: \n");
+    exibeConsultor(consu);
+    strcpy(consu->nome, usu->nome);
+    consu->numNativo = numerologia(usu->dia, usu->mes, usu->ano);
+    strcpy(consu->cpf, usu->cpf);
+    strcpy(consu->signos, signo(usu->dia, usu->mes, usu->ano));
+    strcpy(consu->china, horoscopo(usu->ano));
+    fwrite(consu, sizeof(Consultor), 1, fp2);
+    printf("\nDados atualizados com sucesso!\n");
+  } else{
+    printf("\nAparentemente, o usuário com este CPF não está cadastrado no sistema geral ou não está cadastrado na bola de cristal da cigana...\n");
+  }
+  fclose(fp2);
+  free(usu);
+  free(consu);
+}
+
 void creditos(void){
-	system("clear");
-	printf("\nDesenvolvido por: Danrley Daniel e Hiago Roque\n");
-	printf("Sob orientação do professoe Flavius Gorgônio\n");
-	printf("Email: danrleydaniel21@gmail.com\n");
-	printf("medeiroshiago70@gmail.com\n");
+  system("clear");
+  printf("\nDesenvolvido por: Danrley Daniel e Hiago Roque\n");
+  printf("Sob orientação do professoe Flavius Gorgônio\n");
+  printf("Email: danrleydaniel21@gmail.com\n");
+  printf("medeiroshiago70@gmail.com\n");
 }
 
 void gravaUsuario(Usuario* usu){
@@ -399,4 +551,14 @@ void gravaUsuario(Usuario* usu){
   }
   fwrite(usu, sizeof(Usuario), 1, fp);
   fclose(fp);
+}
+
+void gravaConsultor(Consultor* consu){
+  FILE* fp2;
+  fp2 = fopen("consultores.dat","ab");
+  if(fp2 == NULL){
+    printf("\nOps! Aparentemente o arquivo 'consultores.dat' não foi encontrado. Tente novamente\n");
+  }
+  fwrite(consu, sizeof(Consultor), 1, fp2);
+  fclose(fp2);
 }
