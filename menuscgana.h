@@ -1,5 +1,6 @@
 typedef struct usuario Usuario;
 typedef struct consultor Consultor;
+typedef struct relatorio Relatorio;
 
 struct usuario{
   char nome[80];
@@ -20,6 +21,14 @@ struct consultor{
   char status;
 };
 
+struct relatorio{
+  char nomeUsuario[80];
+  int dia;
+  int mes;
+  int ano;
+  char cpfUsuario[15];
+};
+
 void logotipoPrincipal(void); //Mostra o logotipo do programa principal
 void logoCadastrarCliente(void); //Mostra o logotipo do menu Cadastrar Cliente
 void logoMenuClientes(void); //Mostra o logotipo do Menu Clientes geral
@@ -31,12 +40,16 @@ void logoMenuPrevisoes(void); //Mostra o logotipo do Menu Previsões
 void logoCadastrarBolaCristal(void); //Mostra o logotipo do Menu Cadastrar na Bola de Cristal
 void logoListarConsultores(void); //Mostra o logotipo do Menu Listar Consultores
 void logoEditarBolaCristal(void); //Mostra o logotipo do Menu Editar Dados da Bola de Cristal
+void logoConsultarCigana(void); //Mostra o logotipo do Menu Consultar Cigana
+void logoRelatorios(void); //Mostra o logotipo do Menu Relatorios
+void consultarCigana(void); //Realiza a consulta com a cigana
 void exibeCliente(Usuario*); //Exibe um usuário em específico
 char mainMenu(void); //Menu principal do programa
 char menuClientes(void); //Mostra o menu da área dos clientes
 void cdCliente(void); //Cadastra um novo usuário
 void gravaUsuario(Usuario*); //Grava os dados de um usuário num arquivo
 void gravaConsultor(Consultor*); //Grava os dados de um consultor num arquivo
+void gravaRelatorio(Relatorio*); //Grava os dados de um relatório num arquivo
 void listarClientes(void); //Lista os clientes que estão cadastrados
 void buscarCliente(void); //Busca um cliente
 char menuEditarCliente(void); //Mostra as opções para editar um cliente
@@ -50,4 +63,6 @@ void cadastraBolaCristal(void); //Cadastra o cliente nas funcionalidades da ciga
 void exibeConsultor(Consultor*); //Exibe um consultor em específico
 void listarConsultores(void); //Lista os consultores que estão cadastrados
 void editarDadosBolaCristal(void); //Edita os dados de algum consultor na bola de cristal
+void relatorios(void); //Exibe todos os relatórios gerados
+void exibeRelatorio(Relatorio*); //Exibe um relatório em específico
 void creditos(void); //Informações sobre os desenvolvedores e o programa
