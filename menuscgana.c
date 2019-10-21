@@ -418,7 +418,7 @@ char menuPrevisoes(void){
       break;
 
       case '4':
-      printf("Em breve.\n");
+      consultarCigana();
       sleep(5);
 
       case '5':
