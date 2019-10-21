@@ -86,12 +86,27 @@ void logoEditarBolaCristal(void){
   "");
 }
 
+void logoConsultarCigana(void){
+  printf("======================\n"
+  "|| CONSULTAR CIGANA ||\n"
+  "======================\n"
+  "");
+}
+
+void logoRelatorios(void){
+  printf("================\n"
+  "|| RELATÓRIOS ||\n"
+  "================\n"
+  "");
+}
+
 char mainMenu(void){
   char opcao;
   printf("Escolha uma opção: \n\n");
   printf("1 - MENU CLIENTES\n");
   printf("2 - MENU PREVISÕES\n");
-  printf("3 - SOBRE\n");
+  printf("3 - RELATÓRIOS\n");
+  printf("4 - SOBRE\n");
   printf("0 - FECHAR PROGRAMA\n");
   scanf("%c", &opcao);
 
@@ -535,6 +550,73 @@ void editarDadosBolaCristal(void){
   free(consu);
 }
 
+void consultarCigana(void){
+  system("clear||cls");
+  char procurado[15];
+  int encontrado = 0;
+  FILE* fp2;
+  Consultor* consu;
+  logoConsultarCigana();
+  printf("\nDigite o seu CPF: ");
+  scanf(" %15[^\n]",procurado);
+  fp2 = fopen("consultores.dat","rb");
+  if(fp2 == NULL){
+    printf("\nOps! Aparentemente o arquivo 'consultores.dat' não foi encontrado. Tente novamente\n");
+    fclose(fp2);
+  } else{
+    consu = (Consultor*) malloc(sizeof(Consultor));
+    while((!encontrado) && (fread(consu,sizeof(Consultor),1,fp2))){
+      if(strcmp(consu->cpf,procurado) == 0 && (consu->status == 'c')){
+        encontrado = 1;
+      }
+    }
+    fclose(fp2);
+    if(encontrado){
+      printf("\nO seguinte consultor foi encontrado: \n");
+      exibeConsultor(consu);
+      Relatorio* rel;
+      rel = (Relatorio*) malloc(sizeof(Relatorio));
+      strcpy(rel->nomeUsuario,consu->nome);
+      time_t mytime;
+      mytime = time(NULL);
+      struct tm tm = *localtime(&mytime);
+      rel->dia = tm.tm_mday;
+      rel->mes = tm.tm_mon + 1;
+      rel->ano = tm.tm_year + 1900;
+      strcpy(rel->cpfUsuario, consu->cpf);
+      gravaRelatorio(rel);
+      printf("\nSua previsão diária com a cigana foi registrada!\n");
+      free(rel);
+    } else{
+      printf("\nAparentemente, você não está cadastrado na bola de cristal da cigana. Você precisa estar cadastrada nela para poder checar suas previsões.\n");
+    }
+  }
+  free(consu);
+}
+
+void relatorios(void){
+  system("clear||cls");
+  FILE* fp3;
+  Relatorio* rel;
+  logoRelatorios();
+  rel = (Relatorio*) malloc(sizeof(Relatorio));
+  fp3 = fopen("relatorios.dat","rb");
+  if(fp3 == NULL){
+    printf("\nOps! Aparentemente o arquivo 'relatorios.dat' não foi encontrado. Tente novamente\n");
+  } else{
+    while(fread(rel, sizeof(Relatorio), 1, fp3)){
+      exibeRelatorio(rel);
+    }
+  }
+  free(rel);
+  fclose(fp3);
+}
+
+void exibeRelatorio(Relatorio* rel){
+  printf("\n====Atividade no dia %d/%d/%d====",rel->dia, rel->mes, rel->ano);
+  printf("\nO usuário %s, CPF: %s checou sua previsão diária com a cigana.\n\n",rel->nomeUsuario, rel->cpfUsuario);
+}
+
 void creditos(void){
   system("clear");
   printf("\nDesenvolvido por: Danrley Daniel e Hiago Roque\n");
@@ -561,4 +643,14 @@ void gravaConsultor(Consultor* consu){
   }
   fwrite(consu, sizeof(Consultor), 1, fp2);
   fclose(fp2);
+}
+
+void gravaRelatorio(Relatorio* rel){
+  FILE* fp3;
+  fp3 = fopen("relatorios.dat","ab");
+  if(fp3 == NULL){
+    printf("\nOps! Aparentemente o arquivo 'relatorios.dat' não foi encontrado. Tente novamente\n");
+  }
+  fwrite(rel, sizeof(Relatorio), 1, fp3);
+  fclose(fp3);
 }
