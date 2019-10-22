@@ -41,6 +41,7 @@ void logoCadastrarBolaCristal(void); //Mostra o logotipo do Menu Cadastrar na Bo
 void logoListarConsultores(void); //Mostra o logotipo do Menu Listar Consultores
 void logoEditarBolaCristal(void); //Mostra o logotipo do Menu Editar Dados da Bola de Cristal
 void logoConsultarCigana(void); //Mostra o logotipo do Menu Consultar Cigana
+void logoDeletarConsultor(void); //Mostra o logotipo do Menu Deletar Consultor
 void logoRelatorios(void); //Mostra o logotipo do Menu Relatorios
 void consultarCigana(void); //Realiza a consulta com a cigana
 void exibeCliente(Usuario*); //Exibe um usuário em específico
@@ -63,6 +64,10 @@ void cadastraBolaCristal(void); //Cadastra o cliente nas funcionalidades da ciga
 void exibeConsultor(Consultor*); //Exibe um consultor em específico
 void listarConsultores(void); //Lista os consultores que estão cadastrados
 void editarDadosBolaCristal(void); //Edita os dados de algum consultor na bola de cristal
+void deletaConsultor(void); //Deleta um consultor
 void relatorios(void); //Exibe todos os relatórios gerados
 void exibeRelatorio(Relatorio*); //Exibe um relatório em específico
 void creditos(void); //Informações sobre os desenvolvedores e o programa
+void limparArquivos(void); //Responsável por realizar a exclusão física nos arquivos de dados
+void exclusaoFisicaUsuarios(void); //Realiza a exclusão física no arquivo de usuários
+void exclusaoFisicaConsultores(void); //Realiza a exclusão física no arquivo de consultores
