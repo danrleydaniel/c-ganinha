@@ -8,6 +8,7 @@
 #include "menuscgana.h"
 
 int main(){
+  limparArquivos();
   char opcao;
   logotipoPrincipal();
   opcao = mainMenu();
