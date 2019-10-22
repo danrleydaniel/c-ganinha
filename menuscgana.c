@@ -93,6 +93,13 @@ void logoConsultarCigana(void){
   "");
 }
 
+void logoDeletarConsultor(void){
+  printf("=======================\n"
+  "|| DELETAR CONSULTOR ||\n"
+  "=======================\n"
+  "");
+}
+
 void logoRelatorios(void){
   printf("================\n"
   "|| RELATÓRIOS ||\n"
@@ -301,12 +308,15 @@ void editarCliente(void){
     switch(resp){
       case '1': editaNome(usu);
                 fwrite(usu, sizeof(Usuario), 1, fp);
+                fseek(fp, -1*sizeof(Usuario), SEEK_CUR);
                 break;
       case '2': editaEmail(usu);
                 fwrite(usu, sizeof(Usuario), 1, fp);
+                fseek(fp, -1*sizeof(Usuario), SEEK_CUR);
                 break;
       case '3': editaDataNascimento(usu);
                 fwrite(usu, sizeof(Usuario), 1, fp);
+                fseek(fp, -1*sizeof(Usuario), SEEK_CUR);
                 break;
       default: printf("\nOpção inválida!\n");
     }
@@ -369,7 +379,6 @@ void deletarCliente(void){
       encontrado = 1;
     }
   }
-  fclose(fp);
   if(encontrado){
     exibeCliente(usu);
     printf("\nDeseja realmente deletar esse usuário?[S/N] ");
@@ -385,6 +394,7 @@ void deletarCliente(void){
   } else{
     printf("Aparentemente, nenhum usuário com o CPF %s está cadastrado. \n", procurado);
   }
+  fclose(fp);
   free(usu);
 }
 
@@ -468,7 +478,7 @@ void cadastraBolaCristal(void){
     consu->status = 'c';
 
     gravaConsultor(consu);
-    printf("\nPÁRABÉNS! VOCÊ FOI CADASTRADO COMO CONSULTOR!\n");
+    printf("\nPARABÉNS! VOCÊ FOI CADASTRADO COMO CONSULTOR!\n");
     free(consu);
   } else{
     printf("\nNenhum usuário com este CPF foi cadastrado. Você precisa cadastrar-se primeiramente no Menu Clientes para ter acesso às funcionalidades da cigana...\n");
@@ -594,6 +604,45 @@ void consultarCigana(void){
   free(consu);
 }
 
+void deletaConsultor(void){
+  system("clear||cls");
+  logoDeletarConsultor();
+  FILE* fp2;
+  Consultor* consu;
+  int encontrado = 0;
+  char resp;
+  char procurado[15];
+  fp2 = fopen("consultores.dat","r+b");
+  if(fp2 == NULL){
+    printf("\nOps! Aparentemente o arquivo 'consultores.dat' não foi encontrado. Tente novamente\n");
+  }
+  printf("\nDigite o CPF do consultor que deseja deletar: ");
+  scanf(" %14[^\n]",procurado);
+  while((!encontrado) && (fread(consu,sizeof(Consultor),1,fp2))){
+    if((strcmp(consu->cpf,procurado) == 0) && (consu->status == 'c')){
+      encontrado = 1;
+    }
+  }
+  if(encontrado){
+    exibeConsultor(consu);
+    printf("Deseja realmente excluir este consultor? [S/N] ");
+    scanf("%c",&resp);
+    if(resp == 's' || resp == 'S'){
+      consu->status = 'x';
+      fseek(fp2,(-1)*sizeof(Consultor),SEEK_CUR);
+      fwrite(consu,sizeof(Consultor),1,fp2);
+      printf("\nO consultor foi removido da bola de cristal da cigana...\n");
+    } else{
+      printf("\nAção interrompida\n");
+    }
+
+  } else{
+    printf("\nAparentemente, nenhum consultor com este CPF está cadastrado");
+  }
+  free(consu);
+  fclose(fp2);
+}
+
 void relatorios(void){
   system("clear||cls");
   FILE* fp3;
@@ -618,11 +667,14 @@ void exibeRelatorio(Relatorio* rel){
 }
 
 void creditos(void){
-  system("clear");
+  system("clear||cls");
   printf("\nDesenvolvido por: Danrley Daniel e Hiago Roque\n");
   printf("Sob orientação do professoe Flavius Gorgônio\n");
   printf("Email: danrleydaniel21@gmail.com\n");
   printf("medeiroshiago70@gmail.com\n");
+  printf("GitHub: ");
+  printf("\nhttps://github.com/danrleydaniel");
+  printf("\nhttps://github.com/hiagor1");
 }
 
 void gravaUsuario(Usuario* usu){
@@ -653,4 +705,70 @@ void gravaRelatorio(Relatorio* rel){
   }
   fwrite(rel, sizeof(Relatorio), 1, fp3);
   fclose(fp3);
+}
+
+void limparArquivos(void){
+  int diaDoMes;
+  time_t mytime;
+  mytime = time(NULL);
+  struct tm tm = *localtime(&mytime);
+  diaDoMes = tm.tm_mon + 1;
+  if(diaDoMes == 1){
+    exclusaoFisicaUsuarios();
+    exclusaoFisicaConsultores();
+  } else{
+    printf("\n");
+  }
+}
+
+void exclusaoFisicaUsuarios(void){
+  Usuario* usu;
+  FILE* fp;
+  FILE* fp4;
+  fp = fopen("usuarios.dat","rb");
+  fp4 = fopen("backup.dat","wb");
+  usu = (Usuario*) malloc(sizeof(Usuario));
+  while(fread(usu,sizeof(Usuario),1,fp)){
+    if(usu->status == 'c'){
+      fwrite(usu,sizeof(Usuario),1,fp4);
+    }
+  }
+  free(usu);
+  fclose(fp);
+  fclose(fp4);
+  fp4 = fopen("backup.dat","rb");
+  fp = fopen("usuarios.dat","wb");
+  usu = (Usuario*) malloc(sizeof(Usuario));
+  while(fread(usu,sizeof(Usuario),1,fp4)){
+    fwrite(usu,sizeof(Usuario),1,fp);
+  }
+  free(usu);
+  fclose(fp);
+  fclose(fp4);
+}
+
+void exclusaoFisicaConsultores(void){
+  Consultor* consu;
+  FILE* fp2;
+  FILE* fp4;
+  fp2 = fopen("consultores.dat","rb");
+  fp4 = fopen("backup.dat","wb");
+  consu = (Consultor*) malloc(sizeof(Consultor));
+  while(fread(consu,sizeof(Consultor),1,fp2)){
+    if(consu->status == 'c'){
+      fwrite(consu,sizeof(Consultor),1,fp4);
+    }
+  }
+  free(consu);
+  fclose(fp2);
+  fclose(fp4);
+  fp4 = fopen("backup.dat","rb");
+  fp2 = fopen("consultores.dat","wb");
+  consu = (Consultor*) malloc(sizeof(Consultor));
+  while(fread(consu,sizeof(Consultor),1,fp4)){
+    fwrite(consu,sizeof(Consultor),1,fp2);
+  }
+  free(consu);
+  fclose(fp2);
+  fclose(fp4);
 }
