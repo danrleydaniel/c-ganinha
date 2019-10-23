@@ -7,3 +7,17 @@ int bissexto(int); //Função do professor Flavius Gorgônio que checa se um ano
 int dataValida(int, int, int); //Função do professor Flavius Gorgônio que checa se uma data fornecida pelo usário é válida
 int validaCpf(char *); //Função que verifica a validez de um CPF dado pelo usário
 int validaEmail(char *); //Função que verifica a validez de um email dado pelo usário
+//Funções que mostram as características de cada signo:
+void ariesCarac(void);
+void touroCarac(void);
+void gemeosCarac(void);
+void cCarac(void);
+void leaoCarac(void);
+void virgemCarac(void);
+void libraCarac(void);
+void escorpiaoCarac(void);
+void sagiCarac(void);
+void capricornioCarac(void);
+void aquarioCarac(void);
+void peixesCarac(void);
+void signCarac(char* s); //Recebe como parâmetro o signo e printa as características dele
