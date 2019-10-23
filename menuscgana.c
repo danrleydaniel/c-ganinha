@@ -142,12 +142,13 @@ char menuClientes(void){
 
       case '2':
       listarClientes();
-      sleep(5);
+      sleep(40);
+      
       break;
 
       case '3':
       buscarCliente();
-      sleep(5);
+      sleep(30);
       break;
 
       case '4':
@@ -429,7 +430,8 @@ char menuPrevisoes(void){
 
       case '4':
       consultarCigana();
-      sleep(5);
+      sleep(80);
+      break;
 
       case '5':
       printf("Em breve\n");
@@ -584,6 +586,8 @@ void consultarCigana(void){
     if(encontrado){
       printf("\nO seguinte consultor foi encontrado: \n");
       exibeConsultor(consu);
+      previsaoDiaria(consu);
+
       Relatorio* rel;
       rel = (Relatorio*) malloc(sizeof(Relatorio));
       strcpy(rel->nomeUsuario,consu->nome);
@@ -602,6 +606,20 @@ void consultarCigana(void){
     }
   }
   free(consu);
+}
+
+void previsaoDiaria(Consultor* consu){
+  printf("\nCaracterísticas segundo seu número nativo: \n");
+  printf("Em breve\n");
+
+  printf("\nCaracterísticas do seu signo: \n");
+  signCarac(consu->signos);
+
+  printf("\nCaracterísticas do seu animal no horóscopo chinês: \n");
+  printf("Em breve\n");
+
+  printf("Sua previsão diária: \n");
+  printf("Em breve\n");
 }
 
 void deletaConsultor(void){
