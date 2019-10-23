@@ -225,3 +225,193 @@ int validaEmail(char * email){
     return 1;
   }
 }
+
+void ariesCarac(void){
+  printf("   .-.   .-.\n");
+  printf("  (_  \\ /  _)    \n");
+  printf("       |\n");
+  printf("       |\n");
+  printf("\nÁRIES - CARACTERÍSTICAS");
+  printf("\n   *Tendem a ser impacientes");
+  printf("\n   *São pessoas alegres");
+  printf("\n   *Sinceridade, pra você, é tudo");
+  printf("\n   *Nada de repetição, nem indecisão");
+}
+
+void touroCarac(void){
+  printf("    .     .\n");
+  printf("    '.___.'\n");
+  printf("    .'   `.\n");
+  printf("   :       :\n");
+  printf("   :       :\n");
+  printf("    `.___.'\n");
+  printf("");
+  printf("\n TOURO - CARACTERÍSTICAS");
+  printf("\n   *Pessoa muito possessiva");
+  printf("\n   *Teimoso, mas realista");
+  printf("\n   *Construtivo, determinado, forte");
+  printf("\n   *Apegado às pessoas");
+}
+
+void gemeosCarac(void){
+  printf("    ._____.\n");
+  printf("      | |  \n");
+  printf("      | |\n");
+  printf("     _|_|_\n");
+  printf("    '     '\n");
+  printf("");
+  printf("\nGÊMEOS - CARACTERÍSTICAS: ");
+  printf("\n   *Indeciso");
+  printf("\n   *Inquieto");
+  printf("\n   *Criativo e comunicativo");
+  printf("\n   *Razão acima da emoção");
+}
+
+void cCarac(void){
+  printf("      .--.\n");
+  printf("     /   _`.     \n");
+  printf("    (_) ( )\n");
+  printf("   '.    /\n");
+  printf("     `--'\n");
+  printf("Cancer-  The Crab\n");
+  printf("");
+  printf("CARACTERÍSTICAS:");
+  printf("\n   *Contraditórios");
+  printf("\n   *Adaptável");
+  printf("\n   *Transparente");
+  printf("\n   *Resistente a mudança");
+}
+
+void leaoCarac(void){
+  printf("      .--.\n");
+  printf("     (    )\n");
+  printf("    (_)  /\n");
+  printf("        (_,\n");
+  printf("\n");
+  printf("LEÃO - CARACTERÍSTICAS\n");
+  printf("   *Autoritário\n");
+  printf("   *Dominador\n");
+  printf("   *Ardente nas paixões\n");
+  printf("   *Benevolente");
+}
+
+void virgemCarac(void){
+  printf("  ' `:--.--.\n");
+  printf("     |  |  |\n");
+  printf("     |  |  | )\n");
+  printf("     |  |  |/\n");
+  printf("          (J\n");
+  printf("\n");
+  printf("VIRGEM - CARACTERÍSTICAS\n");
+  printf("   *Dedicado\n");
+  printf("   *Racional\n");
+  printf("   *Exigente\n");
+  printf("   *Organizado");
+}
+
+void libraCarac(void){
+    printf("        __\n");
+    printf("   ___.'  '.___\n");
+    printf("   ____________\n");
+    printf("\n");
+    printf("LIBRA - CARACTERÍSTICAS\n");
+    printf("   *Simpático\n");
+    printf("   *Observador\n");
+    printf("   *Delicado\n");
+    printf("   *Extrovertido");
+}
+
+void escorpiaoCarac(void){
+  printf("   _\n"
+  "  ' `:--.--.\n"
+  "     |  |  |\n"
+  "     |  |  |\n"
+  "     |  |  |  ..,\n"
+  "           `---':\n"
+  "\n"
+  "ESCORPIÃO - CARACTERÍSTICAS\n"
+  "   *Independente\n"
+  "   *Inteligente\n"
+  "   *Extremista\n"
+  "   *Emotivo");
+}
+
+void sagiCarac(void){
+  printf("          ...\n"
+  "          .':\n"
+  "        .'\n"
+  "    `..'\n"
+  "    .'`.\n"
+  "\n"
+  "SAGITÁRIO - CARACTERÍSTICAS\n"
+  "   *Simpático\n"
+  "   *Estudioso\n"
+  "   *Honesto\n"
+  "   *Otimista");
+}
+
+void capricornioCarac(void){
+  printf("            _\n"
+  "    \\      /_)\n"
+  "     \\    /`.\n"
+  "      \\  /   ;\n"
+  "       \\/ __.'\n"
+  "\n"
+  "CAPRICÓRNIO - CARACTERÍSTICAS\n"
+  "   *Personalidade marcante\n"
+  "   *Sabichão\n"
+  "   *Responsável\n"
+  "   *Disciplinado");
+}
+
+void aquarioCarac(void){
+  printf(" .-\"-._.-\"-._.-\n"
+  " .-\"-._.-\"-._.-\n"
+  "\n"
+  "AQUÁRIO - CARACTERÍSTICAS\n"
+  "   *Excêntrico\n"
+  "   *Idealista\n"
+  "   *Humanitário\n"
+  "   *Vive no mundo da lua");
+}
+
+void peixesCarac(void){
+  printf("   `-.    .-'\n"
+  "      :  :\n"
+  "    --:--:--\n"
+  "      :  :\n"
+  "   .-'    `-.\n"
+  "\n"
+  "PEIXES - CARACTERÍSTICAS\n"
+  "   *Temeroso\n"
+  "   *Gentil\n"
+  "   *Sábio\n"
+  "   *Confiante em si e nas outras pessoas");
+}
+
+void signCarac(char* s){
+  if(strcmp(s,"Aries") == 0)
+    ariesCarac();
+  else if(strcmp(s,"Touro") == 0)
+    touroCarac();
+  else if(strcmp(s,"Gemeos") == 0)
+    gemeosCarac();
+  else if(strcmp(s,"Cancer ") == 0)
+    cCarac();
+  else if(strcmp(s,"Leão") == 0)
+    leaoCarac();
+  else if(strcmp(s,"Virgem") == 0)
+    virgemCarac();
+  else if(strcmp(s,"Libra") == 0)
+    libraCarac();
+  else if(strcmp(s,"Escorpião") == 0)
+    escorpiaoCarac();
+  else if(strcmp(s,"Sagitário") == 0)
+    sagiCarac();
+  else if(strcmp(s,"Capricórnio") == 0)
+    capricornioCarac();
+  else if(strcmp(s,"Aquário") == 0)
+    aquarioCarac();
+  else if(strcmp(s,"Peixes") == 0)
+    peixesCarac();
+}
