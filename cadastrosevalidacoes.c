@@ -55,6 +55,15 @@ int numerologia(int dia, int mes, int ano){
      num = (anof + calc1f);
     if (num < 0)
         num *= -1;
+
+    while (num){
+      if (num == 11 || num == 22){
+        return numf = num;
+      }
+      else if (num == 10){
+        numf = (num - 9);
+        return numf;
+      }	
     while (num){
         numf += num%10;
         num/=10;
