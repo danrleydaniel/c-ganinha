@@ -564,11 +564,11 @@ void editarDadosBolaCristal(void){
 
 void consultarCigana(void){
   system("clear||cls");
+  logoConsultarCigana();
   char procurado[15];
   int encontrado = 0;
   FILE* fp2;
   Consultor* consu;
-  logoConsultarCigana();
   printf("\nDigite o seu CPF: ");
   scanf(" %15[^\n]",procurado);
   fp2 = fopen("consultores.dat","rb");
@@ -610,8 +610,9 @@ void consultarCigana(void){
 
 void previsaoDiaria(Consultor* consu){
   printf("\nCaracterísticas segundo seu número nativo: \n");
-  printf("Em breve\n");
+  numCarac(consu->numNativo);
   printf("\n\n");
+
 
   printf("\nCaracterísticas do seu signo: \n");
   signCarac(consu->signos);
