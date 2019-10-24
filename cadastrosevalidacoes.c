@@ -415,3 +415,243 @@ void signCarac(char* s){
   else if(strcmp(s,"Peixes") == 0)
     peixesCarac();
 }
+
+void ratoCarac(void){
+  printf(" _  _\n"
+  "(o)(o)--.\n"
+  " \\../ (  )\n"
+  " m\\/m--m'`--.\n"
+  "\n"
+  "RATO - CARACTERÍSTICAS\n"
+  "  * Grande importância para a família\n"
+  "  * Trabalhador e ambicioso\n"
+  "  * Gosto refinado e requintado\n"
+  "  * Apaixonado e sentimental\n"
+  "");
+}
+
+void boiCarac(void){
+  printf("             (__)    \n"
+  "     `\\------(oo)\n"
+  "       ||    (__)\n"
+  "       ||---||\n"
+  "\n"
+  "BOI - CARACTERÍSTICAS\n"
+  "  * Vigoroso e robusto\n"
+  "  * Muito inteligente e bem informado\n"
+  "  * Apegado às tradições e valores morais\n"
+  "  * Amante dos prazeres que a vida proporciona\n"
+  "");
+}
+
+void tigreCarac(void){
+  printf("    (^\\-==-/^)\n"
+  "     >\\\\ == //<\n"
+  "    :== q''p ==:     _\n"
+  "     .__ qp __.    .' )\n"
+  "      / ^--^ \\    /\\.'\n"
+  "     /_`    / )  '\\/\n"
+  "     (  )  \\  |-'-/\n"
+  "     \\^^,   |-|--'\n"
+  "    ( `'    |_| )\n"
+  "     \\-     |-|/\n"
+  "    (( )^---( ))\n"
+  "\n"
+  "TIGRE - CARACTERÍSTICAS\n"
+  "  * Grande força física e mental\n"
+  "  * Admirado pelos amigos\n"
+  "  * Líder nato\n"
+  "  * Extremamente competitivo\n"
+  "");
+}
+
+void coelhoCarac(void){
+  printf("  \\\\\n"
+  "      \\\\_\n"
+  "      ( _\\\n"
+  "      / \\__\n"
+  "     / _/`\"`\n"
+  "    {\\  )_\n"
+  "      `\"\"\"`\n"
+  "\n"
+  "COELHO - CARACTERÍSTICAS\n"
+  "  * Estabelece fortes laços com os amigos\n"
+  "  * O mais introvertido do zodíaco\n"
+  "  * Defende os mais injustiçados\n"
+  "  * Meigo, delicado e sentimental\n"
+  "");
+}
+
+void dragaoCarac(void){
+  printf("                \\||/\n"
+"                |  @___oo\n"
+"      /\\  /\\   / (__,,,,|\n"
+"     ) /^\\) ^\\/ _)\n"
+"     )   /^\\/   _)\n"
+"     )   _ /  / _)\n"
+" /\\  )/\\/ ||  | )_)\n"
+"<  >      |(,,) )__)\n"
+" ||      /    \\)___)\\\n"
+" | \\____(      )___) )___\n"
+"  \\______(_______;;; __;;; \n"
+  "\n"
+  "DRAGÃO - CARACTERÍSTICAS\n"
+  "  * Personalidade magnética, extravagante e teatral\n"
+  "  * Bastante generoso\n"
+  "  * Dotado de uma inteligência excepcional\n"
+  "  * Fogoso e sensual\n"
+  "" );
+}
+
+void cobraCarac(void){
+  printf("                           ____\n"
+  "  ________________________/ O  \\___/\n"
+  " <_/_\\_/_\\_/_\\_/_\\_/_\\_/_______/   \\\n"
+  "\n"
+  "COBRA - CARACTERÍSTICAS\n"
+  "  * Curioso e ávido de conhecimento\n"
+  "  * Calmo, inteligente e de lucidez perfeita\n"
+  "  * Interesse por assuntos esotéricos\n"
+  "  * Gosta de ficar no comando\n"
+  "");
+}
+
+void cavaloCarac(void){
+  printf("                   ;;\n"
+  "                 ,;;'\\\n"
+  "      __       ,;;' ' \\\n"
+  "    /'  '\\'~~'~' \\ /'\\.)\n"
+  " ,;(      )    /  |\n"
+  ",;' \\    /-.,,(   )\n"
+  "     ) /       ) /\n"
+  "    //         ||\n"
+  "   (_\\         (_\\\n"
+  "\n"
+  "CAVALO - CARACTERÍSTICAS\n"
+  "  * Porte altivo e caráter nobre\n"
+  "  * É muito curioso\n"
+  "  * Leal, amoroso e simpático\n"
+  "  * Gosta de se dedicar aos menos favorecidos\n"
+  "");
+}
+
+void cabraCarac(void){
+  printf("       _))\n"
+  "      > *\\     _~\n"
+  "      `;'\\\\__-' \\_\n"
+  "         | )  _ \\ \\\n"
+  "        / / ``   w w\n"
+  "       w w\n"
+  "OVELHA - CARACTERÍSTICAS\n"
+  "  * Cheio de amigos\n"
+  "  * Precisa sempre se sentir apoiado e protegido\n"
+  "  * Doce, sensível e um pouquinho frágil\n"
+  "  * Instável, sempre propício a mudar de ideias\n"
+  "");
+}
+
+void macacoCarac(void){
+  printf("           .\"`\".\n"
+  "       .-./ _=_ \\.-.\n"
+  "      {  (,(oYo),) }}\n"
+  "      {{ |   \"   |} }\n"
+  "      { { \\(---)/  }}\n"
+  "      {{  }'-=-'{ } }\n"
+  "      { { }._:_.{  }}\n"
+  "      {{  } -:- { } }\n"
+  "      {_{ }`===`{  _}\n"
+  "     ((((\\)     (/))))\n"
+  "\n"
+  "MACACO - CARACTERÍSTICAS\n"
+  "  * Adora popularidade\n"
+  "  * Intelectual, de uma cultura geral impressionante\n"
+  "  * Inventivo, criativo e entusiasta\n"
+  "  * Sempre pronto para ajudar os amigos\n"
+  "");
+}
+
+void galoCarac(void){
+  printf("   ,~.\n"
+  "   ,-'__ `-,\n"
+  "  {,-'  `. }              ,')\n"
+  " ,( a )   `-.__         ,',')~,\n"
+  "<=.) (         `-.__,==' ' ' '}\n"
+  "  (   )                      /)\n"
+  "   `-'\\   ,                    )\n"
+  "       |  \\        `~.        /\n"
+  "       \\   `._        \\      /\n"
+  "        \\     `._____,'    ,'\n"
+  "         `-.             ,'\n"
+  "            `-._     _,-'\n"
+  "                77jj'\n"
+  "               //_||\n"
+  "            __//--'/`          \n"
+  "          ,--'/`  '\n"
+  "\n"
+  "GALO - CARACTERÍSTICAS\n"
+  "  * Gosta de ser venerado, um pouco egocêntrico\n"
+  "  * Orgulhoso e determinado\n"
+  "  * Não se assusta com responsabilidades\n"
+  "  * Um companheiro muito leal\n"
+  "");
+}
+
+void caoCarac(void){
+  printf("                            __\n"
+  "     ,                    ,\" e`--o\n"
+  "    ((                   (  | __,'\n"
+  "     \\\\~----------------' \\_;/\n"
+  "     (                      /\n"
+  "     /) ._______________.  )\n"
+  "    (( (               (( (\n"
+  "     ``-'               ``-'\n"
+  "CACHORRO - CARACTERÍSTICAS\n"
+  "  * Dá valor à fidelidade e lealdade\n"
+  "  * Idealista e tolerante\n"
+  "  * Receia cometer qualquer injustiça\n"
+  "  * Nem pense em enganá-lo!\n"
+  "");
+}
+
+void porcoCarac(void){
+  printf("        __,---.__\n"
+  "     ,-'         `-.__\n"
+  "   &/           `._\\ _\\\n"
+  "   /               ''._\n"
+  "   |   ,             (\")\n"
+  "   |__,'`-..--|__|--''\n"
+  "\n"
+  "PORCO - CARACTERÍSTICAS\n"
+  "  * Gentil, generoso e tolerante\n"
+  "  * Odeia confrontos, gosta de viver em harmonia\n"
+  "  * É bastante erudito, gosta de ler e estudar\n"
+  "  * Apesar de sua natureza pura, não é ingênuo\n"
+  "");
+}
+
+void animalCarac(char* a){
+  if(strcmp(a, "Rato") == 0)
+    ratoCarac();
+  else if(strcmp(a, "Boi") == 0)
+    boiCarac();
+  else if(strcmp(a, "Tigre") == 0)
+    tigreCarac();
+  else if(strcmp(a, "Lebre") == 0)
+    coelhoCarac();
+  else if(strcmp(a, "Dragão") == 0)
+    dragaoCarac();
+  else if(strcmp(a, "Cobra") == 0)
+    cobraCarac();
+  else if(strcmp(a, "Cavalo") == 0)
+    cavaloCarac();
+  else if(strcmp(a, "Ovelha") == 0)
+    cabraCarac();
+  else if(strcmp(a, "Macaco") == 0)
+    macacoCarac();
+  else if(strcmp(a, "Galo") == 0)
+    galoCarac();
+  else if(strcmp(a, "Cão") == 0)
+    caoCarac();
+  else if(strcmp(a, "Porco") == 0)
+    porcoCarac();
+}
