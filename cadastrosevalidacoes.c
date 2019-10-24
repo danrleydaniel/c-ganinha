@@ -211,19 +211,39 @@ int validaCpf(char * cpf){
 }
 
 int validaEmail(char * email){
-  int i = 0;
-  int tamanho = strlen(email);
-  int cont = 0;
-  for(i = 0; i < tamanho; i++){
-    if(email[i] == '@'){
-      cont++;
+  int tam = strlen(email);
+  int arroba = 0, ponto = 0, Aponto = 0, Dponto = 0, i;
+
+  for (i = 0; i < tam; i++){
+    char c = email[i];
+
+    if(c == '@'){
+      if (arroba)
+        break;
+      arroba = 1;
+      if (i < 3)
+        break;
     }
-  }
-  if(cont != 1){
-    return 0;
-  } else{
+    else if (arroba){ 
+      if (ponto){ 
+        Dponto++;
+      }
+      else if (c == '.'){
+        ponto = 1;
+        if (Aponto < 3){
+          break;
+        }
+      }
+      else{
+        Aponto++;
+      }
+    }
+  } 
+
+  if (i == tam && Dponto > 1)
     return 1;
-  }
+  else
+    return 0;;
 }
 
 void ariesCarac(void){
