@@ -675,3 +675,238 @@ void animalCarac(char* a){
   else if(strcmp(a, "Porco") == 0)
     porcoCarac();
 }
+
+void numCarac(int numf){
+    if (numf == 1)
+        carac1();
+    else if (numf == 2)
+        carac2();
+    else if (numf == 3)
+        carac3();
+    else if (numf == 4)
+        carac4();
+    else if (numf == 5)
+        carac5();
+    else if (numf == 6)
+        carac6();
+    else if (numf == 7)
+        carac7();
+    else if (numf == 8)
+        carac8();
+    else if (numf == 9)
+        carac9();
+    else if (numf == 11)
+        carac11();
+    else if (numf == 22)
+        carac22();
+}
+
+void carac1(void){
+    printf("Nativo 1:\n"
+    "Caracteristicas positivas:\n"
+    "\n"
+    "Positivismo\n"
+    "Criatividade\n"
+    "Pionerismo\n"
+    "Coragem\n"
+    "Independêcia\n"
+    "\n"
+    "Caracteristicas negativas:\n"
+    "\n"
+    "Prepotência\n"
+    "Autoritarismo\n"
+    "Agressividade\n"
+    "Orgulhoso\n"
+    "Preguiça\n");
+}
+
+void carac2(void){
+    printf("Nativo 2:\n"
+    "Caracteristicas positivas:\n"
+    "\n"
+    "Paciêcia\n"
+    "Solidárismo\n"
+    "Companheirismo\n"
+    "Amável"
+    "Diplomata"
+    "\n"
+    "Caracteristicas negativas:\n"
+    "\n"
+    "Dualidade\n"
+    "Indecisão\n"
+    "Timidez\n"
+    "Passividade\n"
+    "Submissão\n");
+}
+
+void carac3(void){
+    printf("Nativo 3:\n"
+    "Caracteristicas positivas:\n"
+    "\n"
+    "Otimismo\n"
+    "comunicação\n"
+    "Sociável\n"
+    "Coldial\n"
+    "Entusiasmo\n"
+    "\n"
+    "Caracteristicas negativas:\n"
+    "\n"
+    "Exibicionismo\n"
+    "Supercialidade\n"
+    "Imaturidade\n"
+    "Ostentação\n"
+    "Dispersão\n");
+}
+
+void carac4(void){
+    printf("Nativo 4:\n"
+    "Caracteristicas positivas:\n"
+    "\n"
+    "Lealdade\n"
+    "Diciplina\n"
+    "Honestidade\n"
+    "Dedicação\n"
+    "Confiança\n"
+    "\n"
+    "Caracteristicas negativas:\n"
+    "\n"
+    "Crítico\n"
+    "Insegurânça\n"
+    "Avareza\n"
+    "Conformista\n"
+    "Inlfexível\n");
+}
+
+void carac5(void){
+    printf("Nativo 5:\n"
+    "Caracteristicas positivas:\n"
+    "\n"
+    "Empreendedorismo\n"
+    "Versátilidade\n"
+    "Sensualidade\n"
+    "Curiosidade\n"
+    "Inteligência\n"
+    "\n"
+    "Caracteristicas negativas:\n"
+    "\n"
+    "Inrresponsabilidade\n"
+    "Inquietação\n"
+    "Infidelidade\n"
+    "Impulsividade\n"
+    "Ansiedade\n");
+}
+
+void carac6(void){
+    printf("Nativo 6:\n"
+    "Caracteristicas positivas:\n"
+    "\n"
+    "Equilíbrio\n"
+    "Organização\n"
+    "Honestidade\n"
+    "Solidariedade\n"
+    "Tolerância\n"
+    "\n"
+    "Caracteristicas negativas:\n"
+    "\n"
+    "Preguiça\n"
+    "Vitimísmo\n"
+    "Espírito de mártir\n"
+    "Inconformista\n"
+    "Rancoroso(a)\n");
+}
+
+void carac7(void){
+    printf("Nativo 7:\n"
+    "Caracteristicas positivas:\n"
+    "\n"
+    "Tranquilidade\n"
+    "Sabedoria\n"
+    "Meticulosidade\n"
+    "Perfeccionismo\n"
+    "Autocontrole\n"
+    "\n"
+    "Caracteristicas negativas:\n"
+    "\n"
+    "Melancolismo\n"
+    "Criticismo\n"
+    "Exigente\n"
+    "Solitário(a)\n"
+    "Confiança em excesso\n");
+}
+
+void carac8(void){
+    printf("Nativo 8:\n"
+    "Caracteristicas positivas:\n"
+    "\n"
+    "Liderança\n"
+    "Justiça\n"
+    "Honestidade\n"
+    "Perseverança\n"
+    "Compreensivos\n"
+    "\n"
+    "Caracteristicas negativas:\n"
+    "\n"
+    "Ambiciosidade\n"
+    "Materialismo\n"
+    "Arrogancia\n"
+    "Autoritáriedade\n"
+    "Impaciência\n");
+}
+
+void carac9(void){
+    printf("Nativo 9:\n"
+    "Caracteristicas positivas:\n"
+    "\n"
+    "Paciencia\n"
+    "Generosidade\n"
+    "Espiritualidade\n"
+    "Amigáveis\n"
+    "Carinhoso(a)\n"
+    "\n"
+    "Caracteristicas negativas:\n"
+    "\n"
+    "Fanatismo\n"
+    "Solitário(a)\n"
+    "Intimidação\n"
+    "Abuso emocional\n"
+    "Arrependimento\n");
+}
+
+void carac11(void){
+    printf("Nativo 11:\n"
+    "Caracteristicas positivas:\n"
+    "\n"
+    "Idealismo\n"
+    "Paciência\n"
+    "Sabedoria\n"
+    "Humanitarismo\n"
+    "Simpatia\n"
+    "\n"
+    "Caracteristicas negativas:\n"
+    "\n"
+    "Fanatismo\n"
+    "Charlatanismo\n"
+    "Pragmastismo\n"
+    "Cinismo\n"
+    "Desonestidade\n");
+}
+
+void carac22(void){
+    printf("Nativo 22:\n"
+    "Caracteristicas positivas:\n"
+    "\n"
+    "Generosidade\n"
+    "Esforçado(a)\n"
+    "Sagacidade\n"
+    "Otimismo\n"
+    "Lealdade\n"
+    "\n"
+    "Caracteristicas negativas:\n"
+    "\n"
+    "Vaidade\n"
+    "Complexo de inferioridade\n"
+    "Cinismo\n"
+    "Criticismo\n"
+    "Inlfexível\n");
+}
+
