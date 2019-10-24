@@ -20,4 +20,18 @@ void sagiCarac(void);
 void capricornioCarac(void);
 void aquarioCarac(void);
 void peixesCarac(void);
-void signCarac(char* s); //Recebe como parâmetro o signo e printa as características dele
+void signCarac(char*); //Recebe como parâmetro o signo e printa as características dele
+//Funções que mostram as características de cada signo:
+void ratoCarac(void);
+void boiCarac(void);
+void tigreCarac(void);
+void coelhoCarac(void);
+void dragaoCarac(void);
+void cobraCarac(void);
+void cavaloCarac(void);
+void cabraCarac(void);
+void macacoCarac(void);
+void galoCarac(void);
+void caoCarac(void);
+void porcoCarac(void);
+void animalCarac(char*); //Recebe como parâmetro um animal do horóscopo chinês e printa suas características
