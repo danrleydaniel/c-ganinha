@@ -564,6 +564,7 @@ void editarDadosBolaCristal(void){
 
 void consultarCigana(void){
   system("clear||cls");
+  logoConsultarCigana();
   char procurado[15];
   int encontrado = 0;
   FILE* fp2;
@@ -616,7 +617,7 @@ void previsaoDiaria(Consultor* consu){
   signCarac(consu->signos);
 
   printf("\nCaracterísticas do seu animal no horóscopo chinês: \n");
-  printf("Em breve\n");
+  animalCarac(consu->china);
 
   printf("Sua previsão diária: \n");
   printf("Em breve\n");
@@ -693,6 +694,11 @@ void creditos(void){
   printf("GitHub: ");
   printf("\nhttps://github.com/danrleydaniel");
   printf("\nhttps://github.com/hiagor1");
+  printf("\nCréditos das ASCII arts para os sites: ");
+  printf("\nhttps://asciiart.website");
+  printf("\nhttps://www.asciiart.eu");
+  printf("\nhttp://www.ascii-art.de");
+  printf("\nhttps://ascii.co.uk\n");
 }
 
 void gravaUsuario(Usuario* usu){
