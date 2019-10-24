@@ -63,7 +63,8 @@ int numerologia(int dia, int mes, int ano){
       else if (num == 10){
         numf = (num - 9);
         return numf;
-      }	
+      }
+    }
     while (num){
         numf += num%10;
         num/=10;
