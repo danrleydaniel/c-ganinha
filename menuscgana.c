@@ -564,7 +564,6 @@ void editarDadosBolaCristal(void){
 
 void consultarCigana(void){
   system("clear||cls");
-  logoConsultarCigana();
   char procurado[15];
   int encontrado = 0;
   FILE* fp2;
@@ -612,12 +611,15 @@ void consultarCigana(void){
 void previsaoDiaria(Consultor* consu){
   printf("\nCaracterísticas segundo seu número nativo: \n");
   printf("Em breve\n");
+  printf("\n\n");
 
   printf("\nCaracterísticas do seu signo: \n");
   signCarac(consu->signos);
+  printf("\n\n");
 
   printf("\nCaracterísticas do seu animal no horóscopo chinês: \n");
   animalCarac(consu->china);
+  printf("\n\n");
 
   printf("Sua previsão diária: \n");
   printf("Em breve\n");
