@@ -35,3 +35,15 @@ void galoCarac(void);
 void caoCarac(void);
 void porcoCarac(void);
 void animalCarac(char*); //Recebe como parâmetro um animal do horóscopo chinês e printa suas características
+void numCarac(int); // função complementar para numerologia.
+void carac1(void);
+void carac2(void);
+void carac3(void);
+void carac4(void);
+void carac5(void);
+void carac6(void);
+void carac7(void);
+void carac8(void);
+void carac9(void);
+void carac11(void);
+void carac22(void);
