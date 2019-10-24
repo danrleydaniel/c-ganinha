@@ -56,15 +56,12 @@ int numerologia(int dia, int mes, int ano){
     if (num < 0)
         num *= -1;
 
-    while (num){
-      if (num == 11 || num == 22){
-        return numf = num;
-      }
-      else if (num == 10){
-        numf = (num - 9);
-        return numf;
-      }
+
+    if (num == 11 || num == 22){
+      numf = num;
+      return numf;
     }
+    
     while (num){
         numf += num%10;
         num/=10;
@@ -220,7 +217,8 @@ int validaCpf(char * cpf){
   }
 }
 
-int validaEmail(char * email){
+int validaEmail(char* email) {
+
   int tam = strlen(email);
   int arroba = 0, ponto = 0, Aponto = 0, Dponto = 0, i;
 
@@ -253,7 +251,7 @@ int validaEmail(char * email){
   if (i == tam && Dponto > 1)
     return 1;
   else
-    return 0;;
+    return 0;
 }
 
 void ariesCarac(void){
@@ -275,7 +273,7 @@ void touroCarac(void){
   printf("   :       :\n");
   printf("   :       :\n");
   printf("    `.___.'\n");
-  printf("");
+  printf("\n");
   printf("\n TOURO - CARACTERÍSTICAS");
   printf("\n   *Pessoa muito possessiva");
   printf("\n   *Teimoso, mas realista");
@@ -289,7 +287,7 @@ void gemeosCarac(void){
   printf("      | |\n");
   printf("     _|_|_\n");
   printf("    '     '\n");
-  printf("");
+  printf("\n");
   printf("\nGÊMEOS - CARACTERÍSTICAS: ");
   printf("\n   *Indeciso");
   printf("\n   *Inquieto");
@@ -304,7 +302,7 @@ void cCarac(void){
   printf("   '.    /\n");
   printf("     `--'\n");
   printf("Cancer-  The Crab\n");
-  printf("");
+  printf("\n");
   printf("CARACTERÍSTICAS:");
   printf("\n   *Contraditórios");
   printf("\n   *Adaptável");
@@ -475,7 +473,7 @@ void boiCarac(void){
 }
 
 void tigreCarac(void){
-  printf("    (^\\-==-/^)\n"
+  printf("     (^\\-==-/^)\n"
   "     >\\\\ == //<\n"
   "    :== q''p ==:     _\n"
   "     .__ qp __.    .' )\n"
@@ -496,7 +494,7 @@ void tigreCarac(void){
 }
 
 void coelhoCarac(void){
-  printf("  \\\\\n"
+  printf("     \\\\\n"
   "      \\\\_\n"
   "      ( _\\\n"
   "      / \\__\n"
@@ -685,6 +683,7 @@ void animalCarac(char* a){
   else if(strcmp(a, "Porco") == 0)
     porcoCarac();
 }
+
 
 void numCarac(int numf){
     if (numf == 1)
@@ -919,4 +918,3 @@ void carac22(void){
     "Criticismo\n"
     "Inlfexível\n");
 }
-
