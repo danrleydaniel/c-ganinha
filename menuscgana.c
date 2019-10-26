@@ -137,28 +137,27 @@ char menuClientes(void){
     switch (opcao){
       case '1':
       cdCliente();
-      sleep(10);
+      pausaPrograma();
       break;
 
       case '2':
       listarClientes();
-      sleep(40);
-      
+      pausaPrograma();
       break;
 
       case '3':
       buscarCliente();
-      sleep(30);
+      pausaPrograma();
       break;
 
       case '4':
       editarCliente();
-      sleep(5);
+      pausaPrograma();
       break;
 
       case '5':
       deletarCliente();
-      sleep(5);
+      pausaPrograma();
       break;
 
       default:
@@ -415,31 +414,32 @@ char menuPrevisoes(void){
     switch(opcao){
       case '1':
       cadastraBolaCristal();
-      sleep(15);
+      pausaPrograma();
       break;
 
       case '2':
       listarConsultores();
-      sleep(15);
+      pausaPrograma();
       break;
 
       case '3':
       editarDadosBolaCristal();
-      sleep(15);
+      pausaPrograma();
       break;
 
       case '4':
       consultarCigana();
-      sleep(80);
+      pausaPrograma();
       break;
 
       case '5':
-      printf("Em breve\n");
-      sleep(5);
+      deletaConsultor();
+      pausaPrograma();
 
       default:
       printf("\nOpção inválida\n");
     }
+  system("clear||cls");
   printf("\nO que deseja fazer agora?\n");
   opcao = menuPrevisoes();
   }
@@ -609,6 +609,10 @@ void consultarCigana(void){
 }
 
 void previsaoDiaria(Consultor* consu){
+  time_t mytime;
+  mytime = time(NULL);
+  struct tm tm = *localtime(&mytime);
+  int nds;
   printf("\nCaracterísticas segundo seu número nativo: \n");
   numCarac(consu->numNativo);
   printf("\n\n");
@@ -622,9 +626,36 @@ void previsaoDiaria(Consultor* consu){
   animalCarac(consu->china);
   printf("\n\n");
 
+  nds = numDaSorte(consu->nome, consu->numNativo, 
+  consu->signos, consu->china);
+  nds = nds + tm.tm_mday;
   printf("Sua previsão diária: \n");
-  printf("Em breve\n");
+  previsao(nds);
 }
+
+
+void previsao(int x){
+  FILE* fp5;
+  int linha = 0;
+  int tamLinha = 0;
+  int c;
+
+  fp5 = fopen("previsoes.txt","r");
+  while((c = getc(fp5)) != EOF & linha < x){
+    if(linha == x-1){
+      tamLinha++;
+    }
+    if(c == '\n'){
+      linha++;
+    }
+  }
+  ungetc(c, fp5);
+  fseek(fp5, -tamLinha, SEEK_CUR);
+  char line_value[tamLinha];
+  fgets(line_value, tamLinha, fp5);
+  puts(line_value);
+}
+
 
 void deletaConsultor(void){
   system("clear||cls");
