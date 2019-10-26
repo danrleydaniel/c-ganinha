@@ -10,12 +10,22 @@
 #include "cadastrosevalidacoes.h"
 #include "menuscgana.h"
 
+void pausaPrograma(void){
+  printf("Digite ENTER para continuar\n");
+  getchar();
+  getchar();
+}
+
 int chartoint(char c){
     return c - '0';
 }
 
 char inttochar(int n){
   return n + 48;
+}
+
+int numDaSorte(char* n, int num, char* s, char* c){
+  return strlen(n) + num + strlen(s) + strlen(c);
 }
 
 int numerologia(int dia, int mes, int ano){
