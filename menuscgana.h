@@ -45,6 +45,7 @@ void logoDeletarConsultor(void); //Mostra o logotipo do Menu Deletar Consultor
 void logoRelatorios(void); //Mostra o logotipo do Menu Relatorios
 void consultarCigana(void); //Realiza a consulta com a cigana
 void previsaoDiaria(Consultor*); //Realiza a previsão diária com a cigana
+void previsao(int); //Recebe um "número da sorte" e printa uma previsão com base nele
 void exibeCliente(Usuario*); //Exibe um usuário em específico
 char mainMenu(void); //Menu principal do programa
 char menuClientes(void); //Mostra o menu da área dos clientes
