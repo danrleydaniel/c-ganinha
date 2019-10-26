@@ -1,5 +1,7 @@
+void pausaPrograma(void); //Função para pausar o sistema
 int chartoint(char); //Transforma char para inteiro
 char inttochar(int); //Transforma inteiro para char
+int numDaSorte(char*, int, char*, char*); //Cria um número da sorte para as previsões
 int numerologia(int, int, int); //Função que retorna o "número nativo" do usário
 char * horoscopo(int); //Função que retorna o animal no horóscopo chinês correspondente à data de nascimento do usuário
 char * signo(int, int, int); //Função que retorna o signo de acordo com a data de nascimento do usuário
