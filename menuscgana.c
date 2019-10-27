@@ -681,7 +681,7 @@ void deletaConsultor(void){
   if(encontrado){
     exibeConsultor(consu);
     printf("Deseja realmente excluir este consultor? [S/N] ");
-    scanf("%c",&resp);
+    scanf(" %c",&resp);
     if(resp == 's' || resp == 'S'){
       consu->status = 'x';
       fseek(fp2,(-1)*sizeof(Consultor),SEEK_CUR);
