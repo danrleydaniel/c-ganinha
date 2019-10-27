@@ -269,11 +269,12 @@ void ariesCarac(void){
   printf("  (_  \\ /  _)    \n");
   printf("       |\n");
   printf("       |\n");
-  printf("\nÁRIES - CARACTERÍSTICAS");
+  printf("\n");
+  printf("\nÁRIES - CARACTERÍSTICAS\n");
   printf("\n   *Tendem a ser impacientes");
   printf("\n   *São pessoas alegres");
   printf("\n   *Sinceridade, pra você, é tudo");
-  printf("\n   *Nada de repetição, nem indecisão");
+  printf("\n   *Nada de repetição, nem indecisão\n");
 }
 
 void touroCarac(void){
@@ -284,11 +285,11 @@ void touroCarac(void){
   printf("   :       :\n");
   printf("    `.___.'\n");
   printf("\n");
-  printf("\n TOURO - CARACTERÍSTICAS");
+  printf("\n TOURO - CARACTERÍSTICAS\n");
   printf("\n   *Pessoa muito possessiva");
   printf("\n   *Teimoso, mas realista");
   printf("\n   *Construtivo, determinado, forte");
-  printf("\n   *Apegado às pessoas");
+  printf("\n   *Apegado às pessoas\n");
 }
 
 void gemeosCarac(void){
@@ -298,11 +299,11 @@ void gemeosCarac(void){
   printf("     _|_|_\n");
   printf("    '     '\n");
   printf("\n");
-  printf("\nGÊMEOS - CARACTERÍSTICAS: ");
+  printf("\nGÊMEOS - CARACTERÍSTICAS\n");
   printf("\n   *Indeciso");
   printf("\n   *Inquieto");
   printf("\n   *Criativo e comunicativo");
-  printf("\n   *Razão acima da emoção");
+  printf("\n   *Razão acima da emoção\n");
 }
 
 void cCarac(void){
@@ -311,13 +312,12 @@ void cCarac(void){
   printf("    (_) ( )\n");
   printf("   '.    /\n");
   printf("     `--'\n");
-  printf("Cancer-  The Crab\n");
   printf("\n");
-  printf("CARACTERÍSTICAS:");
+  printf("\nCANCER - CARACTERÍSTICAS\n");
   printf("\n   *Contraditórios");
   printf("\n   *Adaptável");
   printf("\n   *Transparente");
-  printf("\n   *Resistente a mudança");
+  printf("\n   *Resistente a mudança\n");
 }
 
 void leaoCarac(void){
@@ -326,11 +326,11 @@ void leaoCarac(void){
   printf("    (_)  /\n");
   printf("        (_,\n");
   printf("\n");
-  printf("LEÃO - CARACTERÍSTICAS\n");
+  printf("LEÃO - CARACTERÍSTICAS\n\n");
   printf("   *Autoritário\n");
   printf("   *Dominador\n");
   printf("   *Ardente nas paixões\n");
-  printf("   *Benevolente");
+  printf("   *Benevolente\n\n");
 }
 
 void virgemCarac(void){
@@ -340,11 +340,11 @@ void virgemCarac(void){
   printf("     |  |  |/\n");
   printf("          (J\n");
   printf("\n");
-  printf("VIRGEM - CARACTERÍSTICAS\n");
+  printf("VIRGEM - CARACTERÍSTICAS\n\n");
   printf("   *Dedicado\n");
   printf("   *Racional\n");
   printf("   *Exigente\n");
-  printf("   *Organizado");
+  printf("   *Organizado\n\n");
 }
 
 void libraCarac(void){
@@ -352,11 +352,11 @@ void libraCarac(void){
     printf("   ___.'  '.___\n");
     printf("   ____________\n");
     printf("\n");
-    printf("LIBRA - CARACTERÍSTICAS\n");
+    printf("LIBRA - CARACTERÍSTICAS\n\n");
     printf("   *Simpático\n");
     printf("   *Observador\n");
     printf("   *Delicado\n");
-    printf("   *Extrovertido");
+    printf("   *Extrovertido\n\n");
 }
 
 void escorpiaoCarac(void){
@@ -367,11 +367,11 @@ void escorpiaoCarac(void){
   "     |  |  |  ..,\n"
   "           `---':\n"
   "\n"
-  "ESCORPIÃO - CARACTERÍSTICAS\n"
+  "ESCORPIÃO - CARACTERÍSTICAS\n\n"
   "   *Independente\n"
   "   *Inteligente\n"
   "   *Extremista\n"
-  "   *Emotivo");
+  "   *Emotivo\n\n");
 }
 
 void sagiCarac(void){
@@ -381,11 +381,11 @@ void sagiCarac(void){
   "    `..'\n"
   "    .'`.\n"
   "\n"
-  "SAGITÁRIO - CARACTERÍSTICAS\n"
+  "SAGITÁRIO - CARACTERÍSTICAS\n\n"
   "   *Simpático\n"
   "   *Estudioso\n"
   "   *Honesto\n"
-  "   *Otimista");
+  "   *Otimista\n\n");
 }
 
 void capricornioCarac(void){
@@ -395,22 +395,22 @@ void capricornioCarac(void){
   "      \\  /   ;\n"
   "       \\/ __.'\n"
   "\n"
-  "CAPRICÓRNIO - CARACTERÍSTICAS\n"
+  "CAPRICÓRNIO - CARACTERÍSTICAS\n\n"
   "   *Personalidade marcante\n"
   "   *Sabichão\n"
   "   *Responsável\n"
-  "   *Disciplinado");
+  "   *Disciplinado\n\n");
 }
 
 void aquarioCarac(void){
   printf(" .-\"-._.-\"-._.-\n"
   " .-\"-._.-\"-._.-\n"
   "\n"
-  "AQUÁRIO - CARACTERÍSTICAS\n"
+  "AQUÁRIO - CARACTERÍSTICAS\n\n"
   "   *Excêntrico\n"
   "   *Idealista\n"
   "   *Humanitário\n"
-  "   *Vive no mundo da lua");
+  "   *Vive no mundo da lua\n\n");
 }
 
 void peixesCarac(void){
@@ -420,11 +420,11 @@ void peixesCarac(void){
   "      :  :\n"
   "   .-'    `-.\n"
   "\n"
-  "PEIXES - CARACTERÍSTICAS\n"
+  "PEIXES - CARACTERÍSTICAS\n\n"
   "   *Temeroso\n"
   "   *Gentil\n"
   "   *Sábio\n"
-  "   *Confiante em si e nas outras pessoas");
+  "   *Confiante em si e nas outras pessoas\n\n");
 }
 
 void signCarac(char* s){
@@ -460,12 +460,12 @@ void ratoCarac(void){
   " \\../ (  )\n"
   " m\\/m--m'`--.\n"
   "\n"
-  "RATO - CARACTERÍSTICAS\n"
+  "RATO - CARACTERÍSTICAS\n\n"
   "  * Grande importância para a família\n"
   "  * Trabalhador e ambicioso\n"
   "  * Gosto refinado e requintado\n"
   "  * Apaixonado e sentimental\n"
-  "");
+  "\n");
 }
 
 void boiCarac(void){
@@ -474,16 +474,16 @@ void boiCarac(void){
   "       ||    (__)\n"
   "       ||---||\n"
   "\n"
-  "BOI - CARACTERÍSTICAS\n"
+  "BOI - CARACTERÍSTICAS\n\n"
   "  * Vigoroso e robusto\n"
   "  * Muito inteligente e bem informado\n"
   "  * Apegado às tradições e valores morais\n"
   "  * Amante dos prazeres que a vida proporciona\n"
-  "");
+  "\n");
 }
 
 void tigreCarac(void){
-  printf("     (^\\-==-/^)\n"
+  printf("      (^\\-==-/^)\n"
   "     >\\\\ == //<\n"
   "    :== q''p ==:     _\n"
   "     .__ qp __.    .' )\n"
@@ -495,12 +495,12 @@ void tigreCarac(void){
   "     \\-     |-|/\n"
   "    (( )^---( ))\n"
   "\n"
-  "TIGRE - CARACTERÍSTICAS\n"
+  "TIGRE - CARACTERÍSTICAS\n\n"
   "  * Grande força física e mental\n"
   "  * Admirado pelos amigos\n"
   "  * Líder nato\n"
   "  * Extremamente competitivo\n"
-  "");
+  "\n");
 }
 
 void coelhoCarac(void){
@@ -512,12 +512,12 @@ void coelhoCarac(void){
   "    {\\  )_\n"
   "      `\"\"\"`\n"
   "\n"
-  "COELHO - CARACTERÍSTICAS\n"
+  "COELHO - CARACTERÍSTICAS\n\n"
   "  * Estabelece fortes laços com os amigos\n"
   "  * O mais introvertido do zodíaco\n"
   "  * Defende os mais injustiçados\n"
   "  * Meigo, delicado e sentimental\n"
-  "");
+  "\n");
 }
 
 void dragaoCarac(void){
@@ -533,12 +533,12 @@ void dragaoCarac(void){
 " | \\____(      )___) )___\n"
 "  \\______(_______;;; __;;; \n"
   "\n"
-  "DRAGÃO - CARACTERÍSTICAS\n"
+  "DRAGÃO - CARACTERÍSTICAS\n\n"
   "  * Personalidade magnética, extravagante e teatral\n"
   "  * Bastante generoso\n"
   "  * Dotado de uma inteligência excepcional\n"
   "  * Fogoso e sensual\n"
-  "" );
+  "\n" );
 }
 
 void cobraCarac(void){
@@ -546,12 +546,12 @@ void cobraCarac(void){
   "  ________________________/ O  \\___/\n"
   " <_/_\\_/_\\_/_\\_/_\\_/_\\_/_______/   \\\n"
   "\n"
-  "COBRA - CARACTERÍSTICAS\n"
+  "COBRA - CARACTERÍSTICAS\n\n"
   "  * Curioso e ávido de conhecimento\n"
   "  * Calmo, inteligente e de lucidez perfeita\n"
   "  * Interesse por assuntos esotéricos\n"
   "  * Gosta de ficar no comando\n"
-  "");
+  "\n");
 }
 
 void cavaloCarac(void){
@@ -565,12 +565,12 @@ void cavaloCarac(void){
   "    //         ||\n"
   "   (_\\         (_\\\n"
   "\n"
-  "CAVALO - CARACTERÍSTICAS\n"
+  "CAVALO - CARACTERÍSTICAS\n\n"
   "  * Porte altivo e caráter nobre\n"
   "  * É muito curioso\n"
   "  * Leal, amoroso e simpático\n"
   "  * Gosta de se dedicar aos menos favorecidos\n"
-  "");
+  "\n");
 }
 
 void cabraCarac(void){
@@ -580,12 +580,12 @@ void cabraCarac(void){
   "         | )  _ \\ \\\n"
   "        / / ``   w w\n"
   "       w w\n"
-  "OVELHA - CARACTERÍSTICAS\n"
+  "OVELHA - CARACTERÍSTICAS\n\n"
   "  * Cheio de amigos\n"
   "  * Precisa sempre se sentir apoiado e protegido\n"
   "  * Doce, sensível e um pouquinho frágil\n"
   "  * Instável, sempre propício a mudar de ideias\n"
-  "");
+  "\n");
 }
 
 void macacoCarac(void){
@@ -600,12 +600,12 @@ void macacoCarac(void){
   "      {_{ }`===`{  _}\n"
   "     ((((\\)     (/))))\n"
   "\n"
-  "MACACO - CARACTERÍSTICAS\n"
+  "MACACO - CARACTERÍSTICAS\n\n"
   "  * Adora popularidade\n"
   "  * Intelectual, de uma cultura geral impressionante\n"
   "  * Inventivo, criativo e entusiasta\n"
   "  * Sempre pronto para ajudar os amigos\n"
-  "");
+  "\n");
 }
 
 void galoCarac(void){
@@ -626,12 +626,12 @@ void galoCarac(void){
   "            __//--'/`          \n"
   "          ,--'/`  '\n"
   "\n"
-  "GALO - CARACTERÍSTICAS\n"
+  "GALO - CARACTERÍSTICAS\n\n"
   "  * Gosta de ser venerado, um pouco egocêntrico\n"
   "  * Orgulhoso e determinado\n"
   "  * Não se assusta com responsabilidades\n"
   "  * Um companheiro muito leal\n"
-  "");
+  "\n");
 }
 
 void caoCarac(void){
@@ -643,12 +643,12 @@ void caoCarac(void){
   "     /) ._______________.  )\n"
   "    (( (               (( (\n"
   "     ``-'               ``-'\n"
-  "CACHORRO - CARACTERÍSTICAS\n"
+  "CACHORRO - CARACTERÍSTICAS\n\n"
   "  * Dá valor à fidelidade e lealdade\n"
   "  * Idealista e tolerante\n"
   "  * Receia cometer qualquer injustiça\n"
   "  * Nem pense em enganá-lo!\n"
-  "");
+  "\n");
 }
 
 void porcoCarac(void){
@@ -659,12 +659,12 @@ void porcoCarac(void){
   "   |   ,             (\")\n"
   "   |__,'`-..--|__|--''\n"
   "\n"
-  "PORCO - CARACTERÍSTICAS\n"
+  "PORCO - CARACTERÍSTICAS\n\n"
   "  * Gentil, generoso e tolerante\n"
   "  * Odeia confrontos, gosta de viver em harmonia\n"
   "  * É bastante erudito, gosta de ler e estudar\n"
   "  * Apesar de sua natureza pura, não é ingênuo\n"
-  "");
+  "\n");
 }
 
 void animalCarac(char* a){
