@@ -671,6 +671,7 @@ void deletaConsultor(void){
   }
   printf("\nDigite o CPF do consultor que deseja deletar: ");
   scanf(" %14[^\n]",procurado);
+  consu = (Consultor*) malloc(sizeof(Consultor));
   while((!encontrado) && (fread(consu,sizeof(Consultor),1,fp2))){
     if((strcmp(consu->cpf,procurado) == 0) && (consu->status == 'c')){
       encontrado = 1;
