@@ -109,6 +109,8 @@ void logoRelatorios(void){
 
 char mainMenu(void){
   char opcao;
+  system("clear||cls");
+  logotipoPrincipal();
   printf("Escolha uma opção: \n\n");
   printf("1 - MENU CLIENTES\n");
   printf("2 - MENU PREVISÕES\n");
@@ -124,8 +126,7 @@ char menuClientes(void){
   char opcao;
   system("clear||cls");
   logoMenuClientes();
-  printf("O que deseja fazer agora?");
-  printf("\nEscolha uma opção: ");
+  printf("\nEscolha uma opção: \n");
   printf("\n1 - Cadastrar Cliente");
   printf("\n2 - Lista de Clientes");
   printf("\n3 - Buscar Cliente");
@@ -207,7 +208,7 @@ void cdCliente(void){
 
   gravaUsuario(usu);
 
-  printf("USUÁRIO CADASTRADO COM SUCESSO!");
+  printf("\n\nUSUÁRIO CADASTRADO COM SUCESSO!\n");
 
 
   printf("\n");
@@ -402,7 +403,7 @@ char menuPrevisoes(void){
   char opcao;
   system("clear||cls");
   logoMenuPrevisoes();
-  printf("\nEscolha uma opção: ");
+  printf("\nEscolha uma opção: \n");
   printf("\n1 - Cadastrar-se na Bola de Cristal");
   printf("\n2 - Lista de Consultores");
   printf("\n3 - Atualizar Dados da Bola de Cristal");
@@ -480,7 +481,7 @@ void cadastraBolaCristal(void){
     consu->status = 'c';
 
     gravaConsultor(consu);
-    printf("\nPARABÉNS! VOCÊ FOI CADASTRADO COMO CONSULTOR!\n");
+    printf("PARABÉNS! VOCÊ FOI CADASTRADO COMO CONSULTOR!\n\n");
     free(consu);
   } else{
     printf("\nNenhum usuário com este CPF foi cadastrado. Você precisa cadastrar-se primeiramente no Menu Clientes para ter acesso às funcionalidades da cigana...\n");

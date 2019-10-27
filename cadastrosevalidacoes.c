@@ -271,10 +271,10 @@ void ariesCarac(void){
   printf("       |\n");
   printf("\n");
   printf("\nÁRIES - CARACTERÍSTICAS\n");
-  printf("\n   *Tendem a ser impacientes");
-  printf("\n   *São pessoas alegres");
-  printf("\n   *Sinceridade, pra você, é tudo");
-  printf("\n   *Nada de repetição, nem indecisão\n");
+  printf("\n  * Tendem a ser impacientes");
+  printf("\n  * São pessoas alegres");
+  printf("\n  * Sinceridade, pra você, é tudo");
+  printf("\n  * Nada de repetição, nem indecisão\n");
 }
 
 void touroCarac(void){
@@ -286,10 +286,10 @@ void touroCarac(void){
   printf("    `.___.'\n");
   printf("\n");
   printf("\n TOURO - CARACTERÍSTICAS\n");
-  printf("\n   *Pessoa muito possessiva");
-  printf("\n   *Teimoso, mas realista");
-  printf("\n   *Construtivo, determinado, forte");
-  printf("\n   *Apegado às pessoas\n");
+  printf("\n  * Pessoa muito possessiva");
+  printf("\n  * Teimoso, mas realista");
+  printf("\n  * Construtivo, determinado, forte");
+  printf("\n  * Apegado às pessoas\n");
 }
 
 void gemeosCarac(void){
@@ -300,10 +300,10 @@ void gemeosCarac(void){
   printf("    '     '\n");
   printf("\n");
   printf("\nGÊMEOS - CARACTERÍSTICAS\n");
-  printf("\n   *Indeciso");
-  printf("\n   *Inquieto");
-  printf("\n   *Criativo e comunicativo");
-  printf("\n   *Razão acima da emoção\n");
+  printf("\n  * Indeciso");
+  printf("\n  * Inquieto");
+  printf("\n  * Criativo e comunicativo");
+  printf("\n  * Razão acima da emoção\n");
 }
 
 void cCarac(void){
@@ -314,10 +314,10 @@ void cCarac(void){
   printf("     `--'\n");
   printf("\n");
   printf("\nCANCER - CARACTERÍSTICAS\n");
-  printf("\n   *Contraditórios");
-  printf("\n   *Adaptável");
-  printf("\n   *Transparente");
-  printf("\n   *Resistente a mudança\n");
+  printf("\n  * Contraditórios");
+  printf("\n  * Adaptável");
+  printf("\n  * Transparente");
+  printf("\n  * Resistente a mudança\n");
 }
 
 void leaoCarac(void){
@@ -327,10 +327,10 @@ void leaoCarac(void){
   printf("        (_,\n");
   printf("\n");
   printf("LEÃO - CARACTERÍSTICAS\n\n");
-  printf("   *Autoritário\n");
-  printf("   *Dominador\n");
-  printf("   *Ardente nas paixões\n");
-  printf("   *Benevolente\n\n");
+  printf("  * Autoritário\n");
+  printf("  * Dominador\n");
+  printf("  * Ardente nas paixões\n");
+  printf("  * Benevolente\n\n");
 }
 
 void virgemCarac(void){
@@ -341,10 +341,10 @@ void virgemCarac(void){
   printf("          (J\n");
   printf("\n");
   printf("VIRGEM - CARACTERÍSTICAS\n\n");
-  printf("   *Dedicado\n");
-  printf("   *Racional\n");
-  printf("   *Exigente\n");
-  printf("   *Organizado\n\n");
+  printf("  * Dedicado\n");
+  printf("  * Racional\n");
+  printf("  * Exigente\n");
+  printf("  * Organizado\n\n");
 }
 
 void libraCarac(void){
@@ -353,10 +353,10 @@ void libraCarac(void){
     printf("   ____________\n");
     printf("\n");
     printf("LIBRA - CARACTERÍSTICAS\n\n");
-    printf("   *Simpático\n");
-    printf("   *Observador\n");
-    printf("   *Delicado\n");
-    printf("   *Extrovertido\n\n");
+    printf("  * Simpático\n");
+    printf("  * Observador\n");
+    printf("  * Delicado\n");
+    printf("  * Extrovertido\n\n");
 }
 
 void escorpiaoCarac(void){
@@ -368,10 +368,10 @@ void escorpiaoCarac(void){
   "           `---':\n"
   "\n"
   "ESCORPIÃO - CARACTERÍSTICAS\n\n"
-  "   *Independente\n"
-  "   *Inteligente\n"
-  "   *Extremista\n"
-  "   *Emotivo\n\n");
+  "  * Independente\n"
+  "  * Inteligente\n"
+  "  * Extremista\n"
+  "  * Emotivo\n\n");
 }
 
 void sagiCarac(void){
@@ -382,10 +382,10 @@ void sagiCarac(void){
   "    .'`.\n"
   "\n"
   "SAGITÁRIO - CARACTERÍSTICAS\n\n"
-  "   *Simpático\n"
-  "   *Estudioso\n"
-  "   *Honesto\n"
-  "   *Otimista\n\n");
+  "  * Simpático\n"
+  "  * Estudioso\n"
+  "  * Honesto\n"
+  "  * Otimista\n\n");
 }
 
 void capricornioCarac(void){
@@ -396,10 +396,10 @@ void capricornioCarac(void){
   "       \\/ __.'\n"
   "\n"
   "CAPRICÓRNIO - CARACTERÍSTICAS\n\n"
-  "   *Personalidade marcante\n"
-  "   *Sabichão\n"
-  "   *Responsável\n"
-  "   *Disciplinado\n\n");
+  "  * Personalidade marcante\n"
+  "  * Sabichão\n"
+  "  * Responsável\n"
+  "  * Disciplinado\n\n");
 }
 
 void aquarioCarac(void){
@@ -407,10 +407,10 @@ void aquarioCarac(void){
   " .-\"-._.-\"-._.-\n"
   "\n"
   "AQUÁRIO - CARACTERÍSTICAS\n\n"
-  "   *Excêntrico\n"
-  "   *Idealista\n"
-  "   *Humanitário\n"
-  "   *Vive no mundo da lua\n\n");
+  "  * Excêntrico\n"
+  "  * Idealista\n"
+  "  * Humanitário\n"
+  "  * Vive no mundo da lua\n\n");
 }
 
 void peixesCarac(void){
@@ -421,10 +421,10 @@ void peixesCarac(void){
   "   .-'    `-.\n"
   "\n"
   "PEIXES - CARACTERÍSTICAS\n\n"
-  "   *Temeroso\n"
-  "   *Gentil\n"
-  "   *Sábio\n"
-  "   *Confiante em si e nas outras pessoas\n\n");
+  "  * Temeroso\n"
+  "  * Gentil\n"
+  "  * Sábio\n"
+  "  * Confiante em si e nas outras pessoas\n\n");
 }
 
 void signCarac(char* s){
@@ -483,7 +483,7 @@ void boiCarac(void){
 }
 
 void tigreCarac(void){
-  printf("      (^\\-==-/^)\n"
+  printf("     (^\\-==-/^)\n"
   "     >\\\\ == //<\n"
   "    :== q''p ==:     _\n"
   "     .__ qp __.    .' )\n"
@@ -724,207 +724,207 @@ void carac1(void){
     printf("Nativo 1:\n"
     "Caracteristicas positivas:\n"
     "\n"
-    "Positivismo\n"
-    "Criatividade\n"
-    "Pionerismo\n"
-    "Coragem\n"
-    "Independêcia\n"
+    "  * Positivismo\n"
+    "  * Criatividade\n"
+    "  * Pionerismo\n"
+    "  * Coragem\n"
+    "  * Independêcia\n"
     "\n"
     "Caracteristicas negativas:\n"
     "\n"
-    "Prepotência\n"
-    "Autoritarismo\n"
-    "Agressividade\n"
-    "Orgulhoso\n"
-    "Preguiça\n");
+    "  * Prepotência\n"
+    "  * Autoritarismo\n"
+    "  * Agressividade\n"
+    "  * Orgulhoso\n"
+    "  * Preguiça\n");
 }
 
 void carac2(void){
     printf("Nativo 2:\n"
     "Caracteristicas positivas:\n"
     "\n"
-    "Paciêcia\n"
-    "Solidárismo\n"
-    "Companheirismo\n"
-    "Amável"
-    "Diplomata"
+    "  * Paciêcia\n"
+    "  * Solidárismo\n"
+    "  * Companheirismo\n"
+    "  * Amável"
+    "  * Diplomata"
     "\n"
     "Caracteristicas negativas:\n"
     "\n"
-    "Dualidade\n"
-    "Indecisão\n"
-    "Timidez\n"
-    "Passividade\n"
-    "Submissão\n");
+    "  * Dualidade\n"
+    "  * Indecisão\n"
+    "  * Timidez\n"
+    "  * Passividade\n"
+    "  * Submissão\n");
 }
 
 void carac3(void){
     printf("Nativo 3:\n"
     "Caracteristicas positivas:\n"
     "\n"
-    "Otimismo\n"
-    "comunicação\n"
-    "Sociável\n"
-    "Coldial\n"
-    "Entusiasmo\n"
+    "  * Otimismo\n"
+    "  * comunicação\n"
+    "  * Sociável\n"
+    "  * Coldial\n"
+    "  * Entusiasmo\n"
     "\n"
     "Caracteristicas negativas:\n"
     "\n"
-    "Exibicionismo\n"
-    "Supercialidade\n"
-    "Imaturidade\n"
-    "Ostentação\n"
-    "Dispersão\n");
+    "  * Exibicionismo\n"
+    "  * Supercialidade\n"
+    "  * Imaturidade\n"
+    "  * Ostentação\n"
+    "  * Dispersão\n");
 }
 
 void carac4(void){
     printf("Nativo 4:\n"
     "Caracteristicas positivas:\n"
     "\n"
-    "Lealdade\n"
-    "Diciplina\n"
-    "Honestidade\n"
-    "Dedicação\n"
-    "Confiança\n"
+    "  * Lealdade\n"
+    "  * Diciplina\n"
+    "  * Honestidade\n"
+    "  * Dedicação\n"
+    "  * Confiança\n"
     "\n"
     "Caracteristicas negativas:\n"
     "\n"
-    "Crítico\n"
-    "Insegurânça\n"
-    "Avareza\n"
-    "Conformista\n"
-    "Inlfexível\n");
+    "  * Crítico\n"
+    "  * Insegurânça\n"
+    "  * Avareza\n"
+    "  * Conformista\n"
+    "  * Inlfexível\n");
 }
 
 void carac5(void){
     printf("Nativo 5:\n"
     "Caracteristicas positivas:\n"
     "\n"
-    "Empreendedorismo\n"
-    "Versátilidade\n"
-    "Sensualidade\n"
-    "Curiosidade\n"
-    "Inteligência\n"
+    "  * Empreendedorismo\n"
+    "  * Versátilidade\n"
+    "  * Sensualidade\n"
+    "  * Curiosidade\n"
+    "  * Inteligência\n"
     "\n"
     "Caracteristicas negativas:\n"
     "\n"
-    "Inrresponsabilidade\n"
-    "Inquietação\n"
-    "Infidelidade\n"
-    "Impulsividade\n"
-    "Ansiedade\n");
+    "  * Inrresponsabilidade\n"
+    "  * Inquietação\n"
+    "  * Infidelidade\n"
+    "  * Impulsividade\n"
+    "  * Ansiedade\n");
 }
 
 void carac6(void){
     printf("Nativo 6:\n"
     "Caracteristicas positivas:\n"
     "\n"
-    "Equilíbrio\n"
-    "Organização\n"
-    "Honestidade\n"
-    "Solidariedade\n"
-    "Tolerância\n"
+    "  * Equilíbrio\n"
+    "  * Organização\n"
+    "  * Honestidade\n"
+    "  * Solidariedade\n"
+    "  * Tolerância\n"
     "\n"
     "Caracteristicas negativas:\n"
     "\n"
-    "Preguiça\n"
-    "Vitimísmo\n"
-    "Espírito de mártir\n"
-    "Inconformista\n"
-    "Rancoroso(a)\n");
+    "  * Preguiça\n"
+    "  * Vitimísmo\n"
+    "  * Espírito de mártir\n"
+    "  * Inconformista\n"
+    "  * Rancoroso(a)\n");
 }
 
 void carac7(void){
     printf("Nativo 7:\n"
     "Caracteristicas positivas:\n"
     "\n"
-    "Tranquilidade\n"
-    "Sabedoria\n"
-    "Meticulosidade\n"
-    "Perfeccionismo\n"
-    "Autocontrole\n"
+    "  * Tranquilidade\n"
+    "  * Sabedoria\n"
+    "  * Meticulosidade\n"
+    "  * Perfeccionismo\n"
+    "  * Autocontrole\n"
     "\n"
     "Caracteristicas negativas:\n"
     "\n"
-    "Melancolismo\n"
-    "Criticismo\n"
-    "Exigente\n"
-    "Solitário(a)\n"
-    "Confiança em excesso\n");
+    "  * Melancolismo\n"
+    "  * Criticismo\n"
+    "  * Exigente\n"
+    "  * Solitário(a)\n"
+    "  * Confiança em excesso\n");
 }
 
 void carac8(void){
     printf("Nativo 8:\n"
     "Caracteristicas positivas:\n"
     "\n"
-    "Liderança\n"
-    "Justiça\n"
-    "Honestidade\n"
-    "Perseverança\n"
-    "Compreensivos\n"
+    "  * Liderança\n"
+    "  * Justiça\n"
+    "  * Honestidade\n"
+    "  * Perseverança\n"
+    "  * Compreensivos\n"
     "\n"
     "Caracteristicas negativas:\n"
     "\n"
-    "Ambiciosidade\n"
-    "Materialismo\n"
-    "Arrogancia\n"
-    "Autoritáriedade\n"
-    "Impaciência\n");
+    "  * Ambiciosidade\n"
+    "  * Materialismo\n"
+    "  * Arrogancia\n"
+    "  * Autoritáriedade\n"
+    "  * Impaciência\n");
 }
 
 void carac9(void){
     printf("Nativo 9:\n"
     "Caracteristicas positivas:\n"
     "\n"
-    "Paciencia\n"
-    "Generosidade\n"
-    "Espiritualidade\n"
-    "Amigáveis\n"
-    "Carinhoso(a)\n"
+    "  * Paciencia\n"
+    "  * Generosidade\n"
+    "  * Espiritualidade\n"
+    "  * Amigáveis\n"
+    "  * Carinhoso(a)\n"
     "\n"
     "Caracteristicas negativas:\n"
     "\n"
-    "Fanatismo\n"
-    "Solitário(a)\n"
-    "Intimidação\n"
-    "Abuso emocional\n"
-    "Arrependimento\n");
+    "  * Fanatismo\n"
+    "  * Solitário(a)\n"
+    "  * Intimidação\n"
+    "  * Abuso emocional\n"
+    "  * Arrependimento\n");
 }
 
 void carac11(void){
     printf("Nativo 11:\n"
     "Caracteristicas positivas:\n"
     "\n"
-    "Idealismo\n"
-    "Paciência\n"
-    "Sabedoria\n"
-    "Humanitarismo\n"
-    "Simpatia\n"
+    "  * Idealismo\n"
+    "  * Paciência\n"
+    "  * Sabedoria\n"
+    "  * Humanitarismo\n"
+    "  * Simpatia\n"
     "\n"
     "Caracteristicas negativas:\n"
     "\n"
-    "Fanatismo\n"
-    "Charlatanismo\n"
-    "Pragmastismo\n"
-    "Cinismo\n"
-    "Desonestidade\n");
+    "  * Fanatismo\n"
+    "  * Charlatanismo\n"
+    "  * Pragmastismo\n"
+    "  * Cinismo\n"
+    "  * Desonestidade\n");
 }
 
 void carac22(void){
     printf("Nativo 22:\n"
     "Caracteristicas positivas:\n"
     "\n"
-    "Generosidade\n"
-    "Esforçado(a)\n"
-    "Sagacidade\n"
-    "Otimismo\n"
-    "Lealdade\n"
+    "  * Generosidade\n"
+    "  * Esforçado(a)\n"
+    "  * Sagacidade\n"
+    "  * Otimismo\n"
+    "  * Lealdade\n"
     "\n"
     "Caracteristicas negativas:\n"
     "\n"
-    "Vaidade\n"
-    "Complexo de inferioridade\n"
-    "Cinismo\n"
-    "Criticismo\n"
-    "Inlfexível\n");
+    "  * Vaidade\n"
+    "  * Complexo de inferioridade\n"
+    "  * Cinismo\n"
+    "  * Criticismo\n"
+    "  * Inlfexível\n");
 }
