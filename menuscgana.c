@@ -109,8 +109,6 @@ void logoRelatorios(void){
 
 char mainMenu(void){
   char opcao;
-  system("clear||cls");
-  logotipoPrincipal();
   printf("Escolha uma opção: \n\n");
   printf("1 - MENU CLIENTES\n");
   printf("2 - MENU PREVISÕES\n");
@@ -126,7 +124,8 @@ char menuClientes(void){
   char opcao;
   system("clear||cls");
   logoMenuClientes();
-  printf("\nEscolha uma opção: \n");
+  printf("O que deseja fazer agora?");
+  printf("\nEscolha uma opção: ");
   printf("\n1 - Cadastrar Cliente");
   printf("\n2 - Lista de Clientes");
   printf("\n3 - Buscar Cliente");
@@ -208,7 +207,7 @@ void cdCliente(void){
 
   gravaUsuario(usu);
 
-  printf("\n\nUSUÁRIO CADASTRADO COM SUCESSO!\n");
+  printf("USUÁRIO CADASTRADO COM SUCESSO!");
 
 
   printf("\n");
@@ -307,17 +306,11 @@ void editarCliente(void){
     exibeCliente(usu);
     resp = menuEditarCliente();
     switch(resp){
-      case '1': editaNome(usu);
-                fwrite(usu, sizeof(Usuario), 1, fp);
-                fseek(fp, -1*sizeof(Usuario), SEEK_CUR);
+      case '1': editaNome(usu, fp);;
                 break;
-      case '2': editaEmail(usu);
-                fwrite(usu, sizeof(Usuario), 1, fp);
-                fseek(fp, -1*sizeof(Usuario), SEEK_CUR);
+      case '2': editaEmail(usu, fp);
                 break;
-      case '3': editaDataNascimento(usu);
-                fwrite(usu, sizeof(Usuario), 1, fp);
-                fseek(fp, -1*sizeof(Usuario), SEEK_CUR);
+      case '3': editaDataNascimento(usu, fp);
                 break;
       default: printf("\nOpção inválida!\n");
     }
@@ -328,14 +321,17 @@ void editarCliente(void){
   free(usu);
 }
 
-void editaNome(Usuario* usu){
+void editaNome(Usuario* usu, FILE* fp){
   char novoNome[80];
   printf("\nDigite o novo nome: ");
   scanf(" %80[^\n]",novoNome);
   strcpy(usu->nome,novoNome);
+  fseek(fp, -1*sizeof(Usuario), SEEK_CUR);
+  fwrite(usu, sizeof(Usuario), 1, fp);
+  printf("\nUsuário editado. Lembre-se de atualizar seus dados na bola de cristal da cigana.\n");
 }
 
-void editaEmail(Usuario* usu){
+void editaEmail(Usuario* usu, FILE* fp){
   char novoEmail[40];
   printf("\nDigite o novo email: ");
   scanf(" %40[^\n]",novoEmail);
@@ -344,9 +340,12 @@ void editaEmail(Usuario* usu){
     scanf(" %40[^\n]",novoEmail);
   }
   strcpy(usu->email,novoEmail);
+  fseek(fp, -1*sizeof(Usuario), SEEK_CUR);
+  fwrite(usu, sizeof(Usuario), 1, fp);
+  printf("\nUsuário editado. Lembre-se de atualizar seus dados na bola de cristal da cigana.\n");
 }
 
-void editaDataNascimento(Usuario* usu){
+void editaDataNascimento(Usuario* usu, FILE* fp){
   int novoDia, novoMes, novoAno;
   printf("\nDigite a nova de nascimento: ");
   scanf("%d/%d/%d", &novoDia, &novoMes, &novoAno);
@@ -357,6 +356,9 @@ void editaDataNascimento(Usuario* usu){
   usu->dia = novoDia;
   usu->mes = novoMes;
   usu->ano = novoAno;
+  fseek(fp, -1*sizeof(Usuario), SEEK_CUR);
+  fwrite(usu, sizeof(Usuario), 1, fp);
+  printf("\nUsuário editado. Lembre-se de atualizar seus dados na bola de cristal da cigana.\n");
 }
 
 void deletarCliente(void){
@@ -403,7 +405,7 @@ char menuPrevisoes(void){
   char opcao;
   system("clear||cls");
   logoMenuPrevisoes();
-  printf("\nEscolha uma opção: \n");
+  printf("\nEscolha uma opção: ");
   printf("\n1 - Cadastrar-se na Bola de Cristal");
   printf("\n2 - Lista de Consultores");
   printf("\n3 - Atualizar Dados da Bola de Cristal");
@@ -481,7 +483,7 @@ void cadastraBolaCristal(void){
     consu->status = 'c';
 
     gravaConsultor(consu);
-    printf("PARABÉNS! VOCÊ FOI CADASTRADO COMO CONSULTOR!\n\n");
+    printf("\nPARABÉNS! VOCÊ FOI CADASTRADO COMO CONSULTOR!\n");
     free(consu);
   } else{
     printf("\nNenhum usuário com este CPF foi cadastrado. Você precisa cadastrar-se primeiramente no Menu Clientes para ter acesso às funcionalidades da cigana...\n");
@@ -681,7 +683,7 @@ void deletaConsultor(void){
   if(encontrado){
     exibeConsultor(consu);
     printf("Deseja realmente excluir este consultor? [S/N] ");
-    scanf(" %c",&resp);
+    scanf("%c",&resp);
     if(resp == 's' || resp == 'S'){
       consu->status = 'x';
       fseek(fp2,(-1)*sizeof(Consultor),SEEK_CUR);
