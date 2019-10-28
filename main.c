@@ -25,10 +25,12 @@ int main(){
       
       case '3':
       relatorios();
+      pausaPrograma();
       break;
       
       case '4':
       creditos();
+      pausaPrograma();
       break;
       
       default:
