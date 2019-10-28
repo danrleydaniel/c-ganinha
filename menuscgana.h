@@ -57,9 +57,9 @@ void listarClientes(void); //Lista os clientes que estão cadastrados
 void buscarCliente(void); //Busca um cliente
 char menuEditarCliente(void); //Mostra as opções para editar um cliente
 void editarCliente(void); //Edita um cliente
-void editaNome(Usuario*); //Edita o nome
-void editaEmail(Usuario*); //Edita o email
-void editaDataNascimento(Usuario*); //Edita o CPF
+void editaNome(Usuario*, FILE*); //Edita o nome
+void editaEmail(Usuario*, FILE*); //Edita o email
+void editaDataNascimento(Usuario*, FILE*); //Edita o CPF
 void deletarCliente(void); //Deleta um cliente
 char menuPrevisoes(void); //Mostra o menu da área de previsões
 void cadastraBolaCristal(void); //Cadastra o cliente nas funcionalidades da cigana
