@@ -109,6 +109,8 @@ void logoRelatorios(void){
 
 char mainMenu(void){
   char opcao;
+  system("clear||cls");
+  logotipoPrincipal();
   printf("Escolha uma opção: \n\n");
   printf("1 - MENU CLIENTES\n");
   printf("2 - MENU PREVISÕES\n");
@@ -207,7 +209,7 @@ void cdCliente(void){
 
   gravaUsuario(usu);
 
-  printf("USUÁRIO CADASTRADO COM SUCESSO!");
+  printf("\n\nUSUÁRIO CADASTRADO COM SUCESSO!\n");
 
 
   printf("\n");
@@ -405,7 +407,7 @@ char menuPrevisoes(void){
   char opcao;
   system("clear||cls");
   logoMenuPrevisoes();
-  printf("\nEscolha uma opção: ");
+  printf("\nEscolha uma opção: \n");
   printf("\n1 - Cadastrar-se na Bola de Cristal");
   printf("\n2 - Lista de Consultores");
   printf("\n3 - Atualizar Dados da Bola de Cristal");
@@ -683,7 +685,7 @@ void deletaConsultor(void){
   if(encontrado){
     exibeConsultor(consu);
     printf("Deseja realmente excluir este consultor? [S/N] ");
-    scanf("%c",&resp);
+    scanf(" %c",&resp);
     if(resp == 's' || resp == 'S'){
       consu->status = 'x';
       fseek(fp2,(-1)*sizeof(Consultor),SEEK_CUR);
