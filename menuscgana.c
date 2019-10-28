@@ -109,8 +109,6 @@ void logoRelatorios(void){
 
 char mainMenu(void){
   char opcao;
-  system("clear||cls");
-  logotipoPrincipal();
   printf("Escolha uma opção: \n\n");
   printf("1 - MENU CLIENTES\n");
   printf("2 - MENU PREVISÕES\n");
@@ -209,7 +207,7 @@ void cdCliente(void){
 
   gravaUsuario(usu);
 
-  printf("\n\nUSUÁRIO CADASTRADO COM SUCESSO!\n");
+  printf("USUÁRIO CADASTRADO COM SUCESSO!");
 
 
   printf("\n");
@@ -407,7 +405,7 @@ char menuPrevisoes(void){
   char opcao;
   system("clear||cls");
   logoMenuPrevisoes();
-  printf("\nEscolha uma opção: \n");
+  printf("\nEscolha uma opção: ");
   printf("\n1 - Cadastrar-se na Bola de Cristal");
   printf("\n2 - Lista de Consultores");
   printf("\n3 - Atualizar Dados da Bola de Cristal");
@@ -685,7 +683,7 @@ void deletaConsultor(void){
   if(encontrado){
     exibeConsultor(consu);
     printf("Deseja realmente excluir este consultor? [S/N] ");
-    scanf(" %c",&resp);
+    scanf("%c",&resp);
     if(resp == 's' || resp == 'S'){
       consu->status = 'x';
       fseek(fp2,(-1)*sizeof(Consultor),SEEK_CUR);
@@ -791,24 +789,30 @@ void exclusaoFisicaUsuarios(void){
   FILE* fp4;
   fp = fopen("usuarios.dat","rb");
   fp4 = fopen("backup.dat","wb");
-  usu = (Usuario*) malloc(sizeof(Usuario));
-  while(fread(usu,sizeof(Usuario),1,fp)){
-    if(usu->status == 'c'){
-      fwrite(usu,sizeof(Usuario),1,fp4);
+  if(fp == NULL || fp4 == NULL){
+    printf("\nUm dos arquivos não foi encontrado ou não existe.\n");
+    fclose(fp);
+    fclose(fp4);
+  } else{
+    usu = (Usuario*) malloc(sizeof(Usuario));
+    while(fread(usu,sizeof(Usuario),1,fp)){
+      if(usu->status == 'c'){
+        fwrite(usu,sizeof(Usuario),1,fp4);
+      }
     }
+    free(usu);
+    fclose(fp);
+    fclose(fp4);
+    fp4 = fopen("backup.dat","rb");
+    fp = fopen("usuarios.dat","wb");
+    usu = (Usuario*) malloc(sizeof(Usuario));
+    while(fread(usu,sizeof(Usuario),1,fp4)){
+      fwrite(usu,sizeof(Usuario),1,fp);
+    }
+    free(usu);
+    fclose(fp);
+    fclose(fp4);
   }
-  free(usu);
-  fclose(fp);
-  fclose(fp4);
-  fp4 = fopen("backup.dat","rb");
-  fp = fopen("usuarios.dat","wb");
-  usu = (Usuario*) malloc(sizeof(Usuario));
-  while(fread(usu,sizeof(Usuario),1,fp4)){
-    fwrite(usu,sizeof(Usuario),1,fp);
-  }
-  free(usu);
-  fclose(fp);
-  fclose(fp4);
 }
 
 void exclusaoFisicaConsultores(void){
@@ -817,22 +821,28 @@ void exclusaoFisicaConsultores(void){
   FILE* fp4;
   fp2 = fopen("consultores.dat","rb");
   fp4 = fopen("backup.dat","wb");
-  consu = (Consultor*) malloc(sizeof(Consultor));
-  while(fread(consu,sizeof(Consultor),1,fp2)){
-    if(consu->status == 'c'){
-      fwrite(consu,sizeof(Consultor),1,fp4);
+  if(fp2 == NULL || fp4 == NULL){
+    printf("\nUm dos arquivos não foi encontrado ou não existe\n");
+    fclose(fp2);
+    fclose(fp4);
+  } else{
+    consu = (Consultor*) malloc(sizeof(Consultor));
+    while(fread(consu,sizeof(Consultor),1,fp2)){
+      if(consu->status == 'c'){
+        fwrite(consu,sizeof(Consultor),1,fp4);
+      }
     }
+    free(consu);
+    fclose(fp2);
+    fclose(fp4);
+    fp4 = fopen("backup.dat","rb");
+    fp2 = fopen("consultores.dat","wb");
+    consu = (Consultor*) malloc(sizeof(Consultor));
+    while(fread(consu,sizeof(Consultor),1,fp4)){
+      fwrite(consu,sizeof(Consultor),1,fp2);
+    }
+    free(consu);
+    fclose(fp2);
+    fclose(fp4);
   }
-  free(consu);
-  fclose(fp2);
-  fclose(fp4);
-  fp4 = fopen("backup.dat","rb");
-  fp2 = fopen("consultores.dat","wb");
-  consu = (Consultor*) malloc(sizeof(Consultor));
-  while(fread(consu,sizeof(Consultor),1,fp4)){
-    fwrite(consu,sizeof(Consultor),1,fp2);
-  }
-  free(consu);
-  fclose(fp2);
-  fclose(fp4);
 }
