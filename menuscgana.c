@@ -308,7 +308,7 @@ void editarCliente(void){
     exibeCliente(usu);
     resp = menuEditarCliente();
     switch(resp){
-      case '1': editaNome(usu, fp);;
+      case '1': editaNome(usu, fp);
                 break;
       case '2': editaEmail(usu, fp);
                 break;
