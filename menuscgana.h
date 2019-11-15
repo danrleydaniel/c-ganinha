@@ -1,4 +1,6 @@
 typedef struct usuario Usuario;
+typedef struct noUsuario NoUsuario;
+
 typedef struct consultor Consultor;
 typedef struct relatorio Relatorio;
 
@@ -10,6 +12,17 @@ struct usuario{
   int mes;
   int ano;
   char status;
+};
+
+struct noUsuario{
+  char nome[80];
+  char email[40];
+  char cpf[15];
+  int dia;
+  int mes;
+  int ano;
+  char status;
+  NoUsuario* prox;
 };
 
 struct consultor{
@@ -43,9 +56,11 @@ void logoEditarBolaCristal(void); //Mostra o logotipo do Menu Editar Dados da Bo
 void logoConsultarCigana(void); //Mostra o logotipo do Menu Consultar Cigana
 void logoDeletarConsultor(void); //Mostra o logotipo do Menu Deletar Consultor
 void logoRelatorios(void); //Mostra o logotipo do Menu Relatorios
+
 void consultarCigana(void); //Realiza a consulta com a cigana
 void previsaoDiaria(Consultor*); //Realiza a previsão diária com a cigana
 void previsao(int); //Recebe um "número da sorte" e printa uma previsão com base nele
+
 void exibeCliente(Usuario*); //Exibe um usuário em específico
 char mainMenu(void); //Menu principal do programa
 char menuClientes(void); //Mostra o menu da área dos clientes
@@ -53,7 +68,11 @@ void cdCliente(void); //Cadastra um novo usuário
 void gravaUsuario(Usuario*); //Grava os dados de um usuário num arquivo
 void gravaConsultor(Consultor*); //Grava os dados de um consultor num arquivo
 void gravaRelatorio(Relatorio*); //Grava os dados de um relatório num arquivo
+char menuListarCliente(void); //Mostra as opções para listar os clientes
 void listarClientes(void); //Lista os clientes que estão cadastrados
+void listaNormal(void); //Lista os clientes que estão cadastrados
+NoUsuario* listaInvertida(void); //Gera uma lista de com a ordem inversa de usuários cadastrados
+void exibeListaUsuario(NoUsuario*); //Função auxiliar para a listaInvertida
 void buscarCliente(void); //Busca um cliente
 char menuEditarCliente(void); //Mostra as opções para editar um cliente
 void editarCliente(void); //Edita um cliente
@@ -61,6 +80,7 @@ void editaNome(Usuario*, FILE*); //Edita o nome
 void editaEmail(Usuario*, FILE*); //Edita o email
 void editaDataNascimento(Usuario*, FILE*); //Edita o CPF
 void deletarCliente(void); //Deleta um cliente
+
 char menuPrevisoes(void); //Mostra o menu da área de previsões
 void cadastraBolaCristal(void); //Cadastra o cliente nas funcionalidades da cigana
 void exibeConsultor(Consultor*); //Exibe um consultor em específico
@@ -69,7 +89,9 @@ void editarDadosBolaCristal(void); //Edita os dados de algum consultor na bola d
 void deletaConsultor(void); //Deleta um consultor
 void relatorios(void); //Exibe todos os relatórios gerados
 void exibeRelatorio(Relatorio*); //Exibe um relatório em específico
+
 void creditos(void); //Informações sobre os desenvolvedores e o programa
+
 void limparArquivos(void); //Responsável por realizar a exclusão física nos arquivos de dados
 void exclusaoFisicaUsuarios(void); //Realiza a exclusão física no arquivo de usuários
 void exclusaoFisicaConsultores(void); //Realiza a exclusão física no arquivo de consultores
