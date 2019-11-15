@@ -217,7 +217,42 @@ void cdCliente(void){
   free(usu);
 }
 
+char menuListarCliente(void){
+  char opcao;
+  printf("\nQual tipo de lista deseja ver?\n"
+  "1 - Lista Normal\n"
+  "2 - Lista Direta\n"
+  "3 - Lista Invertida\n");
+  scanf(" %c",&opcao);
+  return opcao;
+}
+
 void listarClientes(void){
+  system("clear||cls");
+  char op;
+  NoUsuario* lista;
+  logoEditarCliente();
+  op = menuListarCliente();
+  switch(op){
+    case '1': 
+      listaNormal(); 
+      break;
+
+    case '2':
+      printf("\nEm breve!\n");
+      break;
+
+    case '3':
+      lista = listaInvertida();
+      exibeListaUsuario(lista);
+      break;
+
+    default:
+      printf("\nOpção inválida.\n");
+  }
+}
+
+void listaNormal(void){
   system("clear||cls");
   FILE* fp;
   Usuario* usu;
@@ -234,6 +269,56 @@ void listarClientes(void){
   }
   free(usu);
   fclose(fp);
+}
+
+NoUsuario* listaInvertida(void){
+  system("clear||cls");
+  logoListaClientes();
+  FILE* fp;
+  Usuario* usu;
+  NoUsuario* noUsu;
+  NoUsuario* lista;
+
+  lista = NULL;
+  fp = fopen("usuarios.dat", "rb");
+  if(fp == NULL){
+    printf("\nOps! Aparentemente o arquivo 'usuarios.dat' não foi encontrado.\n");
+    printf("Tente novamente mais tarde.\n");
+    exit(1);
+  }
+
+  usu = (Usuario*) malloc(sizeof(Usuario));
+  while(fread(usu, sizeof(Usuario), 1, fp)){
+    if(usu->status == 'c'){
+      noUsu = (NoUsuario*) malloc(sizeof(NoUsuario));
+      strcpy(noUsu->nome, usu->nome);
+      strcpy(noUsu->email, usu->email);
+      strcpy(noUsu->cpf, usu->cpf);
+      noUsu->dia = usu->dia;
+      noUsu->mes = usu->mes;
+      noUsu->ano = usu->ano;
+      noUsu->status = usu->status;
+      noUsu->prox = lista;
+      lista = noUsu;
+    }
+  }
+  fclose(fp);
+  free(usu);
+  return lista;
+}
+
+void exibeListaUsuario(NoUsuario* lista){
+  while(lista != NULL){
+    printf("\nNome: %s \n", lista->nome);
+    printf("Email: %s \n",lista->email);
+    printf("CPF: %s \n",lista->cpf);
+    printf("Data de nascimento: %d/%d/%d \n", lista->dia, lista->mes, lista->ano);
+    if(lista->status == 'c'){
+      printf("Usuário cadastrado normalmente\n");
+    } else{
+      printf("Obs: este usuário encontra-se deletado.\n");
+    }
+  }
 }
 
 void exibeCliente(Usuario* usu){
@@ -726,19 +811,28 @@ void exibeRelatorio(Relatorio* rel){
 }
 
 void creditos(void){
-  system("clear||cls");
-  printf("\nDesenvolvido por: Danrley Daniel e Hiago Roque\n");
-  printf("Sob orientação do professoe Flavius Gorgônio\n");
-  printf("Email: danrleydaniel21@gmail.com\n");
-  printf("medeiroshiago70@gmail.com\n");
-  printf("GitHub: ");
-  printf("\nhttps://github.com/danrleydaniel");
-  printf("\nhttps://github.com/hiagor1");
-  printf("\nCréditos das ASCII arts para os sites: ");
-  printf("\nhttps://asciiart.website");
-  printf("\nhttps://www.asciiart.eu");
-  printf("\nhttp://www.ascii-art.de");
-  printf("\nhttps://ascii.co.uk\n");
+  printf("===========\n"
+  "|| SOBRE ||\n"
+  "===========\n"
+  "\n"
+  "Desenvolvido por: \n"
+  "Danrley Daniel\n"
+  "GITHUB: https://github.com/danrleydaniel\n"
+  "EMAIL: danrleydaniel21@gmail.com\n"
+  "\n"
+  "Hiago Roque\n"
+  "GITHUB: https://github.com/hiagor1\n"
+  "EMAIL: medeiroshiago70@gmail.com \n"
+  "\n"
+  "Sob orientação do professor Flavius Gorgônio\n"
+  "\n"
+  "Programa desenvolvido para a disciplina de Programação, do curso Sistemas de Informação (CERES - UFRN, Caicó, 2019).\n"
+  "\n"
+  "Créditos das ASCII Arts usadas no projeto para os sites:\n"
+  "https://asciiart.website\n"
+  "https://www.asciiart.eu\n"
+  "http://www.ascii-art.de\n"
+  "https://ascii.co.uk\n");
 }
 
 void gravaUsuario(Usuario* usu){
