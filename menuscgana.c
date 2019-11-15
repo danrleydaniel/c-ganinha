@@ -318,6 +318,7 @@ void exibeListaUsuario(NoUsuario* lista){
     } else{
       printf("Obs: este usuário encontra-se deletado.\n");
     }
+    lista = lista->prox;
   }
 }
 
