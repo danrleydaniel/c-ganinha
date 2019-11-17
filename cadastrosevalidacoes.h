@@ -10,6 +10,7 @@ int dataValida(int, int, int); //Função do professor Flavius Gorgônio que che
 int validaCpf(char *); //Função que verifica a validez de um CPF dado pelo usário
 int validaEmail(char *); //Função que verifica a validez de um email dado pelo usário
 //Funções que mostram as características de cada signo:
+int Tarot(void);
 void ariesCarac(void);
 void touroCarac(void);
 void gemeosCarac(void);
@@ -49,3 +50,25 @@ void carac8(void);
 void carac9(void);
 void carac11(void);
 void carac22(void);
+void TheFoolCard(void);
+void TheMagicianCard(void);
+void TheHighPriestessCard(void);
+void TheEmpressCard(void);
+void TheEmperorCard(void);
+void TheHierophantCard(void);
+void TheLoversCard(void);
+void TheChariotCard(void);
+void StrengthCard(void);
+void TheHermitCard(void);
+void TheWheelOfFortuneCard(void);
+void JusticeCard(void);
+void TheHangedManCard(void);
+void DeathCard(void);
+void TemperanceCard(void);
+void TheDevilCard(void);
+void TheTowerCard(void);
+void TheStarCard(void);
+void TheMoonCard(void);
+void TheSunCard(void);
+void JudgementCard(void);
+void TheWorldCard(void);

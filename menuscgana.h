@@ -95,3 +95,4 @@ void creditos(void); //Informações sobre os desenvolvedores e o programa
 void limparArquivos(void); //Responsável por realizar a exclusão física nos arquivos de dados
 void exclusaoFisicaUsuarios(void); //Realiza a exclusão física no arquivo de usuários
 void exclusaoFisicaConsultores(void); //Realiza a exclusão física no arquivo de consultores
+void chamaTarot(void);

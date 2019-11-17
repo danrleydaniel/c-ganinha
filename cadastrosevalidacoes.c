@@ -720,6 +720,124 @@ void numCarac(int numf){
         carac22();
 }
 
+int Tarot(void){
+    int num;
+    srand(time(NULL));
+    num = (rand() % 23);
+    num = 0;
+
+    if (num == 0 || num == 22)
+    {
+        TheFoolCard();
+        return 0;
+    }
+    else if (num == 1)
+    {
+        TheMagicianCard();
+        return 0;
+    }
+    else if (num == 2)
+    {
+        TheHighPriestessCard();
+        return 0;
+    }
+    else if (num == 3)
+    {
+        TheEmpressCard();
+        return 0;
+    }
+    else if (num == 4)
+    {
+        TheEmperorCard();
+        return 0;
+    }
+    else if (num == 5)
+    {
+        TheHierophantCard();
+        return 0;
+    }
+    else if (num == 6)
+    {
+        TheLoversCard();
+        return 0;
+    }
+    else if (num == 7)
+    {
+        TheChariotCard();
+        return 0;
+    }
+    else if (num == 8)
+    {
+        StrengthCard();
+        return 0;
+    }
+    else if (num == 9)
+    {
+        TheHermitCard();
+        return 0;
+    }
+    else if (num == 10)
+    {
+        TheWheelOfFortuneCard();
+        return 0;
+    }
+    else if (num == 11)
+    {
+        JusticeCard();
+        return 0;
+    }
+    else if (num == 12)
+    {
+        TheHangedManCard();
+        return 0;
+    }
+    else if (num == 13)
+    {
+        DeathCard();
+        return 0;
+    }
+    else if (num == 14)
+    {
+        TemperanceCard();
+        return 0;
+    }
+    else if (num == 15)
+    {
+        TheDevilCard();
+        return 0;
+    }
+    else if (num == 16)
+    {
+        TheTowerCard();
+        return 0;
+    }
+    else if (num == 17)
+    {
+        TheStarCard();
+        return 0;
+    }
+    else if (num == 18)
+    {
+        TheMoonCard();
+        return 0;
+    }
+    else if (num == 19)
+    {
+        TheSunCard();
+        return 0;
+    }
+    else if (num == 20)
+    {
+        JudgementCard();
+        return 0;
+    }
+    else if (num == 21)
+    {
+        TheWorldCard();
+        return 0;
+    }
+}
+
 void carac1(void){
     printf("Nativo 1:\n"
     "Caracteristicas positivas:\n"
@@ -927,4 +1045,399 @@ void carac22(void){
     "  * Cinismo\n"
     "  * Criticismo\n"
     "  * Inlfexível\n");
+}
+
+
+void TheFoolCard(void){
+    printf("\nCarta O Tolo Caracteristicas");
+    printf("\n");
+    printf("Ás vezes na vida é necessário retornamos para o ponto de partida, o novo ciclo e esta é a energia da carta do Tarot o Louco.\n\n");
+    printf("Pontos positivos:\n\n"
+    "  * Impetuosidade\n"
+    "  * Vontade de viver\n"
+    "  * Entusiasmo temporário\n"
+    "  * Integridade\n"
+    "  * Otimismo\n\n"
+    "Pontos negativos:\n\n"
+    "  * Imprudência\n"
+    "  * Falta de paciência\n"
+    "  * Precipitação\n"
+    );
+    printf("\n");
+    system("display English/0the_fool.jpg");
+}
+
+void TheMagicianCard(void){
+    printf("\nCarta O Mago Caracteristicas");
+    printf("\n");
+    printf("Possui as ferramentas necessárias para desbravar um universo desconhecido de possibilidades.\n\n");
+    printf("Pontos positivos:\n\n"
+    "  * Força de vontade\n"
+    "  * Conhecimento\n"
+    "  * Esperteza\n\n"
+    "Pontos negativos:\n\n"
+    "  * Ilusão\n"
+    "  * Falta de controle\n"
+    );
+    printf("\n");
+    system("display English/1the_magician.jpg");
+}
+
+void TheHighPriestessCard(void){
+    printf("\nCarta A Papisa Caracteristicas");
+    printf("\n");
+    printf("Indica a sabedoria e a paciência de saber ouvir para poder concluir.\n\n");
+    printf("Pontos positivos:\n\n"
+    "  * Preparo\n"
+    "  * Intuição\n"
+    "  * Resignação\n"
+    "  * fé\n"
+    "  * Sabedoria\n"
+    "  * Piedade\n\n"
+    "Pontos negativos:\n\n"
+    "  * Medo do novo\n"
+    "  * Evolução lenta\n"
+    );
+    printf("\n");
+    system("display English/2the_high_priestess.jpg");
+}
+
+void TheEmpressCard(void){
+    printf("\nCarta A Imperatriz Caracteristicas");
+    printf("\n");
+    printf("Poder de solução de problemas e melhora de qualquer situação.\n\n");
+    printf("Pontos positivos:\n\n"
+    "  * Estabilidade\n"
+    "  * Beleza\n"
+    "  * Riqueza\n"
+    "  * Intuição\n"
+    "  * Sabedoria\n\n"
+    "Pontos negativos:\n\n"
+    "  * Intrigas\n"
+    "  * Desavenças\n"
+    );
+    printf("\n");
+    system("display English/3the_empress.jpg");
+}
+
+void TheEmperorCard(void){
+    printf("\nCarta O Emperador Caraxteristicas");
+    printf("\n");
+    printf("Representa uma pessoa extremamente intransigente, dominador e soberano.\n\n");
+    printf("Pontos positivos:\n\n"
+    "  * Organização\n"
+    "  * Respeito\n"
+    "  * Orientação\n"
+    "  * Proteção\n"
+    "  * Cautela\n\n"
+    "Pontos negativos:\n\n"
+    "  * Ser reprimido\n"
+    "  * Ser rebaixado\n"
+    );
+    printf("\n");
+    system("display English/4the_emperor.jpg");
+}
+
+void TheHierophantCard(void){
+    printf("\nCarta O Sacerdote Caraxteristicas");
+    printf("\n");
+    printf("Conexão do poder e da sabedoria divina com o mundo humano.\n\n");
+    printf("Pontos positivos:\n\n"
+    "  * Justiça\n"
+    "  * Ordem\n"
+    "  * Organização\n"
+    "  * Lealdade\n"
+    "  * Amizade\n\n"
+    "Pontos negativos:\n\n"
+    "  * Indecisão\n"
+    );
+    printf("\n");
+    system("display English/5the_hierophant.jpg");
+}
+
+void TheLoversCard(void){
+    printf("Carta Os Enamorados Caracteristicas:\n");
+    printf("\n");
+    printf("Representa oportunidades, benefícios e possíveis ofertas em sua vida neste momento.\n\n");
+    printf("Pontos positivos:\n\n"
+    "  * Familiar\n"
+    "  * União\n"
+    "  * Dúvidas\n"
+    "  * Desejos\n"
+    "Pontos negativos:\n\n"
+    "  * Medo de errar\n"
+    "  * Pressão externa\n"
+    "  * Tensão"
+    );
+    printf("\n");
+    system("display English/6the_lovers.jpg");
+}
+
+void TheChariotCard(void){
+    printf("Carta A Carruagem Caracteristicas:\n");
+    printf("\n");
+    printf("Representa um período de grande afeto e proteção, que pode trazer grandes e intensas atividades.\n\n");
+    printf("Pontos positivos:\n\n"
+    "  * Viajante\n"
+    "  * Dedicação\n"
+    "  * Honra\n"
+    "  * Motivação\n"
+    "  * Movimento\n"
+    "  * Mudanças\n"
+    "  * Visão dos caminhos\n"
+    "  * Decisão\n"
+    "  * Determinação\n"
+    "  * Coragem\n"
+    "  * Planejamento\n"
+    "Pontos negativos:\n\n"
+    "  * Alvo de oportunistas\n"
+    "  * Ambição\n"
+    "  * Orgulho\n"
+    "  * Ser manipulado facilmente\n"
+    );
+    system("display English/7the_chariot.jpg");
+}
+
+void StrengthCard(void){
+    printf("Carta Força Caracteristicas:\n");
+    printf("\n");
+    printf("Controle sobre as paixões, o amor e a eficiência das conquistas.\n\n");
+    printf("Pontos positivos:\n\n"
+    "  * Coragem\n" 
+    "  * Domínio emocional\n"
+    "  * Força visceral\n"
+    "  * Superação\n" 
+    "  * Ímpeto\n"
+    "  * Segurança\n"
+    "  * Realização\n"
+    "Pontos negativos:\n\n"
+    "  * Agressividade\n"
+    "  * Impaciência\n"
+    );
+    printf("\n");
+    system("display English/8strength.jpg");
+}
+
+void TheHermitCard(void){
+    printf("Carta Eremita Caracteristicas:\n");
+    printf("\n");
+    printf("Ensina a desligar a mente e aproveitar o silêncio para obter iluminação e autoconhecimento.\n\n");
+    printf("Pontos positivos:\n\n"
+    "  * Iluminação\n" 
+    "  * Sabedoria\n"
+    "  * Autoconhecimento\n"
+    "  * Prudência\n"
+    "  * Concentração\n"
+    "Pontos negativos:\n\n"
+    "  * Solidão\n"
+    );
+    printf("\n");
+    system("display English/9the_hermit.jpg");
+}
+
+void TheWheelOfFortuneCard(void){
+    printf("Carta Roda Da Fortuna Caracteristicas:\n");
+    printf("\n");
+    printf("simboliza riqueza, imediatamente conclui-se que o consulente será alvo de ganhos materiais e prosperidade.\n\n");
+    printf("Pontos positivos:\n\n"
+    "  * Recompensas\n" 
+    "  * Boa sorte\n"
+    "  * Ciclo da vida\n"
+    "Pontos negativos:\n\n"
+    "  * Recompensas\n"
+    "  * Má sorte\n"
+    "  * Ciclo da vida\n"
+    );
+    printf("\n");
+    system("display English/10the_wheel_of_fortune.jpg");
+}
+
+void JusticeCard(void){
+    printf("Carta Justiça Caracteristicas:\n");
+    printf("\n");
+    printf("Ela pede que tenha sabedoria e saiba pensar com cautela nas suas tomadas de decisões.\n\n");
+    printf("Pontos positivos:\n\n"
+    "  * Autoconhecimento\n" 
+    "  * Clareza\n"
+    "  * Sabedoria\n"
+    "  * Karma\n"
+    "Pontos negativos:\n\n"
+    "  * Más interpretações\n"
+    "  * Karma\n"
+    );
+    printf("\n");
+    system("display English/11justice.jpg");
+}
+
+void TheHangedManCard(void){
+    printf("Carta O Enforcado Caracteristicas:\n");
+    printf("\n");
+    printf("Não faça nada sem ponderar, sem observar, sem pensar.\n\n");
+    printf("Pontos positivos:\n\n"
+    "  * Força física e espiritual\n"
+    "  * Atenção\n"
+    "  * Paciência\n"
+    "Pontos negativos:\n\n"
+    "  * Incertaza\n"
+    "  * Cansaço\n"
+    );
+    printf("\n");
+    system("display English/12the_hanged_man.jpg");
+}
+
+void DeathCard(void){
+    printf("Carta Morte Caracteristicas:\n");
+    printf("\n");
+    printf("Ela não simboliza perder a vida e sim, uma transformação gigante.\n\n");
+    printf("Pontos positivos:\n\n"
+    "  * Renascimento\n"
+    "  * Amadurecimento\n"
+    "  * Energia de superação\n"
+    "Pontos negativos:\n\n"
+    "  * Covardia\n"
+    "  * Se prender ao passado\n"
+    );
+    printf("\n");
+    system("display English/13death.jpg");
+}
+
+void TemperanceCard(void){
+    printf("Carta Temeperança Caracteristicas:\n");
+    printf("\n");
+    printf("A Temperança traz a conexão com o mundo espiritual.\n\n");
+    printf("Pontos positivos:\n\n"
+    "  * Renovação\n"
+    "  * Equilíbrio\n"
+    "  * Espírito\n"
+    "  * Razão\n"
+    "  * Emoção\n" 
+    "Pontos negativos:\n\n"
+    "  * Facilmente persuadido(a)\n"
+    "  * Tenta agradar a todos\n"
+    );
+    printf("\n");
+    system("display English/14temperance.jpg");
+}
+
+void TheDevilCard(void){
+    printf("Carta O Diabo Caracteristicas:\n");
+    printf("\n");
+    printf("O poder e ambição unidos te levará aos diversos aspectos que poderão definir o seu futuro.\n\n");
+    printf("Pontos positivos:\n\n"
+    "  * Fertilidade\n"
+    "  * Ambição\n"
+    "  * Desejo\n"
+    "  * Audácia\n"
+    "  * Paixão\n" 
+    "Pontos negativos:\n\n"
+    "  * Luxúria\n"
+    "  * Ambição\n"
+    "  * Cobiça\n"
+    );
+    system("display English/15the_devil.jpg");
+}
+
+void TheTowerCard(void){
+    printf("Carta A Torre Caracteristicas:\n");
+    printf("\n");
+    printf("Uma força exterior te fará abandonar o seu conforto\n\n");
+    printf("Pontos positivos:\n\n"
+    "  * Amadurecimento\n"
+    "  * Ciclo\n"
+    "Pontos negativos:\n\n"
+    "  * Teimosia\n"
+    );
+    system("display English/16the_tower.jpg");
+}
+
+void TheStarCard(void){
+    printf("Carta A Estrela Caracteristicas:\n");
+    printf("\n");
+    printf("Traz o poder da orientação para a conquista dos objetivos.\n\n");
+    printf("Pontos positivos:\n\n"
+    "  * Verdade e realidade\n"
+    "  * Equilíbrio\n"
+    "  * Inspiração\n"
+    "  * Busca por orientação\n"
+    "  * Alcance de desejos\n"
+    "  * Renovação\n"
+    "  * Sucesso\n"
+    "  * Esperança\n"
+    "  * Brilho\n"
+    "  * Perfeição\n"
+    "Pontos negativos:\n\n"
+    "  * Passa dos limites\n"
+    "  * Se cobra demais\n"
+    );
+    system("display English/17the_star.jpg");
+}
+
+void TheMoonCard(void){
+    printf("Carta A Lua Caracteristicas:\n");
+    printf("\n");
+    printf("Conecta ao Universo de coisas escondidas que podem existir nos mais diversos processos.\n\n");
+    printf("Pontos positivos:\n\n"
+    "  * Simbolismo\n"
+    "  * Sabedoria intelectual\n"
+    "  * Conhecimento instintivo\n"
+    "Pontos negativos:\n\n"
+    "  * Receio\n"
+    "  * Medo\n"
+    "  * Insegurança\n"
+    );
+    system("display English/18the_moon.jpg");
+}
+
+void TheSunCard(void){
+    printf("Carta O Sol Caracteristicas:\n");
+    printf("\n");
+    printf("É a hora de encontrar esclarecimentos à todas as dúvidas que te perseguiram e firmar com você mesmo o compromisso de empenho para conquista..\n\n");
+    printf("Pontos positivos:\n\n"
+    "  * Brilho\n"
+    "  * Sucesso\n"
+    "  * Glória\n"
+    "  * Alegria\n"
+    "  * Intuição\n"
+    "  * Vitalidade\n"
+    "  * Razão\n"
+    "Pontos negativos:\n\n"
+    "  * Orgulho\n"
+    "  * Confusão\n"
+    );
+    system("display English/19the_sun.jpg");
+}
+
+void JudgementCard(void){
+    printf("Carta Julgamento Caracteristicas:\n");
+    printf("\n");
+    printf("Renovação e novas oportunidades surgindo. Por outro lado tudo o que foi plantado no passado será colhido nos dias atuais.\n");
+    printf("Pontos positivos:\n\n"
+    "  * Organização\n"
+    "  * Estratégia\n"
+    "  * Crítica\n"
+    "  * Curiosidade\n"
+    "Pontos negativos:\n\n"
+    "  * Infame\n"
+    "  * Chateação\n"
+    );
+    system("display English/20judgement.jpg");
+}
+
+void TheWorldCard(void){
+    printf("Carta O Mundo Caracteristicas:\n");
+    printf("\n");
+    printf("Coroação para quem sempre se empenhou muito e se dedicou em cada quesito da vida.\n");
+    printf("Pontos positivos:\n\n"
+    "  * Autoconhecimento\n"
+    "  * Sucesso\n"
+    "  * Plenitude\n"
+    "  * Coquistas\n"
+    "  * Boa vida\n"
+    "  * Realização\n"
+    "  * Virtuosidade\n"
+    "  * Efeitos benéficos\n"
+    "Pontos negativos:\n\n"
+    "  * Nenhum\n"
+    );
+    system("display English/21the_world.jpg");
 }

@@ -498,7 +498,8 @@ char menuPrevisoes(void){
   printf("\n2 - Lista de Consultores");
   printf("\n3 - Atualizar Dados da Bola de Cristal");
   printf("\n4 - Consultar Cigana");
-  printf("\n5 - Romper Contrato com a Cigana");
+  printf("\n5 - Tarot do Dia");
+  printf("\n6 - Romper Contrato com a Cigana");
   printf("\n0 - Voltar ao Menu Principal\n");
   scanf("%c",&opcao);
   while(opcao != '0'){
@@ -524,6 +525,11 @@ char menuPrevisoes(void){
       break;
 
       case '5':
+      chamaTarot();
+      pausaPrograma();
+      break;
+
+      case '6':
       deletaConsultor();
       pausaPrograma();
 
@@ -941,5 +947,31 @@ void exclusaoFisicaConsultores(void){
     free(consu);
     fclose(fp2);
     fclose(fp4);
+  }
+}
+
+void chamaTarot(void){
+  system("clear||cls");
+  char procurado[15];
+  int encontrado = 0;
+  FILE* fp2;
+  Consultor* consu;
+  printf("\nDigite o seu CPF: ");
+  scanf(" %15[^\n]",procurado);
+  fp2 = fopen("consultores.dat","rb");
+  if(fp2 == NULL){
+    printf("\nOps! Aparentemente o arquivo 'consultores.dat' não foi encontrado. Tente novamente\n");
+    fclose(fp2);
+  } else{
+    consu = (Consultor*) malloc(sizeof(Consultor));
+    while((!encontrado) && (fread(consu,sizeof(Consultor),1,fp2))){
+      if(strcmp(consu->cpf,procurado) == 0 && (consu->status == 'c')){
+        encontrado = 1;
+      }
+    }
+    fclose(fp2);
+    if(encontrado){
+      Tarot();
+    }
   }
 }
