@@ -724,7 +724,6 @@ int Tarot(void){
     int num;
     srand(time(NULL));
     num = (rand() % 23);
-    num = 0;
 
     if (num == 0 || num == 22)
     {
