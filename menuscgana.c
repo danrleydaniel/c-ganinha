@@ -10,15 +10,15 @@
 #include "menuscgana.h"
 
 void logotipoPrincipal(void){
-  printf("//////////////////////////////////\n");
-  printf("//     SANDRA ROSA MADALENA     //\n");
-  printf("//////////////////////////////////");
+  printf("////////////////////////////\n");
+  printf("//  SANDRA ROSA MADALENA  //\n");
+  printf("////////////////////////////");
   printf("\n\n");
 }
 
 void logoCadastrarCliente(void){
   printf("==========================\n"
-  "||CADASTRAR NOVO USUÁRIO||\n"
+  "|| CADASTRAR NOVO USUÁRIO ||\n"
   "==========================\n"
   "");
 }
@@ -93,6 +93,13 @@ void logoConsultarCigana(void){
   "");
 }
 
+void logoTarotDiario(void){
+  printf("==================\n"
+  "|| TAROT DO DIA ||\n"
+  "==================\n"
+  "");
+}
+
 void logoDeletarConsultor(void){
   printf("=======================\n"
   "|| DELETAR CONSULTOR ||\n"
@@ -126,8 +133,7 @@ char menuClientes(void){
   char opcao;
   system("clear||cls");
   logoMenuClientes();
-  printf("O que deseja fazer agora?");
-  printf("\nEscolha uma opção: ");
+  printf("\nEscolha uma opção: \n");
   printf("\n1 - Cadastrar Cliente");
   printf("\n2 - Lista de Clientes");
   printf("\n3 - Buscar Cliente");
@@ -404,6 +410,15 @@ void liberaLista(NoUsuario* lista){
 	}
 }
 
+void liberaListaConsultor(NoConsultor* lista){
+  NoConsultor* aux = lista;
+  while (lista != NULL) {
+		lista = lista->prox;
+		free(aux);
+		aux = lista;
+	}
+}
+
 void exibeCliente(Usuario* usu){
   printf("Nome: %s \n",usu->nome);
   printf("Email: %s \n",usu->email);
@@ -618,8 +633,7 @@ char menuPrevisoes(void){
       default:
       printf("\nOpção inválida\n");
     }
-  system("clear||cls");
-  printf("\nO que deseja fazer agora?\n");
+  printf("\n");
   opcao = menuPrevisoes();
   }
   return opcao;
@@ -676,28 +690,181 @@ void exibeConsultor(Consultor* consu){
   printf("\n\n");
 }
 
+int menuListarConsultor(void){
+  char opcao;
+  printf("\nQual tipo de lista deseja ver?\n\n"
+  "1 - Lista Normal\n"
+  "2 - Lista Ordenada\n"
+  "3 - Lista De Clientes Recentes\n");
+  scanf(" %c",&opcao);
+  return opcao;
+}
+
 void listarConsultores(void){
-  // crriar switch
-  // dentro do switch por as listas
-  // criar exibir lista consultor
-  // abrir consultores.dat
-  // criar NoConsultor*
   system("clear||cls");
-  FILE* fp2;
-  Consultor* consu;
+  char op;
   logoListarConsultores();
-  consu = (Consultor*) malloc(sizeof(Usuario));
-  fp2 = fopen("consultores.dat","rb");
-  if(fp2 == NULL){
-    printf("\nOps! Aparentemente o arquivo 'consultores.dat' não foi encontrado. Tente novamente\n");
+  op = menuListarConsultor();
+  switch(op){
+    case '1': 
+      listaDiretaConsultor(); 
+      break;
+
+    case '2':
+      listaOrdenadaConsultor();
+      break;
+
+    case '3': 
+      listaInvertidaConsultor();
+      break;
+
+    default:
+      printf("\nOpção inválida.\n");
   }
-  while(fread(consu, sizeof(Consultor), 1, fp2)){
+}
+
+void listaInvertidaConsultor(void){
+  system("clear||cls");
+  logoListarConsultores();
+  FILE* fp;
+  Consultor* consu;
+  NoConsultor* noConsu;
+  NoConsultor* lista;
+
+  lista = NULL;
+  fp = fopen("consultores.dat", "rb");
+  if(fp == NULL){
+    printf("\nOps! Aparentemente o arquivo 'consultores.dat' não foi encontrado.\n");
+    printf("Tente novamente mais tarde.\n");
+    exit(1);
+  }
+
+  consu = (Consultor*) malloc(sizeof(Consultor));
+  while(fread(consu, sizeof(Consultor), 1, fp)){
     if(consu->status == 'c'){
-      exibeConsultor(consu);
+      noConsu = (NoConsultor*) malloc(sizeof(NoConsultor));
+      strcpy(noConsu->nome, consu->nome);
+      strcpy(noConsu->cpf, consu->cpf);
+      noConsu->numNativo, consu->numNativo;
+      strcpy(noConsu->signos, consu->signos);
+      strcpy(noConsu->china, consu->china);
+      noConsu->status = consu->status;
+      noConsu->prox = lista;
+      lista = noConsu;
     }
   }
+  fclose(fp);
+  exibeListaConsultor(lista);
   free(consu);
-  fclose(fp2);
+  liberaListaConsultor(lista);
+}
+
+
+void listaDiretaConsultor(void){
+  system("clear||cls");
+  logoListarConsultores();
+  FILE* fp;
+  Consultor* consu;
+  NoConsultor* noConsu;
+  NoConsultor* lista;
+  NoConsultor* ult;
+
+  lista = NULL;
+  fp = fopen("consultores.dat", "rb");
+  if(fp == NULL){
+    printf("\nOps! Aparentemente o arquivo 'consultores.dat' não foi encontrado.\n");
+    printf("Tente novamente mais tarde.\n");
+    exit(1);
+  }
+  consu = (Consultor*) malloc(sizeof(Consultor));
+  while(fread(consu, sizeof(Consultor), 1, fp)){
+    if(consu->status == 'c'){
+      noConsu = (NoConsultor*) malloc(sizeof(NoConsultor));
+      strcpy(noConsu->nome, consu->nome);
+      strcpy(noConsu->cpf, consu->cpf);
+      noConsu->numNativo, consu->numNativo;
+      strcpy(noConsu->signos, consu->signos);
+      strcpy(noConsu->china, consu->china);
+      noConsu->status = consu->status;
+      noConsu->prox = NULL;
+    }
+    if (lista == NULL){
+      lista = noConsu;
+    } else{
+      ult->prox = noConsu;
+    }
+    ult = noConsu;
+  }
+  fclose(fp);
+  exibeListaConsultor(lista);
+  free(consu);
+  liberaListaConsultor(lista);
+}
+
+void listaOrdenadaConsultor(void){
+  system("clear||cls");
+  logoListaClientes();
+  FILE* fp;
+  Consultor* consu;
+  NoConsultor* noConsu;
+  NoConsultor* lista;
+
+  lista = NULL;
+  fp = fopen("consultores.dat", "rb");
+  if(fp == NULL){
+    printf("\nOps! Aparentemente o arquivo 'consultores.dat' não foi encontrado.\n");
+    printf("Tente novamente mais tarde.\n");
+    exit(1);
+  }
+  consu = (Consultor*) malloc(sizeof(Consultor));
+  while(fread(consu, sizeof(Consultor), 1, fp)){
+    if(consu->status == 'c'){
+      noConsu = (NoConsultor*) malloc(sizeof(NoConsultor));
+      strcpy(noConsu->nome, consu->nome);
+      strcpy(noConsu->cpf, consu->cpf);
+      noConsu->numNativo, consu->numNativo;
+      strcpy(noConsu->signos, consu->signos);
+      strcpy(noConsu->china, consu->china);
+      noConsu->status = consu->status;
+
+      if (lista == NULL){
+        lista = noConsu;
+        noConsu->prox = NULL;
+      } else if (strcmp(noConsu->nome,lista->nome) < 0) {
+        noConsu->prox = lista;
+        lista = noConsu;
+      } else {
+        NoConsultor* ant = lista;
+        NoConsultor* atu = lista->prox;
+        while ((atu != NULL) && strcmp(atu->nome,noConsu->nome) < 0) {
+          ant = atu;
+          atu = atu->prox;
+        }
+        ant->prox = noConsu;
+        noConsu->prox = atu;
+      }
+    }
+  }
+  fclose(fp);
+  exibeListaConsultor(lista);
+  free(consu);
+  liberaListaConsultor(lista);
+}
+
+void exibeListaConsultor(NoConsultor* lista){
+    while(lista != NULL){
+        printf("\nNome: %s \n", lista->nome);
+        printf("CPF: %s \n",lista->cpf);
+        printf("Numero Nativo: %d \n",lista->numNativo);
+        printf("Signo: %s \n",lista->signos);
+        printf("Horoscopo Chinês: %s \n",lista->china);
+        if(lista->status == 'c'){
+        printf("Consultor cadastrado normalmente\n");
+        } else{
+        printf("Obs: este consultor encontra-se deletado.\n");
+        }
+        lista = lista->prox;
+    }
 }
 
 void editarDadosBolaCristal(void){
@@ -927,7 +1094,10 @@ void creditos(void){
   "https://asciiart.website\n"
   "https://www.asciiart.eu\n"
   "http://www.ascii-art.de\n"
-  "https://ascii.co.uk\n");
+  "https://ascii.co.uk\n\n"
+  "Créditos pelos scans das cartas de tarot:"
+  "http://askthecards.info/\n"
+  );
 }
 
 void gravaUsuario(Usuario* usu){
@@ -1040,6 +1210,7 @@ void exclusaoFisicaConsultores(void){
 
 void chamaTarot(void){
   system("clear||cls");
+  logoTarotDiario();
   int nds, dia;
   time_t mytime;
   mytime = time(NULL);

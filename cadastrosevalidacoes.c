@@ -11,7 +11,7 @@
 #include "menuscgana.h"
 
 void pausaPrograma(void){
-  printf("Digite ENTER para continuar\n");
+  printf("\nDigite ENTER para continuar\n");
   getchar();
   getchar();
 }
@@ -265,6 +265,7 @@ int validaEmail(char* email) {
 }
 
 void ariesCarac(void){
+  printf("\n");
   printf("   .-.   .-.\n");
   printf("  (_  \\ /  _)    \n");
   printf("       |\n");
@@ -278,6 +279,7 @@ void ariesCarac(void){
 }
 
 void touroCarac(void){
+  printf("\n");
   printf("    .     .\n");
   printf("    '.___.'\n");
   printf("    .'   `.\n");
@@ -293,6 +295,7 @@ void touroCarac(void){
 }
 
 void gemeosCarac(void){
+  printf("\n");
   printf("    ._____.\n");
   printf("      | |  \n");
   printf("      | |\n");
@@ -307,6 +310,7 @@ void gemeosCarac(void){
 }
 
 void cCarac(void){
+  printf("\n");
   printf("      .--.\n");
   printf("     /   _`.     \n");
   printf("    (_) ( )\n");
@@ -321,6 +325,7 @@ void cCarac(void){
 }
 
 void leaoCarac(void){
+  printf("\n");
   printf("      .--.\n");
   printf("     (    )\n");
   printf("    (_)  /\n");
@@ -334,6 +339,7 @@ void leaoCarac(void){
 }
 
 void virgemCarac(void){
+  printf("\n");
   printf("  ' `:--.--.\n");
   printf("     |  |  |\n");
   printf("     |  |  | )\n");
@@ -348,18 +354,20 @@ void virgemCarac(void){
 }
 
 void libraCarac(void){
-    printf("        __\n");
-    printf("   ___.'  '.___\n");
-    printf("   ____________\n");
-    printf("\n");
-    printf("LIBRA - CARACTERÍSTICAS\n\n");
-    printf("  * Simpático\n");
-    printf("  * Observador\n");
-    printf("  * Delicado\n");
-    printf("  * Extrovertido\n\n");
+  printf("\n");
+  printf("        __\n");
+  printf("   ___.'  '.___\n");
+  printf("   ____________\n");
+  printf("\n");
+  printf("LIBRA - CARACTERÍSTICAS\n\n");
+  printf("  * Simpático\n");
+  printf("  * Observador\n");
+  printf("  * Delicado\n");
+  printf("  * Extrovertido\n\n");
 }
 
 void escorpiaoCarac(void){
+  printf("\n");
   printf("   _\n"
   "  ' `:--.--.\n"
   "     |  |  |\n"
@@ -375,6 +383,7 @@ void escorpiaoCarac(void){
 }
 
 void sagiCarac(void){
+  printf("\n");
   printf("          ...\n"
   "          .':\n"
   "        .'\n"
@@ -389,6 +398,7 @@ void sagiCarac(void){
 }
 
 void capricornioCarac(void){
+  printf("\n");
   printf("            _\n"
   "    \\      /_)\n"
   "     \\    /`.\n"
@@ -403,6 +413,7 @@ void capricornioCarac(void){
 }
 
 void aquarioCarac(void){
+  printf("\n");
   printf(" .-\"-._.-\"-._.-\n"
   " .-\"-._.-\"-._.-\n"
   "\n"
@@ -414,6 +425,7 @@ void aquarioCarac(void){
 }
 
 void peixesCarac(void){
+  printf("\n");
   printf("   `-.    .-'\n"
   "      :  :\n"
   "    --:--:--\n"
@@ -455,6 +467,7 @@ void signCarac(char* s){
 }
 
 void ratoCarac(void){
+  printf("\n");
   printf(" _  _\n"
   "(o)(o)--.\n"
   " \\../ (  )\n"
@@ -469,6 +482,7 @@ void ratoCarac(void){
 }
 
 void boiCarac(void){
+  printf("\n");
   printf("             (__)    \n"
   "     `\\------(oo)\n"
   "       ||    (__)\n"
@@ -483,6 +497,7 @@ void boiCarac(void){
 }
 
 void tigreCarac(void){
+  printf("\n");
   printf("     (^\\-==-/^)\n"
   "     >\\\\ == //<\n"
   "    :== q''p ==:     _\n"
@@ -504,6 +519,7 @@ void tigreCarac(void){
 }
 
 void coelhoCarac(void){
+  printf("\n");
   printf("     \\\\\n"
   "      \\\\_\n"
   "      ( _\\\n"
@@ -521,6 +537,7 @@ void coelhoCarac(void){
 }
 
 void dragaoCarac(void){
+  printf("\n");
   printf("                \\||/\n"
 "                |  @___oo\n"
 "      /\\  /\\   / (__,,,,|\n"
@@ -542,6 +559,7 @@ void dragaoCarac(void){
 }
 
 void cobraCarac(void){
+  printf("\n");
   printf("                           ____\n"
   "  ________________________/ O  \\___/\n"
   " <_/_\\_/_\\_/_\\_/_\\_/_\\_/_______/   \\\n"
@@ -555,6 +573,7 @@ void cobraCarac(void){
 }
 
 void cavaloCarac(void){
+  printf("\n");
   printf("                   ;;\n"
   "                 ,;;'\\\n"
   "      __       ,;;' ' \\\n"
@@ -574,6 +593,7 @@ void cavaloCarac(void){
 }
 
 void cabraCarac(void){
+  printf("\n");
   printf("       _))\n"
   "      > *\\     _~\n"
   "      `;'\\\\__-' \\_\n"
@@ -589,6 +609,7 @@ void cabraCarac(void){
 }
 
 void macacoCarac(void){
+  printf("\n");
   printf("           .\"`\".\n"
   "       .-./ _=_ \\.-.\n"
   "      {  (,(oYo),) }}\n"
@@ -609,6 +630,7 @@ void macacoCarac(void){
 }
 
 void galoCarac(void){
+  printf("\n");
   printf("   ,~.\n"
   "   ,-'__ `-,\n"
   "  {,-'  `. }              ,')\n"
@@ -635,6 +657,7 @@ void galoCarac(void){
 }
 
 void caoCarac(void){
+  printf("\n");
   printf("                            __\n"
   "     ,                    ,\" e`--o\n"
   "    ((                   (  | __,'\n"
@@ -652,6 +675,7 @@ void caoCarac(void){
 }
 
 void porcoCarac(void){
+  printf("\n");
   printf("        __,---.__\n"
   "     ,-'         `-.__\n"
   "   &/           `._\\ _\\\n"
@@ -837,6 +861,7 @@ int Tarot(int num){
 }
 
 void carac1(void){
+    printf("\n");
     printf("Nativo 1:\n"
     "Caracteristicas positivas:\n"
     "\n"
@@ -852,18 +877,19 @@ void carac1(void){
     "  * Autoritarismo\n"
     "  * Agressividade\n"
     "  * Orgulhoso\n"
-    "  * Preguiça\n");
+    "  * Preguiça\n\n");
 }
 
 void carac2(void){
+    printf("\n");
     printf("Nativo 2:\n"
     "Caracteristicas positivas:\n"
     "\n"
     "  * Paciêcia\n"
     "  * Solidárismo\n"
     "  * Companheirismo\n"
-    "  * Amável"
-    "  * Diplomata"
+    "  * Amável\n"
+    "  * Diplomata\n"
     "\n"
     "Caracteristicas negativas:\n"
     "\n"
@@ -871,10 +897,11 @@ void carac2(void){
     "  * Indecisão\n"
     "  * Timidez\n"
     "  * Passividade\n"
-    "  * Submissão\n");
+    "  * Submissão\n\n");
 }
 
 void carac3(void){
+    printf("\n");
     printf("Nativo 3:\n"
     "Caracteristicas positivas:\n"
     "\n"
@@ -890,10 +917,11 @@ void carac3(void){
     "  * Supercialidade\n"
     "  * Imaturidade\n"
     "  * Ostentação\n"
-    "  * Dispersão\n");
+    "  * Dispersão\n\n");
 }
 
 void carac4(void){
+    printf("\n");
     printf("Nativo 4:\n"
     "Caracteristicas positivas:\n"
     "\n"
@@ -909,10 +937,11 @@ void carac4(void){
     "  * Insegurânça\n"
     "  * Avareza\n"
     "  * Conformista\n"
-    "  * Inlfexível\n");
+    "  * Inlfexível\n\n");
 }
 
 void carac5(void){
+    printf("\n");
     printf("Nativo 5:\n"
     "Caracteristicas positivas:\n"
     "\n"
@@ -928,10 +957,11 @@ void carac5(void){
     "  * Inquietação\n"
     "  * Infidelidade\n"
     "  * Impulsividade\n"
-    "  * Ansiedade\n");
+    "  * Ansiedade\n\n");
 }
 
 void carac6(void){
+    printf("\n");
     printf("Nativo 6:\n"
     "Caracteristicas positivas:\n"
     "\n"
@@ -947,10 +977,11 @@ void carac6(void){
     "  * Vitimísmo\n"
     "  * Espírito de mártir\n"
     "  * Inconformista\n"
-    "  * Rancoroso(a)\n");
+    "  * Rancoroso(a)\n\n");
 }
 
 void carac7(void){
+    printf("\n");
     printf("Nativo 7:\n"
     "Caracteristicas positivas:\n"
     "\n"
@@ -966,10 +997,11 @@ void carac7(void){
     "  * Criticismo\n"
     "  * Exigente\n"
     "  * Solitário(a)\n"
-    "  * Confiança em excesso\n");
+    "  * Confiança em excesso\n\n");
 }
 
 void carac8(void){
+    printf("\n");
     printf("Nativo 8:\n"
     "Caracteristicas positivas:\n"
     "\n"
@@ -985,10 +1017,11 @@ void carac8(void){
     "  * Materialismo\n"
     "  * Arrogancia\n"
     "  * Autoritáriedade\n"
-    "  * Impaciência\n");
+    "  * Impaciência\n\n");
 }
 
 void carac9(void){
+    printf("\n");
     printf("Nativo 9:\n"
     "Caracteristicas positivas:\n"
     "\n"
@@ -1004,10 +1037,11 @@ void carac9(void){
     "  * Solitário(a)\n"
     "  * Intimidação\n"
     "  * Abuso emocional\n"
-    "  * Arrependimento\n");
+    "  * Arrependimento\n\n");
 }
 
 void carac11(void){
+    printf("\n");
     printf("Nativo 11:\n"
     "Caracteristicas positivas:\n"
     "\n"
@@ -1023,10 +1057,11 @@ void carac11(void){
     "  * Charlatanismo\n"
     "  * Pragmastismo\n"
     "  * Cinismo\n"
-    "  * Desonestidade\n");
+    "  * Desonestidade\n\n");
 }
 
 void carac22(void){
+    printf("\n");
     printf("Nativo 22:\n"
     "Caracteristicas positivas:\n"
     "\n"
@@ -1042,11 +1077,12 @@ void carac22(void){
     "  * Complexo de inferioridade\n"
     "  * Cinismo\n"
     "  * Criticismo\n"
-    "  * Inlfexível\n");
+    "  * Inlfexível\n\n");
 }
 
 
 void TheFoolCard(void){
+    printf("\n");
     printf("\nCarta O Tolo Caracteristicas");
     printf("\n");
     printf("Ás vezes na vida é necessário retornamos para o ponto de partida, o novo ciclo e esta é a energia da carta do Tarot o Louco.\n\n");
@@ -1059,13 +1095,14 @@ void TheFoolCard(void){
     "Pontos negativos:\n\n"
     "  * Imprudência\n"
     "  * Falta de paciência\n"
-    "  * Precipitação\n"
+    "  * Precipitação\n\n"
     );
     printf("\n");
     system("display English/0the_fool.jpg");
 }
 
 void TheMagicianCard(void){
+    printf("\n");
     printf("\nCarta O Mago Caracteristicas");
     printf("\n");
     printf("Possui as ferramentas necessárias para desbravar um universo desconhecido de possibilidades.\n\n");
@@ -1075,13 +1112,14 @@ void TheMagicianCard(void){
     "  * Esperteza\n\n"
     "Pontos negativos:\n\n"
     "  * Ilusão\n"
-    "  * Falta de controle\n"
+    "  * Falta de controle\n\n"
     );
     printf("\n");
     system("display English/1the_magician.jpg");
 }
 
 void TheHighPriestessCard(void){
+    printf("\n");
     printf("\nCarta A Papisa Caracteristicas");
     printf("\n");
     printf("Indica a sabedoria e a paciência de saber ouvir para poder concluir.\n\n");
@@ -1094,13 +1132,14 @@ void TheHighPriestessCard(void){
     "  * Piedade\n\n"
     "Pontos negativos:\n\n"
     "  * Medo do novo\n"
-    "  * Evolução lenta\n"
+    "  * Evolução lenta\n\n"
     );
     printf("\n");
     system("display English/2the_high_priestess.jpg");
 }
 
 void TheEmpressCard(void){
+    printf("\n");
     printf("\nCarta A Imperatriz Caracteristicas");
     printf("\n");
     printf("Poder de solução de problemas e melhora de qualquer situação.\n\n");
@@ -1112,13 +1151,14 @@ void TheEmpressCard(void){
     "  * Sabedoria\n\n"
     "Pontos negativos:\n\n"
     "  * Intrigas\n"
-    "  * Desavenças\n"
+    "  * Desavenças\n\n"
     );
     printf("\n");
     system("display English/3the_empress.jpg");
 }
 
 void TheEmperorCard(void){
+    printf("\n");
     printf("\nCarta O Emperador Caraxteristicas");
     printf("\n");
     printf("Representa uma pessoa extremamente intransigente, dominador e soberano.\n\n");
@@ -1130,13 +1170,14 @@ void TheEmperorCard(void){
     "  * Cautela\n\n"
     "Pontos negativos:\n\n"
     "  * Ser reprimido\n"
-    "  * Ser rebaixado\n"
+    "  * Ser rebaixado\n\n"
     );
     printf("\n");
     system("display English/4the_emperor.jpg");
 }
 
 void TheHierophantCard(void){
+    printf("\n");
     printf("\nCarta O Sacerdote Caraxteristicas");
     printf("\n");
     printf("Conexão do poder e da sabedoria divina com o mundo humano.\n\n");
@@ -1147,13 +1188,14 @@ void TheHierophantCard(void){
     "  * Lealdade\n"
     "  * Amizade\n\n"
     "Pontos negativos:\n\n"
-    "  * Indecisão\n"
+    "  * Indecisão\n\n"
     );
     printf("\n");
     system("display English/5the_hierophant.jpg");
 }
 
 void TheLoversCard(void){
+    printf("\n");
     printf("Carta Os Enamorados Caracteristicas:\n");
     printf("\n");
     printf("Representa oportunidades, benefícios e possíveis ofertas em sua vida neste momento.\n\n");
@@ -1161,17 +1203,18 @@ void TheLoversCard(void){
     "  * Familiar\n"
     "  * União\n"
     "  * Dúvidas\n"
-    "  * Desejos\n"
+    "  * Desejos\n\n"
     "Pontos negativos:\n\n"
     "  * Medo de errar\n"
     "  * Pressão externa\n"
-    "  * Tensão"
+    "  * Tensão\n\n"
     );
     printf("\n");
     system("display English/6the_lovers.jpg");
 }
 
 void TheChariotCard(void){
+    printf("\n");
     printf("Carta A Carruagem Caracteristicas:\n");
     printf("\n");
     printf("Representa um período de grande afeto e proteção, que pode trazer grandes e intensas atividades.\n\n");
@@ -1186,17 +1229,18 @@ void TheChariotCard(void){
     "  * Decisão\n"
     "  * Determinação\n"
     "  * Coragem\n"
-    "  * Planejamento\n"
+    "  * Planejamento\n\n"
     "Pontos negativos:\n\n"
     "  * Alvo de oportunistas\n"
     "  * Ambição\n"
     "  * Orgulho\n"
-    "  * Ser manipulado facilmente\n"
+    "  * Ser manipulado facilmente\n\n"
     );
     system("display English/7the_chariot.jpg");
 }
 
 void StrengthCard(void){
+    printf("\n");
     printf("Carta Força Caracteristicas:\n");
     printf("\n");
     printf("Controle sobre as paixões, o amor e a eficiência das conquistas.\n\n");
@@ -1207,16 +1251,17 @@ void StrengthCard(void){
     "  * Superação\n" 
     "  * Ímpeto\n"
     "  * Segurança\n"
-    "  * Realização\n"
+    "  * Realização\n\n"
     "Pontos negativos:\n\n"
     "  * Agressividade\n"
-    "  * Impaciência\n"
+    "  * Impaciência\n\n"
     );
     printf("\n");
     system("display English/8strength.jpg");
 }
 
 void TheHermitCard(void){
+    printf("\n");
     printf("Carta Eremita Caracteristicas:\n");
     printf("\n");
     printf("Ensina a desligar a mente e aproveitar o silêncio para obter iluminação e autoconhecimento.\n\n");
@@ -1225,32 +1270,34 @@ void TheHermitCard(void){
     "  * Sabedoria\n"
     "  * Autoconhecimento\n"
     "  * Prudência\n"
-    "  * Concentração\n"
+    "  * Concentração\n\n"
     "Pontos negativos:\n\n"
-    "  * Solidão\n"
+    "  * Solidão\n\n"
     );
     printf("\n");
     system("display English/9the_hermit.jpg");
 }
 
 void TheWheelOfFortuneCard(void){
+    printf("\n");
     printf("Carta Roda Da Fortuna Caracteristicas:\n");
     printf("\n");
     printf("simboliza riqueza, imediatamente conclui-se que o consulente será alvo de ganhos materiais e prosperidade.\n\n");
     printf("Pontos positivos:\n\n"
     "  * Recompensas\n" 
     "  * Boa sorte\n"
-    "  * Ciclo da vida\n"
+    "  * Ciclo da vida\n\n"
     "Pontos negativos:\n\n"
     "  * Recompensas\n"
     "  * Má sorte\n"
-    "  * Ciclo da vida\n"
+    "  * Ciclo da vida\n\n"
     );
     printf("\n");
     system("display English/10the_wheel_of_fortune.jpg");
 }
 
 void JusticeCard(void){
+    printf("\n");
     printf("Carta Justiça Caracteristicas:\n");
     printf("\n");
     printf("Ela pede que tenha sabedoria e saiba pensar com cautela nas suas tomadas de decisões.\n\n");
@@ -1258,48 +1305,51 @@ void JusticeCard(void){
     "  * Autoconhecimento\n" 
     "  * Clareza\n"
     "  * Sabedoria\n"
-    "  * Karma\n"
+    "  * Karma\n\n"
     "Pontos negativos:\n\n"
     "  * Más interpretações\n"
-    "  * Karma\n"
+    "  * Karma\n\n"
     );
     printf("\n");
     system("display English/11justice.jpg");
 }
 
 void TheHangedManCard(void){
+    printf("\n");
     printf("Carta O Enforcado Caracteristicas:\n");
     printf("\n");
     printf("Não faça nada sem ponderar, sem observar, sem pensar.\n\n");
     printf("Pontos positivos:\n\n"
     "  * Força física e espiritual\n"
     "  * Atenção\n"
-    "  * Paciência\n"
+    "  * Paciência\n\n"
     "Pontos negativos:\n\n"
     "  * Incertaza\n"
-    "  * Cansaço\n"
+    "  * Cansaço\n\n"
     );
     printf("\n");
     system("display English/12the_hanged_man.jpg");
 }
 
 void DeathCard(void){
+    printf("\n");
     printf("Carta Morte Caracteristicas:\n");
     printf("\n");
     printf("Ela não simboliza perder a vida e sim, uma transformação gigante.\n\n");
     printf("Pontos positivos:\n\n"
     "  * Renascimento\n"
     "  * Amadurecimento\n"
-    "  * Energia de superação\n"
+    "  * Energia de superação\n\n"
     "Pontos negativos:\n\n"
     "  * Covardia\n"
-    "  * Se prender ao passado\n"
+    "  * Se prender ao passado\n\n"
     );
     printf("\n");
     system("display English/13death.jpg");
 }
 
 void TemperanceCard(void){
+    printf("\n");
     printf("Carta Temeperança Caracteristicas:\n");
     printf("\n");
     printf("A Temperança traz a conexão com o mundo espiritual.\n\n");
@@ -1308,16 +1358,17 @@ void TemperanceCard(void){
     "  * Equilíbrio\n"
     "  * Espírito\n"
     "  * Razão\n"
-    "  * Emoção\n" 
+    "  * Emoção\n\n" 
     "Pontos negativos:\n\n"
     "  * Facilmente persuadido(a)\n"
-    "  * Tenta agradar a todos\n"
+    "  * Tenta agradar a todos\n\n"
     );
     printf("\n");
     system("display English/14temperance.jpg");
 }
 
 void TheDevilCard(void){
+    printf("\n");
     printf("Carta O Diabo Caracteristicas:\n");
     printf("\n");
     printf("O poder e ambição unidos te levará aos diversos aspectos que poderão definir o seu futuro.\n\n");
@@ -1326,29 +1377,31 @@ void TheDevilCard(void){
     "  * Ambição\n"
     "  * Desejo\n"
     "  * Audácia\n"
-    "  * Paixão\n" 
+    "  * Paixão\n\n" 
     "Pontos negativos:\n\n"
     "  * Luxúria\n"
     "  * Ambição\n"
-    "  * Cobiça\n"
+    "  * Cobiça\n\n"
     );
     system("display English/15the_devil.jpg");
 }
 
 void TheTowerCard(void){
+    printf("\n");
     printf("Carta A Torre Caracteristicas:\n");
     printf("\n");
     printf("Uma força exterior te fará abandonar o seu conforto\n\n");
     printf("Pontos positivos:\n\n"
     "  * Amadurecimento\n"
-    "  * Ciclo\n"
+    "  * Ciclo\n\n"
     "Pontos negativos:\n\n"
-    "  * Teimosia\n"
+    "  * Teimosia\n\n"
     );
     system("display English/16the_tower.jpg");
 }
 
 void TheStarCard(void){
+    printf("\n");
     printf("Carta A Estrela Caracteristicas:\n");
     printf("\n");
     printf("Traz o poder da orientação para a conquista dos objetivos.\n\n");
@@ -1362,31 +1415,33 @@ void TheStarCard(void){
     "  * Sucesso\n"
     "  * Esperança\n"
     "  * Brilho\n"
-    "  * Perfeição\n"
+    "  * Perfeição\n\n"
     "Pontos negativos:\n\n"
     "  * Passa dos limites\n"
-    "  * Se cobra demais\n"
+    "  * Se cobra demais\n\n"
     );
     system("display English/17the_star.jpg");
 }
 
 void TheMoonCard(void){
+    printf("\n");
     printf("Carta A Lua Caracteristicas:\n");
     printf("\n");
     printf("Conecta ao Universo de coisas escondidas que podem existir nos mais diversos processos.\n\n");
     printf("Pontos positivos:\n\n"
     "  * Simbolismo\n"
     "  * Sabedoria intelectual\n"
-    "  * Conhecimento instintivo\n"
+    "  * Conhecimento instintivo\n\n"
     "Pontos negativos:\n\n"
     "  * Receio\n"
     "  * Medo\n"
-    "  * Insegurança\n"
+    "  * Insegurança\n\n"
     );
     system("display English/18the_moon.jpg");
 }
 
 void TheSunCard(void){
+    printf("\n");
     printf("Carta O Sol Caracteristicas:\n");
     printf("\n");
     printf("É a hora de encontrar esclarecimentos à todas as dúvidas que te perseguiram e firmar com você mesmo o compromisso de empenho para conquista..\n\n");
@@ -1397,15 +1452,16 @@ void TheSunCard(void){
     "  * Alegria\n"
     "  * Intuição\n"
     "  * Vitalidade\n"
-    "  * Razão\n"
+    "  * Razão\n\n"
     "Pontos negativos:\n\n"
     "  * Orgulho\n"
-    "  * Confusão\n"
+    "  * Confusão\n\n"
     );
     system("display English/19the_sun.jpg");
 }
 
 void JudgementCard(void){
+    printf("\n");
     printf("Carta Julgamento Caracteristicas:\n");
     printf("\n");
     printf("Renovação e novas oportunidades surgindo. Por outro lado tudo o que foi plantado no passado será colhido nos dias atuais.\n");
@@ -1413,15 +1469,16 @@ void JudgementCard(void){
     "  * Organização\n"
     "  * Estratégia\n"
     "  * Crítica\n"
-    "  * Curiosidade\n"
+    "  * Curiosidade\n\n"
     "Pontos negativos:\n\n"
     "  * Infame\n"
-    "  * Chateação\n"
+    "  * Chateação\n\n"
     );
     system("display English/20judgement.jpg");
 }
 
 void TheWorldCard(void){
+    printf("\n");
     printf("Carta O Mundo Caracteristicas:\n");
     printf("\n");
     printf("Coroação para quem sempre se empenhou muito e se dedicou em cada quesito da vida.\n");
@@ -1433,9 +1490,9 @@ void TheWorldCard(void){
     "  * Boa vida\n"
     "  * Realização\n"
     "  * Virtuosidade\n"
-    "  * Efeitos benéficos\n"
+    "  * Efeitos benéficos\n\n"
     "Pontos negativos:\n\n"
-    "  * Nenhum\n"
+    "  * Nenhum\n\n"
     );
     system("display English/21the_world.jpg");
 }
