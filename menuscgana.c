@@ -221,8 +221,8 @@ char menuListarCliente(void){
   char opcao;
   printf("\nQual tipo de lista deseja ver?\n"
   "1 - Lista Normal\n"
-  "2 - Lista Direta\n"
-  "3 - Lista Invertida\n");
+  "2 - Lista Ordenada\n"
+  "3 - Lista De Clientes Recentes\n");
   scanf(" %c",&opcao);
   return opcao;
 }
@@ -230,21 +230,19 @@ char menuListarCliente(void){
 void listarClientes(void){
   system("clear||cls");
   char op;
-  NoUsuario* lista;
   logoEditarCliente();
   op = menuListarCliente();
   switch(op){
     case '1': 
-      listaNormal(); 
+      listaDireta(); 
       break;
 
     case '2':
-      printf("\nEm breve!\n");
+      listaOrdenada();
       break;
 
-    case '3':
-      lista = listaInvertida();
-      exibeListaUsuario(lista);
+    case '3': 
+      listaInvertida();
       break;
 
     default:
@@ -252,26 +250,7 @@ void listarClientes(void){
   }
 }
 
-void listaNormal(void){
-  system("clear||cls");
-  FILE* fp;
-  Usuario* usu;
-  logoListaClientes();
-  usu = (Usuario*) malloc(sizeof(Usuario));
-  fp = fopen("usuarios.dat","rb");
-  if(fp == NULL){
-    printf("\nOps! Aparentemente o arquivo 'usuarios.dat' não foi encontrado. Tente novamente\n");
-  }
-  while(fread(usu, sizeof(Usuario), 1, fp)){
-    if(usu->status == 'c'){
-      exibeCliente(usu);
-    }
-  }
-  free(usu);
-  fclose(fp);
-}
-
-NoUsuario* listaInvertida(void){
+void listaInvertida(void){
   system("clear||cls");
   logoListaClientes();
   FILE* fp;
@@ -303,8 +282,102 @@ NoUsuario* listaInvertida(void){
     }
   }
   fclose(fp);
+  exibeListaUsuario(lista);
   free(usu);
-  return lista;
+  liberaLista(lista);
+}
+
+void listaDireta(void){
+  system("clear||cls");
+  logoListaClientes();
+  FILE* fp;
+  Usuario* usu;
+  NoUsuario* noUsu;
+  NoUsuario* lista;
+  NoUsuario* ult;
+
+  lista = NULL;
+  fp = fopen("usuarios.dat", "rb");
+  if(fp == NULL){
+    printf("\nOps! Aparentemente o arquivo 'usuarios.dat' não foi encontrado.\n");
+    printf("Tente novamente mais tarde.\n");
+    exit(1);
+  }
+  usu = (Usuario*) malloc(sizeof(Usuario));
+  while(fread(usu, sizeof(Usuario), 1, fp)){
+    if(usu->status == 'c'){
+      noUsu = (NoUsuario*) malloc(sizeof(NoUsuario));
+      strcpy(noUsu->nome, usu->nome);
+      strcpy(noUsu->email, usu->email);
+      strcpy(noUsu->cpf, usu->cpf);
+      noUsu->dia = usu->dia;
+      noUsu->mes = usu->mes;
+      noUsu->ano = usu->ano;
+      noUsu->status = usu->status;
+      noUsu->prox = NULL;
+    }
+    if (lista == NULL){
+      lista = noUsu;
+    } else{
+      ult->prox = noUsu;
+    }
+    ult = noUsu;
+  }
+  fclose(fp);
+  exibeListaUsuario(lista);
+  free(usu);
+  liberaLista(lista);
+}
+
+void listaOrdenada(void){
+  system("clear||cls");
+  logoListaClientes();
+  FILE* fp;
+  Usuario* usu;
+  NoUsuario* noUsu;
+  NoUsuario* lista;
+
+  lista = NULL;
+  fp = fopen("usuarios.dat", "rb");
+  if(fp == NULL){
+    printf("\nOps! Aparentemente o arquivo 'usuarios.dat' não foi encontrado.\n");
+    printf("Tente novamente mais tarde.\n");
+    exit(1);
+  }
+  usu = (Usuario*) malloc(sizeof(Usuario));
+  while(fread(usu, sizeof(Usuario), 1, fp)){
+    if(usu->status == 'c'){
+      noUsu = (NoUsuario*) malloc(sizeof(NoUsuario));
+      strcpy(noUsu->nome, usu->nome);
+      strcpy(noUsu->email, usu->email);
+      strcpy(noUsu->cpf, usu->cpf);
+      noUsu->dia = usu->dia;
+      noUsu->mes = usu->mes;
+      noUsu->ano = usu->ano;
+      noUsu->status = usu->status;
+
+      if (lista == NULL){
+        lista = noUsu;
+        noUsu->prox = NULL;
+      } else if (strcmp(noUsu->nome,lista->nome) < 0) {
+        noUsu->prox = lista;
+        lista = noUsu;
+      } else {
+        NoUsuario* ant = lista;
+        NoUsuario* atu = lista->prox;
+        while ((atu != NULL) && strcmp(atu->nome,noUsu->nome) < 0) {
+          ant = atu;
+          atu = atu->prox;
+        }
+        ant->prox = noUsu;
+        noUsu->prox = atu;
+      }
+    }
+  }
+  fclose(fp);
+  exibeListaUsuario(lista);
+  free(usu);
+  liberaLista(lista);
 }
 
 void exibeListaUsuario(NoUsuario* lista){
@@ -320,6 +393,15 @@ void exibeListaUsuario(NoUsuario* lista){
     }
     lista = lista->prox;
   }
+}
+
+void liberaLista(NoUsuario* lista){
+  NoUsuario* aux = lista;
+  while (lista != NULL) {
+		lista = lista->prox;
+		free(aux);
+		aux = lista;
+	}
 }
 
 void exibeCliente(Usuario* usu){
@@ -595,6 +677,11 @@ void exibeConsultor(Consultor* consu){
 }
 
 void listarConsultores(void){
+  // crriar switch
+  // dentro do switch por as listas
+  // criar exibir lista consultor
+  // abrir consultores.dat
+  // criar NoConsultor*
   system("clear||cls");
   FILE* fp2;
   Consultor* consu;
@@ -695,6 +782,7 @@ void consultarCigana(void){
       rel->mes = tm.tm_mon + 1;
       rel->ano = tm.tm_year + 1900;
       strcpy(rel->cpfUsuario, consu->cpf);
+      strcpy(rel->acao, "checou sua previsão diária");
       gravaRelatorio(rel);
       printf("\nSua previsão diária com a cigana foi registrada!\n");
       free(rel);
@@ -814,7 +902,7 @@ void relatorios(void){
 
 void exibeRelatorio(Relatorio* rel){
   printf("\n====Atividade no dia %d/%d/%d====",rel->dia, rel->mes, rel->ano);
-  printf("\nO usuário %s, CPF: %s checou sua previsão diária com a cigana.\n\n",rel->nomeUsuario, rel->cpfUsuario);
+  printf("\nO usuário %s, CPF: %s %s. \n\n",rel->nomeUsuario, rel->cpfUsuario, rel->acao);
 }
 
 void creditos(void){
@@ -952,6 +1040,11 @@ void exclusaoFisicaConsultores(void){
 
 void chamaTarot(void){
   system("clear||cls");
+  int nds, dia;
+  time_t mytime;
+  mytime = time(NULL);
+  struct tm tm = *localtime(&mytime);
+  dia = tm.tm_mday;
   char procurado[15];
   int encontrado = 0;
   FILE* fp2;
@@ -971,7 +1064,22 @@ void chamaTarot(void){
     }
     fclose(fp2);
     if(encontrado){
-      Tarot();
+      nds = numDaSorte(consu->nome, consu->numNativo, consu->signos, consu->china);
+      nds = nds + dia;
+      Tarot(nds);
+
+      Relatorio* rel;
+      rel = (Relatorio*) malloc(sizeof(Relatorio));
+      strcpy(rel->nomeUsuario,consu->nome);
+      time_t mytime;
+      mytime = time(NULL);
+      struct tm tm = *localtime(&mytime);
+      rel->dia = tm.tm_mday;
+      rel->mes = tm.tm_mon + 1;
+      rel->ano = tm.tm_year + 1900;
+      strcpy(rel->cpfUsuario, consu->cpf);
+      strcpy(rel->acao, "checou seu tarot diário");
+      gravaRelatorio(rel);
     }
   }
 }

@@ -720,9 +720,8 @@ void numCarac(int numf){
         carac22();
 }
 
-int Tarot(void){
-    int num;
-    srand(time(NULL));
+int Tarot(int num){
+    srand(num);
     num = (rand() % 23);
 
     if (num == 0 || num == 22)

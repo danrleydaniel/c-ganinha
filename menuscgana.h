@@ -40,6 +40,7 @@ struct relatorio{
   int mes;
   int ano;
   char cpfUsuario[15];
+  char acao[27];
 };
 
 void logotipoPrincipal(void); //Mostra o logotipo do programa principal
@@ -70,8 +71,7 @@ void gravaConsultor(Consultor*); //Grava os dados de um consultor num arquivo
 void gravaRelatorio(Relatorio*); //Grava os dados de um relatório num arquivo
 char menuListarCliente(void); //Mostra as opções para listar os clientes
 void listarClientes(void); //Lista os clientes que estão cadastrados
-void listaNormal(void); //Lista os clientes que estão cadastrados
-NoUsuario* listaInvertida(void); //Gera uma lista de com a ordem inversa de usuários cadastrados
+void listaInvertida(void); //Gera uma lista de com a ordem inversa de usuários cadastrados
 void exibeListaUsuario(NoUsuario*); //Função auxiliar para a listaInvertida
 void buscarCliente(void); //Busca um cliente
 char menuEditarCliente(void); //Mostra as opções para editar um cliente
@@ -96,3 +96,6 @@ void limparArquivos(void); //Responsável por realizar a exclusão física nos a
 void exclusaoFisicaUsuarios(void); //Realiza a exclusão física no arquivo de usuários
 void exclusaoFisicaConsultores(void); //Realiza a exclusão física no arquivo de consultores
 void chamaTarot(void);
+void liberaLista(NoUsuario*);
+void listaDireta(void);
+void listaOrdenada(void);
