@@ -745,7 +745,7 @@ void listaInvertidaConsultor(void){
       noConsu = (NoConsultor*) malloc(sizeof(NoConsultor));
       strcpy(noConsu->nome, consu->nome);
       strcpy(noConsu->cpf, consu->cpf);
-      noConsu->numNativo, consu->numNativo;
+      noConsu->numNativo = consu->numNativo;
       strcpy(noConsu->signos, consu->signos);
       strcpy(noConsu->china, consu->china);
       noConsu->status = consu->status;
@@ -782,7 +782,7 @@ void listaDiretaConsultor(void){
       noConsu = (NoConsultor*) malloc(sizeof(NoConsultor));
       strcpy(noConsu->nome, consu->nome);
       strcpy(noConsu->cpf, consu->cpf);
-      noConsu->numNativo, consu->numNativo;
+      noConsu->numNativo = consu->numNativo;
       strcpy(noConsu->signos, consu->signos);
       strcpy(noConsu->china, consu->china);
       noConsu->status = consu->status;
@@ -822,7 +822,7 @@ void listaOrdenadaConsultor(void){
       noConsu = (NoConsultor*) malloc(sizeof(NoConsultor));
       strcpy(noConsu->nome, consu->nome);
       strcpy(noConsu->cpf, consu->cpf);
-      noConsu->numNativo, consu->numNativo;
+      noConsu->numNativo = consu->numNativo;
       strcpy(noConsu->signos, consu->signos);
       strcpy(noConsu->china, consu->china);
       noConsu->status = consu->status;
