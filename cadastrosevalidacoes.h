@@ -10,7 +10,7 @@ int dataValida(int, int, int); //Função do professor Flavius Gorgônio que che
 int validaCpf(char *); //Função que verifica a validez de um CPF dado pelo usário
 int validaEmail(char *); //Função que verifica a validez de um email dado pelo usário
 //Funções que mostram as características de cada signo:
-int Tarot(int);
+void Tarot(int);
 void ariesCarac(void);
 void touroCarac(void);
 void gemeosCarac(void);
