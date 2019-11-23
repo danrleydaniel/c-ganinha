@@ -742,121 +742,99 @@ void numCarac(int numf){
         carac11();
     else if (numf == 22)
         carac22();
-}
+} 
 
-int Tarot(int num){
+void Tarot(int num){
     srand(num);
     num = (rand() % 23);
 
     if (num == 0 || num == 22)
     {
         TheFoolCard();
-        return 0;
     }
     else if (num == 1)
     {
         TheMagicianCard();
-        return 0;
     }
     else if (num == 2)
     {
         TheHighPriestessCard();
-        return 0;
     }
     else if (num == 3)
     {
         TheEmpressCard();
-        return 0;
     }
     else if (num == 4)
     {
         TheEmperorCard();
-        return 0;
     }
     else if (num == 5)
     {
         TheHierophantCard();
-        return 0;
     }
     else if (num == 6)
     {
         TheLoversCard();
-        return 0;
     }
     else if (num == 7)
     {
         TheChariotCard();
-        return 0;
     }
     else if (num == 8)
     {
         StrengthCard();
-        return 0;
     }
     else if (num == 9)
     {
         TheHermitCard();
-        return 0;
     }
     else if (num == 10)
     {
         TheWheelOfFortuneCard();
-        return 0;
     }
     else if (num == 11)
     {
         JusticeCard();
-        return 0;
     }
     else if (num == 12)
     {
         TheHangedManCard();
-        return 0;
     }
     else if (num == 13)
     {
         DeathCard();
-        return 0;
     }
     else if (num == 14)
     {
         TemperanceCard();
-        return 0;
     }
     else if (num == 15)
     {
         TheDevilCard();
-        return 0;
     }
     else if (num == 16)
     {
         TheTowerCard();
-        return 0;
     }
     else if (num == 17)
     {
         TheStarCard();
-        return 0;
     }
     else if (num == 18)
     {
         TheMoonCard();
-        return 0;
     }
     else if (num == 19)
     {
         TheSunCard();
-        return 0;
     }
     else if (num == 20)
     {
         JudgementCard();
-        return 0;
     }
     else if (num == 21)
     {
         TheWorldCard();
-        return 0;
     }
 }
 
