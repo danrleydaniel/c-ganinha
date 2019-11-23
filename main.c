@@ -10,7 +10,6 @@
 int main(){
   limparArquivos();
   char opcao;
-  logotipoPrincipal();
   opcao = mainMenu();
   
   while(opcao != '0'){
