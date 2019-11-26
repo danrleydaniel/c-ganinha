@@ -207,7 +207,7 @@ void cdCliente(void){
   scanf(" %15[^\n]",usu->cpf);
   
   while(!(validaCpf(usu->cpf))){
-    printf("CPF inválido. Digite novamente: ");
+    printf("O CPF informado é inválido ou já está cadastrado. Digite novamente: ");
     scanf(" %15[^\n]",usu->cpf);
   }
     
@@ -980,7 +980,7 @@ void previsaoDiaria(Consultor* consu){
 
   nds = numDaSorte(consu->nome, consu->numNativo, 
   consu->signos, consu->china);
-  nds = nds + tm.tm_mday;
+  nds = nds + tm.tm_mday + tm.tm_mon + 1;
   printf("Sua previsão diária: \n");
   previsao(nds);
 }
@@ -1211,11 +1211,12 @@ void exclusaoFisicaConsultores(void){
 void chamaTarot(void){
   system("clear||cls");
   logoTarotDiario();
-  int nds, dia;
+  int nds, dia, mes;
   time_t mytime;
   mytime = time(NULL);
   struct tm tm = *localtime(&mytime);
   dia = tm.tm_mday;
+  mes = tm.tm_mon + 1;
   char procurado[15];
   int encontrado = 0;
   FILE* fp2;
@@ -1236,7 +1237,7 @@ void chamaTarot(void){
     fclose(fp2);
     if(encontrado){
       nds = numDaSorte(consu->nome, consu->numNativo, consu->signos, consu->china);
-      nds = nds + dia;
+      nds = nds + dia + mes;
       Tarot(nds);
 
       Relatorio* rel;
