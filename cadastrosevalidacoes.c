@@ -154,6 +154,14 @@ int bissexto(int aa) {
 }
 
 int dataValida(int dd, int mm, int aa) {
+  time_t mytime;
+  mytime = time(NULL);
+  struct tm tm = *localtime(&mytime);
+  int anoAtual = tm.tm_year + 1900;
+
+  if(aa > anoAtual){
+    return 0;
+  } else{
     //Função feita pelo professor Flavius Gorgônio.
     int maiorDia;
     if (aa < 0 || mm < 1 || mm > 12){
@@ -180,6 +188,31 @@ int dataValida(int dd, int mm, int aa) {
     }
 
     return 1;
+  }
+}
+
+int cpfJaExiste(char* cpf){
+  int encontrado = 0;
+  FILE* fp;
+  Usuario* usu;
+  fp = fopen("usuarios.dat","rb");
+  if(fp == NULL){
+    return 0;
+  } else{
+    usu = (Usuario*) malloc(sizeof(Usuario));
+    while((!encontrado) && (fread(usu, sizeof(Usuario), 1, fp))){
+      if((strcmp(usu->cpf, cpf) == 0) && (usu->status == 'c')){
+        encontrado = 1;
+      }
+    }
+    fclose(fp);
+    free(usu);
+    if(encontrado){
+      return 1;
+    } else{
+      return 0;
+    }
+  }
 }
 
 int validaCpf(char * cpf){
@@ -188,27 +221,14 @@ int validaCpf(char * cpf){
     return 0;
   }
   else{
-    int num;
-    int soma1 = 0;
-    char digito1, digito2;
-    int j = 0;
-    for(int i = 10; i >= 2; i--){
-      num = chartoint(cpf[j]);
-      num *= i;
-      soma1 += num;
-      j++;
-    }
-    soma1 = soma1 % 11;
-    soma1 = 11 - soma1;
-    if(soma1 > 9)
-      soma1 = 0;
-    digito1 = inttochar(soma1);
-    if(digito1 != cpf[9])
+    if(cpfJaExiste(cpf)){
       return 0;
-    else{
-      j = 0;
-      soma1 = 0;
-      for(int i = 11; i >= 2; i--){
+    } else{
+      int num;
+      int soma1 = 0;
+      char digito1, digito2;
+      int j = 0;
+      for(int i = 10; i >= 2; i--){
         num = chartoint(cpf[j]);
         num *= i;
         soma1 += num;
@@ -218,11 +238,28 @@ int validaCpf(char * cpf){
       soma1 = 11 - soma1;
       if(soma1 > 9)
         soma1 = 0;
-      digito2 = inttochar(soma1);
-      if(digito2 != cpf[10])
+      digito1 = inttochar(soma1);
+      if(digito1 != cpf[9])
         return 0;
-      else
-        return 1;
+      else{
+        j = 0;
+        soma1 = 0;
+        for(int i = 11; i >= 2; i--){
+          num = chartoint(cpf[j]);
+          num *= i;
+          soma1 += num;
+          j++;
+        }
+        soma1 = soma1 % 11;
+        soma1 = 11 - soma1;
+        if(soma1 > 9)
+          soma1 = 0;
+        digito2 = inttochar(soma1);
+        if(digito2 != cpf[10])
+          return 0;
+        else
+          return 1;
+      }
     }
   }
 }
