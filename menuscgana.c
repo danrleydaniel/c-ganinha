@@ -760,7 +760,12 @@ void listaDiretaConsultor(void){
   consu = (Consultor*) malloc(sizeof(Consultor));
   while(fread(consu, sizeof(Consultor), 1, fp)){
     if(consu->status == 'c'){
-      exibeConsultor(consu);
+      printf("\nNome: %s",consu->nome);
+      printf("\nCPF: %s",consu->cpf);
+      printf("\nNúmero Nativo: %d",consu->numNativo);
+      printf("\nSigno: %s",consu->signos);
+      printf("\nHoróscopo Chinês: %s", consu->china);
+      printf("\nUsuário cadastrado normalmente.\n\n");
     }
   }
   fclose(fp);
@@ -769,7 +774,7 @@ void listaDiretaConsultor(void){
 
 void listaOrdenadaConsultor(void){
   system("clear||cls");
-  logoListaClientes();
+  logoListarConsultores();
   FILE* fp;
   Consultor* consu;
   NoConsultor* noConsu;
