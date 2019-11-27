@@ -1174,7 +1174,7 @@ void TheEmpressCard(void){
 
 void TheEmperorCard(void){
     printf("\n");
-    printf("\nCarta O Emperador Caraxteristicas");
+    printf("\nCarta O Emperador Caracteristicas");
     printf("\n");
     printf("Representa uma pessoa extremamente intransigente, dominador e soberano.\n\n");
     printf("Pontos positivos:\n\n"
