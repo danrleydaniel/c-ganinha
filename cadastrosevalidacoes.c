@@ -1193,7 +1193,7 @@ void TheEmperorCard(void){
 
 void TheHierophantCard(void){
     printf("\n");
-    printf("\nCarta O Sacerdote Caraxteristicas");
+    printf("\nCarta O Sacerdote Caracteristicas");
     printf("\n");
     printf("Conexão do poder e da sabedoria divina com o mundo humano.\n\n");
     printf("Pontos positivos:\n\n"
