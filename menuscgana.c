@@ -298,41 +298,26 @@ void listaDireta(void){
   logoListaClientes();
   FILE* fp;
   Usuario* usu;
-  NoUsuario* noUsu;
-  NoUsuario* lista;
-  NoUsuario* ult;
 
-  lista = NULL;
-  fp = fopen("usuarios.dat", "rb");
+  fp = fopen("usuarios.dat","rb");
   if(fp == NULL){
     printf("\nOps! Aparentemente o arquivo 'usuarios.dat' não foi encontrado.\n");
     printf("Tente novamente mais tarde.\n");
     exit(1);
   }
+
   usu = (Usuario*) malloc(sizeof(Usuario));
-  while(fread(usu, sizeof(Usuario), 1, fp)){
+  while(fread(usu,sizeof(Usuario), 1, fp)){
     if(usu->status == 'c'){
-      noUsu = (NoUsuario*) malloc(sizeof(NoUsuario));
-      strcpy(noUsu->nome, usu->nome);
-      strcpy(noUsu->email, usu->email);
-      strcpy(noUsu->cpf, usu->cpf);
-      noUsu->dia = usu->dia;
-      noUsu->mes = usu->mes;
-      noUsu->ano = usu->ano;
-      noUsu->status = usu->status;
-      noUsu->prox = NULL;
+      printf("\nNome: %s",usu->nome);
+      printf("\nEmail: %s",usu->email);
+      printf("\nCPF: %s",usu->cpf);
+      printf("\nData de Nascimento: %d/%d/%d",usu->dia, usu->mes, usu->ano);
+      printf("\nUsuário cadastrado normalmente.\n\n");
     }
-    if (lista == NULL){
-      lista = noUsu;
-    } else{
-      ult->prox = noUsu;
-    }
-    ult = noUsu;
   }
   fclose(fp);
-  exibeListaUsuario(lista);
   free(usu);
-  liberaLista(lista);
 }
 
 void listaOrdenada(void){
@@ -765,40 +750,21 @@ void listaDiretaConsultor(void){
   logoListarConsultores();
   FILE* fp;
   Consultor* consu;
-  NoConsultor* noConsu;
-  NoConsultor* lista;
-  NoConsultor* ult;
 
-  lista = NULL;
-  fp = fopen("consultores.dat", "rb");
+  fp = fopen("consultores.dat","rb");
   if(fp == NULL){
-    printf("\nOps! Aparentemente o arquivo 'consultores.dat' não foi encontrado.\n");
-    printf("Tente novamente mais tarde.\n");
+    printf("\nOps! Aparentemente o arquivo 'consultores.dat' não foi encontrado\n");
+    printf("Tente novamente mais tarde.");
     exit(1);
   }
   consu = (Consultor*) malloc(sizeof(Consultor));
   while(fread(consu, sizeof(Consultor), 1, fp)){
     if(consu->status == 'c'){
-      noConsu = (NoConsultor*) malloc(sizeof(NoConsultor));
-      strcpy(noConsu->nome, consu->nome);
-      strcpy(noConsu->cpf, consu->cpf);
-      noConsu->numNativo = consu->numNativo;
-      strcpy(noConsu->signos, consu->signos);
-      strcpy(noConsu->china, consu->china);
-      noConsu->status = consu->status;
-      noConsu->prox = NULL;
+      exibeConsultor(consu);
     }
-    if (lista == NULL){
-      lista = noConsu;
-    } else{
-      ult->prox = noConsu;
-    }
-    ult = noConsu;
   }
   fclose(fp);
-  exibeListaConsultor(lista);
   free(consu);
-  liberaListaConsultor(lista);
 }
 
 void listaOrdenadaConsultor(void){
